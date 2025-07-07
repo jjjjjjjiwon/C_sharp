@@ -21,8 +21,6 @@
     {
         int answer = 0;
         answer = num1 * num2;
-        int i;
-        Console.Write
         return answer;
     }
     
