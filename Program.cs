@@ -7,11 +7,29 @@
     /// <param name="args"></param>
     private static void Main(string[] args)
     {
-        Console.WriteLine(Solution0708(7, 2));
+        Console.WriteLine(Solution0708_2(3, 3));
     }
 
     /// <summary>
     /// 
+    /// </summary>
+    /// <param name="num1"></param>
+    /// <param name="num2"></param>
+    /// <returns></returns>
+    public static int Solution0708_2(int num1, int num2)
+    {
+        // int answer;
+        if (num1 == num2)
+        {
+            return 1;
+        }
+            return -1;
+
+        // return answer;
+    }
+
+    /// <summary>
+    ///  나누기 연산
     /// </summary>
     /// <param name="num1"></param>
     /// <param name="num2"></param>
