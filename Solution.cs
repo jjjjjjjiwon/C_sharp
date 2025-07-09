@@ -1,5 +1,37 @@
+using System.Formats.Asn1;
+
 class Solution
 {
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="num1"></param>
+    /// <param name="num2"></param>
+    /// <returns></returns>
+    public int Solution0709_2(int num1, int num2)
+    {
+        int answer = 0;
+
+        // answer = (int)(((float)num1 / (float)num2) * 1000);
+
+        return (int)(((float)num1 / (float)num2) * 1000);
+    }
+
+    
+    /// <summary>
+    /// 나이 구하기_2022
+    /// </summary>
+    /// <param name="num1"></param>
+    /// <param name="num2"></param>
+    /// <returns></returns>
+    public int Solution0709(int age)
+    {
+        int answer = 0;
+        answer = 2022 - age + 1;
+        return answer;
+    }
+
     /// <summary>
     /// 숫자 비교하기
     /// </summary>
