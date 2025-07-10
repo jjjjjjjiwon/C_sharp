@@ -1,7 +1,57 @@
 using System.Formats.Asn1;
+using System.Runtime.InteropServices;
 
 class Solution
 {
+    /// <summary>
+    /// 각도
+    /// </summary>
+    /// <param name="num1"></param>
+    /// <param name="num2"></param>
+    /// <returns></returns>
+    public int Solution0710_2(int num1)
+    {
+        int answer = 3;
+        string str = "둔";
+        Console.Write(num1 + "도는 ");
+        if (num1 == 180)
+        {
+            answer = 4;
+            str = "평";
+        }
+        
+        else if (num1 == 90)
+        {
+            answer = 2;
+            str = "직";
+        }
+        if ((0 < num1) && (num1 < 90))
+        {
+            answer = 1;
+            str = "예";
+        }
+        // else
+        // {
+        //     answer = 3;
+        //     str = "둔";
+        // }
+        
+            Console.WriteLine(str + "각입니다");
+
+            return answer;
+    }
+
+    /// <summary>
+    ///  더하기
+    /// </summary>
+    /// <param name="num1"></param>
+    /// <param name="num2"></param>
+    /// <returns></returns>
+    public int Solution0710(int num1, int num2)
+    {
+        return num1 + num2;
+    }
+   
 
     /// <summary>
     /// 
@@ -18,7 +68,6 @@ class Solution
         return (int)(((float)num1 / (float)num2) * 1000);
     }
 
-    
     /// <summary>
     /// 나이 구하기_2022
     /// </summary>

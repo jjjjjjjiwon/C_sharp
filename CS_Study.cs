@@ -1,7 +1,41 @@
+using System.Reflection.Metadata;
 using System.Reflection.PortableExecutable;
 
 class CS_study
 {
+
+    public void ArraySample()
+    {
+        int sum = 0;
+        //int [] nums = new int[10] {1,2,3,4,5,6,7,9,8,0}
+        int[] nums = new int[10];
+
+        nums[0] = 1;
+        nums[1] = 2;
+        //
+        nums[9] = 0;
+        // nums[10] = 0; - 배열의 크기를 넘어감
+
+        Random rand = new Random();
+        for (int i = 0; i < nums.Length; i++)
+        {
+            nums[i] = rand.Next() % 100;
+        }
+
+        for (int i = 0; i < nums.Length; i += 1)
+        {
+            Console.WriteLine(i + " : " + nums[i]);
+            sum += nums[i];
+        }
+
+        Console.WriteLine("sum = " + sum);
+
+
+    }
+
+    /// <summary>
+    /// int, float, string은 기억하자
+    /// </summary>
     public void DataType()
     {
         // bool 타입
