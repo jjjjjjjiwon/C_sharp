@@ -8,6 +8,7 @@ using System.Xml.Schema;
 
 class CS_study
 {
+
     /// <summary>
     /// ListSample
     /// List는 크기가 변할때 좋고
