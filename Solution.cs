@@ -3,6 +3,41 @@ using System.Runtime.InteropServices;
 
 class Solution
 {
+
+    public int Solution0711_2(int n)
+    {
+        int answer = 0;
+
+        if (0 < n && n <= 1000)
+        {
+            for (int i = 1; i <= n; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    answer += i;
+                }
+            }
+        }
+
+        return answer;
+    }
+
+    /// <summary>
+    ///  계산
+    /// </summary>
+    /// <param name="d">양꼬치</param>
+    /// <param name="k">음료수</param>
+    /// <returns></returns>
+    public int Solution0711(int n, int k)
+    {
+        int answer = 0;
+        int num = n / 10;
+
+        answer = (n * 12000) + ((k - num) * 2000);
+
+        return answer;
+    }
+
     /// <summary>
     /// 각도
     /// </summary>
@@ -19,7 +54,7 @@ class Solution
             answer = 4;
             str = "평";
         }
-        
+
         else if (num1 == 90)
         {
             answer = 2;
@@ -35,10 +70,10 @@ class Solution
         //     answer = 3;
         //     str = "둔";
         // }
-        
-            Console.WriteLine(str + "각입니다");
 
-            return answer;
+        Console.WriteLine(str + "각입니다");
+
+        return answer;
     }
 
     /// <summary>
