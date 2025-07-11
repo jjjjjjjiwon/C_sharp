@@ -1,9 +1,64 @@
+using System.Collections;
 using System.Reflection.Metadata;
 using System.Reflection.PortableExecutable;
+using System.Xml.Schema;
+
+// var = 뒤의 것으로 변시, 숫자가 있으면 int, 문자열이 있으면 string
+// var i = 1; - int형으로, var i = "ad"; - string으로
 
 class CS_study
 {
+    /// <summary>
+    /// ListSample
+    /// List는 크기가 변할때 좋고
+    /// 배열은 고정 되어 있을때 좋다
+    /// </summary>
+    public void ListSample()
+    {
+        //List<int> myList = new List<int>();
+        var myList = new List<int>(); // int형 리스트
+        myList.Add(90);
+        myList.Add(88);
+        myList.Add(75);
+        int val = myList[1]; // int형 밖에 안됨
 
+        var chrList = new List<char>(); // char형 리스트
+        chrList.Add('b');
+
+        var boolList = new List<bool>(); // char형 리스트
+        boolList.Add(false);
+
+        //int[] iarray = new int[100];
+        var iarray = new int[100];
+        iarray[2] = 10;
+        myList.Add(10); // List에 넣는 방법
+        Console.WriteLine(iarray.Length); // 배열 길이 세는법
+        Console.WriteLine(myList.Count); // List 길이 세는법 
+
+
+        myList.Sort();
+    }
+
+    /// <summary>
+    ///  ArrayList
+    /// </summary>
+    public void ArrayListSample()
+    {
+        // ArrayList myList = new ArrayList();
+        var myList = new ArrayList(); // 위 아래 코드는 같다,
+
+        myList.Add(90);
+        myList.Add(88);
+        myList.Add(75);
+        int val = (int)myList[1];
+
+        Console.WriteLine(val);
+        Console.WriteLine(myList[0]);
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
     public void ArraySample()
     {
         int sum = 0;

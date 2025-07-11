@@ -10,10 +10,10 @@ internal class Program
     private static void Main(string[] args)
     {
         Solution sol = new Solution();
-        Console.WriteLine(sol.Solution0710_2(100));
+        //Console.WriteLine(sol.Solution0710_2(100));
 
         CS_study cS_Study = new CS_study();
-        //cS_Study.ArraySample();
+        cS_Study.ListSample();
     }
 
     
