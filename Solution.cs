@@ -1,9 +1,56 @@
 using System.Formats.Asn1;
+using System.Reflection.Metadata;
 using System.Runtime.InteropServices;
 
 class Solution
 {
 
+    public int[] SolutiSolution0714_2(int[] num_list)
+    {
+        int len = num_list.Length;
+        int[] answer = new int[len];
+
+        for (int i = 0; i < len; i++)
+        {
+            // answer[len - 1 - i] = num_list[i];
+            answer[i] = num_list[len - 1 - i];
+        }
+        
+
+        return answer;
+    }
+
+    /// <summary>
+    ///  배열의 평균 값
+    /// </summary>
+    /// <param name="numbers"></param>
+    /// <returns></returns>
+    public double Solution0714(int[] numbers)
+    {
+        double answer = 0;
+
+        // foreach문
+        foreach (var item in numbers)
+        {
+            answer += item;
+        }
+
+        // for문
+        // for (int i = 0; i < numbers.Length; i++)
+        // {
+        //     answer += numbers[i];
+        // }
+
+        answer /= numbers.Length;
+
+        return answer;
+    }
+
+    /// <summary>
+    /// 짝수 더하기
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
     public int Solution0711_2(int n)
     {
         int answer = 0;
@@ -86,7 +133,7 @@ class Solution
     {
         return num1 + num2;
     }
-   
+
 
     /// <summary>
     /// 

@@ -8,6 +8,76 @@ using System.Xml.Schema;
 
 class CS_study
 {
+    /// <summary>
+    /// 스택, Queue에 대한 것
+    /// </summary>
+    public void StackQueue()
+    {
+        // 스택
+        // Stack<float> s = new Stack<float>();
+        var s = new Stack<float>();
+        s.Push(10.5f);  // push - 스택에 넣기
+        s.Push(3.54f);
+        s.Push(4.22f);
+
+        float pp = s.Peek(); // peek - 미리 보기
+        Console.WriteLine("pp = " + pp);    // 4.22
+
+        // float p3 = s.Pop();
+        var p3 = s.Pop();   // Pop - 스택 꺼내기 (꺼낸건 자료구조에서 삭제)
+        Console.WriteLine("p3 = " + p3);    // 4.22
+
+        var p4 = s.Pop();
+        Console.WriteLine("p4 = " + p4);    // 3.54
+        
+        // Queue
+        //Queue<int> q = new Queue<int>();
+        var q = new Queue<int>();
+        q.Enqueue(120); // Enqueue - Queue에 넣기
+        q.Enqueue(130);
+        q.Enqueue(150);
+
+        int next = q.Peek();
+        Console.WriteLine("next = " + next); // 120
+
+        next = q.Dequeue(); // Dequeue - Queue 꺼내기
+        Console.WriteLine("next = " + next);
+
+        int next2 = q.Peek();
+        Console.WriteLine("next = " + next2);
+
+
+    }
+
+    /// <summary>
+    /// LinkedList에 대한 것
+    /// </summary>
+    public void LinkedListSample()
+    {
+        // LinkedList<string> list = new LinkedList<string>();
+        var list = new LinkedList<string>();
+
+        // var는 한줄에 하나만 정의 가능
+        // var a = 1, var2 = 2;
+
+        list.AddLast("Apple");
+        list.AddLast("Banana");
+        list.AddLast("Lemon");
+
+        // LinkedListNode<string> node = list.Find("Banana");
+        var node = list.Find("Banana");     // Find - 찾는 것
+        var newNode = new LinkedListNode<string>("Grape");
+
+        list.AddAfter(node, newNode);   // AddAfter - 노드 뒤에 붙이기
+        list.AddAfter(node, "kiwi");    // AddAfter - (node, node) , (node, string value) 두가지 경우로 사용 가능
+
+        list.ToList<string>().ForEach(p => Console.WriteLine(p));   // ToList - list를 List<string>로 변경 시키는 것, 인덱스 접근, 정렬, 반복등 사용 가능해짐
+
+        foreach (var item in list)
+        {
+            Console.WriteLine(item);
+        }
+    }
 
     /// <summary>
     /// ListSample
