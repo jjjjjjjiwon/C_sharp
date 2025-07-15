@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Globalization;
 using System.Reflection.Metadata;
 using System.Reflection.PortableExecutable;
 using System.Xml.Schema;
@@ -8,7 +9,49 @@ using System.Xml.Schema;
 
 class CS_study
 {
+
     /// <summary>
+    /// 해시테이블, 딕션어리
+    /// </summary>
+    public void HashTableSample()
+    {
+        // Hashtable
+
+        Hashtable ht = new Hashtable();
+        // var re = new Hashtable();
+        ht.Add("Irina", "Irina Sp");
+        ht.Add("tom", "Tom Cr");
+        ht.Add(3, 'a');
+        
+        if (ht.Contains("tom"))
+        {
+            Console.WriteLine(ht["tom"]);
+        }
+
+        //Dictionary
+
+        //Dictionary<int, string> emp = new Dictionary<int, string>();
+        var emp = new Dictionary<int, string>();
+        emp.Add(1001, "jane");
+        emp.Add(1002, "Tom");
+        emp.Add(1003, "Cindy");
+        // if (emp.ContainsKey(1002) == false)
+        // {
+        //     emp.Add(1002, "kim");
+
+        // }
+
+        if (emp.ContainsValue("Cindy") == true)
+        {
+            Console.Write(emp);
+
+        }
+        
+        String name = emp[1002];
+        Console.WriteLine(name);
+    }
+    
+    // <summary>
     /// 스택, Queue에 대한 것
     /// </summary>
     public void StackQueue()
@@ -29,7 +72,7 @@ class CS_study
 
         var p4 = s.Pop();
         Console.WriteLine("p4 = " + p4);    // 3.54
-        
+
         // Queue
         //Queue<int> q = new Queue<int>();
         var q = new Queue<int>();

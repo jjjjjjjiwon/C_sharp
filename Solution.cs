@@ -1,10 +1,79 @@
 using System.Formats.Asn1;
 using System.Reflection.Metadata;
 using System.Runtime.InteropServices;
+using System.Text;
 
 class Solution
 {
 
+    /// <summary>
+    /// 특정문자 제거
+    /// </summary>
+    /// <param name="myst"></param>
+    /// <param name="letter"></param>
+    /// <returns></returns>
+    public string SolutiSolution0715_2(string myst, string letter)
+    {
+        string answer = string.Empty;
+
+        answer = myst.Replace(letter, string.Empty);
+
+        //StringBuilder
+        // var sb = new StringBuilder();
+        // foreach (var item in myst)
+        // {
+        //     if (item.ToString().CompareTo(letter) != 0)
+        //     {
+        //         sb.Append(item);
+        //     }
+        // }
+        // answer = sb.ToString();
+
+        // foreach (var item in myst)
+        // {
+        //     if (item.ToString() != letter)
+        //     {
+        //         answer += item;
+        //     }
+        // }
+
+        return answer;
+    }
+
+    /// <summary>
+    /// 짝수의 개수, 홀수의 개수
+    /// </summary>
+    /// <param name="num_list"></param>
+    /// <returns></returns>
+    public int[] SolutiSolution0715(int[] num_list)
+    {
+        var answer = new int[2] { 0, 0 };
+
+        foreach (var item in num_list)
+        {
+            if (item % 2 == 0)
+            {
+                answer[0]++;
+            }
+            else
+            {
+                answer[1]++;
+            }
+
+
+
+            // answer[item % 2]++;  // 신박하네
+        }
+
+        return answer;
+    }
+
+
+    /// <summary>
+    ///  배열 뒤집기
+    /// </summary>
+    /// <param name="num_list"></param>
+    /// <returns></returns>
     public int[] SolutiSolution0714_2(int[] num_list)
     {
         int len = num_list.Length;
@@ -15,7 +84,7 @@ class Solution
             // answer[len - 1 - i] = num_list[i];
             answer[i] = num_list[len - 1 - i];
         }
-        
+
 
         return answer;
     }
