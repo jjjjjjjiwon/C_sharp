@@ -6,6 +6,49 @@ using System.Text;
 class Solution
 {
 
+    public string SolutiSolution0716_2(string my_string)
+    {
+        // 기본적인
+        // int len = my_string.Length;
+        // char[] answerArray = new char[len];
+        // for (int i = 0; i < len; i++)
+        // {
+        //     // 위치를 주의해서 배열로 바꾼 answer에 넣자
+        //     answerArray[len - i - 1] = my_string[i];
+        // }
+
+        // // 캐릭터 배열을 스트링으로 바꿔서 리턴
+        // string answer = new string(answerArray);
+        // stringBuilder 사용
+        // var sb = new StringBuilder();
+        // foreach (var item in my_string)
+        // {
+        //     sb.Insert(0, item);    
+        // }
+        // string answer = sb.ToString();
+
+        // List로
+        // 스트링 > 리스트 > 배열 > 스트링
+        var list = new List<char>(my_string);
+        list.Reverse();
+        string answer = new string(list.ToArray());
+        
+        return answer;
+    }
+
+    /// <summary>
+    /// 편지
+    /// </summary>
+    /// <param name="message"></param>
+    /// <returns></returns>
+    public int SolutiSolution0716(string message)
+    {
+        int answer = 0;
+        answer = message.Length * 2;
+
+        return answer;
+    }
+
     /// <summary>
     /// 특정문자 제거
     /// </summary>

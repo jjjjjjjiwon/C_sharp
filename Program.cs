@@ -12,11 +12,11 @@ internal class Program
     {
         var intArray = new int[] { 1 };
         Solution sol = new Solution();
-        Console.WriteLine(sol.SolutiSolution0715_2("BCBdbe", "B"));
+        Console.WriteLine(sol.SolutiSolution0716_2("jaron"));
         // PrintIntArray(sol.SolutiSolution0715(intArray));
         
         CS_study cS_Study = new CS_study();
-        //cS_Study.HashTableSample();
+        // cS_Study.SortedDicSample();
 
         // MakeLotto();
     }

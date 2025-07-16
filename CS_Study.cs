@@ -10,6 +10,23 @@ using System.Xml.Schema;
 class CS_study
 {
 
+    public void SortedDicSample()
+    {
+        var tmap = new SortedDictionary<int, string>();
+        tmap.Add(1001, "Tom");
+        tmap.Add(1003, "John");
+        tmap.Add(1010, "Irina");
+        tmap.Add(1005, "Lee");
+
+        string name1010 = tmap[1010];
+
+        // Iterator
+        foreach (KeyValuePair<int, string> kv in tmap)
+        {
+            Console.WriteLine("{0}:{1}:{0}", kv.Key, kv.Value);
+        }
+    }
+
     /// <summary>
     /// 해시테이블, 딕션어리
     /// </summary>
@@ -22,7 +39,7 @@ class CS_study
         ht.Add("Irina", "Irina Sp");
         ht.Add("tom", "Tom Cr");
         ht.Add(3, 'a');
-        
+
         if (ht.Contains("tom"))
         {
             Console.WriteLine(ht["tom"]);
@@ -46,7 +63,7 @@ class CS_study
             Console.Write(emp);
 
         }
-        
+
         String name = emp[1002];
         Console.WriteLine(name);
     }
