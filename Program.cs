@@ -12,14 +12,36 @@ internal class Program
     {
         var intArray = new int[] { 1 };
         Solution sol = new Solution();
-        Console.WriteLine(sol.SolutiSolution0716_2("jaron"));
+        Console.WriteLine(sol.SolutiSolution0717_2(2, 10));
         // PrintIntArray(sol.SolutiSolution0715(intArray));
-        
+
         CS_study cS_Study = new CS_study();
-        // cS_Study.SortedDicSample();
+        // cS_Study.AArraySample();
 
         // MakeLotto();
+
+        int[] scores = { 80, 78, 60, 90, 100 };
+        int sum = CalculateSum(scores);
+        //Console.WriteLine(sum);
     }
+
+
+    /// <summary>
+    /// 정수 배열의 값을 더하는 함수
+    /// </summary>
+    /// <param name="scoresArray"></param>
+    /// <returns></returns>
+    public static int CalculateSum(int[] scoresArray)
+    {
+        int sum = 0;
+        for (int i = 0; i < scoresArray.Length; i++)
+        {
+            sum += scoresArray[i];
+        }
+
+        return sum;
+    }
+
 
     /// <summary>
     /// 정수 배열을 출력시키는 함수

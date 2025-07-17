@@ -2,6 +2,8 @@ using System.Collections;
 using System.Globalization;
 using System.Reflection.Metadata;
 using System.Reflection.PortableExecutable;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Xml.Schema;
 
 // var = 뒤의 것으로 변시, 숫자가 있으면 int, 문자열이 있으면 string
@@ -10,6 +12,51 @@ using System.Xml.Schema;
 class CS_study
 {
 
+    // var는 전역변수로 불가능
+    // var a = new int();
+    public void AArraySample()
+    {
+        // 중첩배열
+        // 1차원 배열
+        string[] player = new string[10];
+        string[] regions = { "서울", "경기", "부산" };
+
+        // 2차원 배열
+        //string[,] depts = { { "김과장", "경리부" }, { "이과장", "총무부" } };
+        var depts = new string[,] { { "김과장", "경리부" }, { "이과장", "총무부" } };
+
+        // 3차원 배열
+        string[,,] cubes;
+
+        // 가변 배열
+        //int[,] aa = new int[3, 2];
+        int[][] A = new int[3][];
+
+        A[0] = new int[2];
+        A[1] = new int[3] { 1, 2, 3 };
+        A[2] = new int[4] { 1, 2, 3, 4 };
+
+        A[0][0] = 1;
+        A[0][1] = 2;
+
+        //aa[0, 0] = 1;
+        //aa[0, 1] = 1;
+
+        int sum = 0;
+        int[] scores = { 80, 78, 60, 90, 100 };
+
+        for (int i = 0; i < scores.Length; i++)
+        {
+            sum += scores[i];
+        }
+
+        Console.WriteLine($"sum = {sum}");
+
+    }
+
+    /// <summary>
+    /// SortedDictionary - 정렬되는 dictionary
+    /// </summary>
     public void SortedDicSample()
     {
         var tmap = new SortedDictionary<int, string>();

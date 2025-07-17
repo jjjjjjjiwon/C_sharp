@@ -1,11 +1,54 @@
 using System.Formats.Asn1;
+using System.Globalization;
 using System.Reflection.Metadata;
 using System.Runtime.InteropServices;
 using System.Text;
 
 class Solution
 {
+    public int SolutiSolution0717_2(int n, int t)
+    {
+        int answer = 0;
 
+        answer = n * (int)Math.Pow(2, t);
+
+        return answer;
+    }
+
+    /// <summary>
+    /// 피자 나누기
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int SolutiSolution0717(int n)
+    {
+
+        int answer = 0;
+
+        // int piz = n / 7;
+        //int res = (n / 7 == 0) ? 0 : 1; // 삼항 연산자
+
+        // if (n % 7 == 0)
+        // {
+        //     res = 0;
+        // }
+        // else
+        // {
+        //     res = 1;
+        // }
+
+        //answer = piz + res;
+
+        answer = (n - 1) / 7 + 1;
+
+        return answer;
+    }
+
+    /// <summary>
+    /// 문자열 뒤집기
+    /// </summary>
+    /// <param name="my_string"></param>
+    /// <returns></returns>
     public string SolutiSolution0716_2(string my_string)
     {
         // 기본적인
@@ -32,7 +75,7 @@ class Solution
         var list = new List<char>(my_string);
         list.Reverse();
         string answer = new string(list.ToArray());
-        
+
         return answer;
     }
 
