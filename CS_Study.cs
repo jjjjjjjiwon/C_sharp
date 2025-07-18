@@ -4,6 +4,7 @@ using System.Reflection.Metadata;
 using System.Reflection.PortableExecutable;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Text;
 using System.Xml.Schema;
 
 // var = 뒤의 것으로 변시, 숫자가 있으면 int, 문자열이 있으면 string
@@ -11,6 +12,80 @@ using System.Xml.Schema;
 
 class CS_study
 {
+
+    /// <summary>
+    /// StringBulid
+    /// </summary>
+    public void SBSample()
+    {
+        var sb = new StringBuilder();
+        for (int i = 1; i <= 26; i++)
+        {
+            sb.Append(i.ToString());    // Append - 문자열 또는 값을 추가
+            //sb.Append(System.Environment.NewLine); // System.Environment.NewLine - 줄 바꿈, \n
+            sb.Append(' ');
+        }
+        string s = sb.ToString();
+        Console.WriteLine($"Result : {s}");
+
+        sb.Clear();
+        sb.Append('A' + 3);
+        Console.WriteLine(sb.ToString());
+    }
+
+
+    /// <summary>
+    /// char 을 string
+    /// </summary>
+    public void ASCIISample()
+    {
+        string s = "C# Studies";
+        for (int i = 0; i < s.Length; i++)
+        {
+            //Console.WriteLine("{0}:{1}", i, s[i]);
+        }
+
+        string str = "Hello";
+        char[] charArray = str.ToCharArray();  // ToCharArray - string를 char형 배열로 바꿔라
+        for (int i = 0; i < charArray.Length; i++)
+        {
+            //Console.WriteLine("{0}:{1}", i, charArray[i]);
+        }
+
+        char[] charArray2 = { 'A', 'B', 'C', 'D' };
+        string s2 = new string(charArray2);
+        //Console.WriteLine(s2);
+
+        // 문자 연산
+        char c1 = 'A';
+        char c2 = (char)(c1 + 3);
+        Console.WriteLine(c2); // D
+
+
+
+
+    }
+
+    /// <summary>
+    /// string.Substring
+    /// </summary>
+    public void StringSample()
+    {
+        string s1 = "C#";
+        string s2 = "programming";
+        int startIndex = 3;
+        int len = s2.Length - startIndex - 1;
+        string s3 = s2.Substring(startIndex, len);
+        Console.WriteLine(s3);
+
+        char c1 = 'A';
+        char c2 = 'B';
+        string s4 = s1 + " " + s2;
+        Console.WriteLine("string : {0}", s4);
+
+        string s4sub = s4.Substring(1, 5);
+        Console.WriteLine("SubString : {0}", s4sub);
+    }
 
     // var는 전역변수로 불가능
     // var a = new int();

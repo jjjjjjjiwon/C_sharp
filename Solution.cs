@@ -6,6 +6,45 @@ using System.Text;
 
 class Solution
 {
+
+    public int SolutiSolution0718(int[] numbers)
+    {
+        int answer = 0;
+
+
+        // 중첩 반복문
+        // for (int i = 0; i < numbers.Length; i++)
+        // {
+        //     for (int j = 0; j < numbers.Length; j++)
+        //     {
+        //         if (i != j)
+        //         {
+        //             continue;
+        //         }
+
+        //         // if (answer < numbers[i] * numbers[j])
+        //         // {
+        //         //     answer = numbers[i] * numbers[j];
+        //         // }
+
+        //         answer = Math.Max(answer, numbers[i] * numbers[j]); // 두개 중에 뭐가 더 큰 값인지
+        //     }
+        // }
+
+
+        // 오르차순으로 정리해서 마지막수 두개의 곱
+        Array.Sort(numbers);
+        answer = numbers[numbers.Length - 1] * numbers[numbers.Length - 2];
+
+        return answer;
+    }
+
+    /// <summary>
+    /// 제곱은?
+    /// </summary>
+    /// <param name="n"></param>
+    /// <param name="t"></param>
+    /// <returns></returns>
     public int SolutiSolution0717_2(int n, int t)
     {
         int answer = 0;
