@@ -12,11 +12,11 @@ internal class Program
     {
         var intArray = new int[] { 0, 31, 24, 10, 1, 9 };
         Solution sol = new Solution();
-        Console.WriteLine(sol.SolutiSolution0718(intArray));
+        Console.WriteLine(sol.SolutiSolution0721_2(1234));
         // PrintIntArray(sol.SolutiSolution0715(intArray));
 
         CS_study cS_Study = new CS_study();
-         //cS_Study.SBSample();
+        //cS_Study.EnumSample();
 
         // MakeLotto();
 

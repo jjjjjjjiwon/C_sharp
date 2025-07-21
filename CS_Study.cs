@@ -1,4 +1,5 @@
 using System.Collections;
+using System.ComponentModel;
 using System.Globalization;
 using System.Reflection.Metadata;
 using System.Reflection.PortableExecutable;
@@ -12,6 +13,92 @@ using System.Xml.Schema;
 
 class CS_study
 {
+
+    string GetName() { return ""; }
+    static public int GetId() { return 0; }
+    public static int GetId2() { return 0; }
+
+    public void CodingGuide()
+    {
+        bool isValid = false;
+        if (isValid == false)
+        {
+
+        }
+        else
+        {
+
+        }
+
+        if (isValid)
+        {
+
+        }
+        else
+        {
+
+        }
+
+        string path = @"C:\Tmep\Test.txt";
+        string s1 = "1", s2 = "2", s3 = "3";
+        //var res = s1 + "+" + s2 + "=" + s3;
+        var res = string.Format("{0} + {1} = {2}", s1, s2, s3);
+
+        
+    }
+
+    public enum GameState { Ready, Run }
+    public enum Category    // enum - 상수다,  클래스, namespace에서만 사용 가능하다, 메서드안에서는 못 쓴다, 형변환 가능
+    {
+        cake = 10,       // 아무것도 지정하지 않으면 초기값 0, 1, ,2로 증가
+        IceCream ,      // 윗 값에 +1 을 한다 5, 6, 7등으로
+        Bread,          // 2, 1, ? 이런식으로 값을 지정하면 ?는 2번을 가리킨다
+    }
+
+    enum City
+    {
+        Seoul,
+        Daejun,
+        Busan = 5,
+        Jeju = 10,
+    }
+
+
+     [Flags] // 비트연사을 하는
+    enum Border
+    {
+        None = 0,
+        Top = 1,
+        Right = 2,
+        Bottom = 4,
+        Left = 8,
+    }
+
+    public void EnumSample()
+    {
+        Category cafeCategory;
+        cafeCategory = Category.Bread;
+        //Console.WriteLine((int)cafeCategory);
+        City myCity = City.Seoul;
+        int cityValue = (int)myCity;
+        if (myCity == City.Seoul)
+        {
+            //Console.WriteLine("Welcome To Seoio")
+        }
+
+        // or 연산자로 다중 플래그 할당
+        Border b = Border.Top | Border.Bottom | Border.Left; // Top, Bottom 두개 동시의
+        // & 연산자로 플래그 체크
+        if ((b & Border.Top) != 0)
+        {
+            // HasFlag() 이용
+            if (b.HasFlag(Border.Bottom))
+            {
+                Console.WriteLine((int)b);
+            }
+        }
+    }
+
 
     /// <summary>
     /// StringBulid

@@ -3,10 +3,64 @@ using System.Globalization;
 using System.Reflection.Metadata;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Xml;
 
 class Solution
 {
 
+    /// <summary>
+    /// 각 자리수 더하기
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int SolutiSolution0721_2(int n)
+    {
+        int answer = 0;
+        string str = n.ToString();
+        foreach (var item in str)
+        {
+
+            answer += item - '0';
+        }
+
+        return answer;
+    }
+
+    /// <summary>
+    /// 영어 모음 빼기
+    /// </summary>
+    /// <param name="my_String"></param>
+    /// <returns></returns>
+    public string SolutiSolution0721(string my_String)
+    {
+        // foreach 사용
+        //    string answer = string.Empty;
+        //     foreach (var item in my_String)
+        //     {
+        //         if ((item != 'o') && (item != 'a') && (item != 'e') && (item != 'i') && (item != 'u'))
+        //         {
+        //             answer += item;  // String연산이니까, stringBulider를 쓰자
+        //         }
+        //     }
+
+        // String. 사용
+        // my_String.Replace('a','\0'); 도 가능
+        string answer = my_String.Replace("a", "");
+        answer = answer.Replace("e", "");
+        answer = answer.Replace("i", "");
+        answer = answer.Replace("o", "");
+        answer = answer.Replace("u", "");
+        //return my_String.Replace("a", "").Replace("e", "").Replace("i", "").Replace("o", "").Replace("u", ""); 이런 식으로 도 가능하다
+
+        return answer;
+    }
+
+
+    /// <summary>
+    /// 배열의 가장 큰수 2개 곱하기
+    /// </summary>
+    /// <param name="numbers"></param>
+    /// <returns></returns>
     public int SolutiSolution0718(int[] numbers)
     {
         int answer = 0;
