@@ -7,6 +7,54 @@ using System.Xml;
 
 class Solution
 {
+    /// <summary>
+    /// 삼각형이 가능한가?
+    /// </summary>
+    /// <param name="array"></param>
+    /// <returns></returns>
+    public int SolutiSolution0722_2(int[] array)
+    {
+        int answer = 0;
+        // list를 이용한 정렬
+        var list = new List<int>(array);
+        list.Sort();
+        answer = (list[2] < list[1] + list[0]) ? 1 : 2;
+        
+        /// 그냥
+        //Array.Sort(array);
+        // if (array[array.Length - 1] >= array[array.Length - 2] + array[array.Length - 3])
+        // {
+        //     answer = 2;
+        // }
+        // else
+        // {
+        //     answer = 1;
+        // }
+
+        // return (array[2] < array[1] + array[0]) ? 1 : 2; // 삼항 연산자로//
+        return answer;
+    }
+
+
+    /// <summary>
+    /// 나보다 큰 키는 몇명?
+    /// </summary>
+    /// <param name="array"></param>
+    /// <param name="height"></param>
+    /// <returns></returns>
+    public int SolutiSolution0722(int[] array, int height)
+    {
+        int answer = 0;
+
+        for (int i = 0; i < array.Length; i++)
+        {
+            if (array[i] > height)
+            {
+                answer++;
+            }
+        }
+        return answer;
+    }
 
     /// <summary>
     /// 각 자리수 더하기

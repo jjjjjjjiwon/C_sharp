@@ -10,13 +10,13 @@ internal class Program
     /// <param name="args"></param>
     private static void Main(string[] args)
     {
-        var intArray = new int[] { 0, 31, 24, 10, 1, 9 };
+        var intArray = new int[] { 199, 72, 222};
         Solution sol = new Solution();
-        Console.WriteLine(sol.SolutiSolution0721_2(1234));
+        Console.WriteLine(sol.SolutiSolution0722_2(intArray));
         // PrintIntArray(sol.SolutiSolution0715(intArray));
 
         CS_study cS_Study = new CS_study();
-        //cS_Study.EnumSample();
+        //cS_Study.OperatiorSample();
 
         // MakeLotto();
 

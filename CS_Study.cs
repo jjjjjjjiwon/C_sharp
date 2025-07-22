@@ -14,6 +14,40 @@ using System.Xml.Schema;
 class CS_study
 {
 
+    /// <summary>
+    /// 연산자
+    /// </summary>
+    public void OperatiorSample()
+    {
+        int num = 1;
+        int a = 0;
+        int b = 0;
+        Console.WriteLine($"before : {num}");
+        num++;
+        Console.WriteLine($"after : {num}");
+
+        num = 2;
+        num = num << 5;
+
+        //int val = (a > b) ? a : b; // 삼항연산자
+        int val;
+        if (a > b)
+        {
+            val = a;
+        }
+        else
+        {
+            val = b;
+        }
+
+        string str = "aa"; // null
+        string s = str ?? "몰라"; // str이 null이면 뒤 에 것을(몰라), 다른것이면 str의 값을 반환, null을 쓸수있는 것만 사용가능
+        Console.WriteLine(s);
+        int? ni = null; // int? - int에서 null을 사용하겠다는 뜻
+        num = ni ?? 20;
+
+    }
+
     string GetName() { return ""; }
     static public int GetId() { return 0; }
     public static int GetId2() { return 0; }
