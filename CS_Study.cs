@@ -15,6 +15,33 @@ class CS_study
 {
 
     /// <summary>
+    /// switch
+    /// </summary>
+    public void conditionSample()
+    {
+        string category = "사과";
+        int price = 0;
+
+        switch (category)
+        {
+            case "사과":
+            case "참외":
+                price = 2000;
+                break;
+            case "딸기":
+                price = 10000;
+                break;
+            case "포도":
+                price = 6000;
+                break;
+            default:
+                price = 1000;
+                break;
+        }
+        Console.WriteLine($"{category}는 : {price}");
+    }
+
+    /// <summary>
     /// 연산자
     /// </summary>
     public void OperatiorSample()

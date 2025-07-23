@@ -6,7 +6,46 @@ using System.Text;
 using System.Xml;
 
 class Solution
-{
+{   
+
+
+    /// <summary>
+    /// 사람 수와 피자 한 판당 조각 수를 받아서 필요한 피자 판 수를 계산합니다.
+    /// </summary>
+    /// <param name="slice">한 판에 들어있는 피자 조각 수</param>
+    /// <param name="n">피자를 먹을 사람 수</param>
+    /// <returns>필요한 피자 판 수</returns>
+    public int SolutiSolution0723_2(int slice, int n)
+    {
+        int answer = n / slice;      // 몫
+        if (n % slice != 0)         // 나머지가 있으면 소수가 있는 것 → +1
+        {
+            answer += 1;
+        }
+
+        return answer;
+    }
+
+    /// <summary>
+    /// num1 ~ num2 사이의 배열의 수 찾기
+    /// </summary>
+    /// <param name="array"></param>
+    /// <param name="num1"></param>
+    /// <param name="num2"></param>
+    /// <returns></returns>
+    public int[] SolutiSolution0723(int[] array, int num1, int num2)
+    {
+        int length = num2 - num1 + 1;
+        int[] answer = new int[length];
+
+        for (int i = 0; i < length; i++)
+        {
+            answer[i] = array[num1 + i];
+        }
+
+        return answer;
+    }
+    
     /// <summary>
     /// 삼각형이 가능한가?
     /// </summary>
@@ -19,7 +58,7 @@ class Solution
         var list = new List<int>(array);
         list.Sort();
         answer = (list[2] < list[1] + list[0]) ? 1 : 2;
-        
+
         /// 그냥
         //Array.Sort(array);
         // if (array[array.Length - 1] >= array[array.Length - 2] + array[array.Length - 3])
