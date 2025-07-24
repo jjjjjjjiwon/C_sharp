@@ -14,6 +14,60 @@ using System.Xml.Schema;
 class CS_study
 {
 
+
+    public void LoopSample()
+    {
+        // for
+        for (int i = 0; i < 10; i += 3)
+        {
+            //Console.WriteLine($"Loop : {i}");
+        }
+
+        string[] array = new string[] { "AB", "CD", "EF" };
+        foreach (var item in array)
+        {
+            //Console.WriteLine(item);
+        }
+
+        string[,,] arr = new string[,,]
+        {
+            {{"1", "2"}, {"11", "22"}},
+            {{"3", "4"}, {"33", "44"}}
+        };
+        for (int i = 0; i < arr.GetLength(0); i++)
+        {
+            for (int j = 0; j < arr.GetLength(1); j++)
+            {
+                for (int k = 0; k < arr.GetLength(2); k++)
+                {
+                    //Console.Write(arr[i, j, k] + ",");
+                }
+            }
+        }
+        //Console.WriteLine();
+        foreach (var item in arr)
+        {
+            //Console.Write(item + ",");
+        }
+
+        // while
+        int answer = 6;
+        while (answer <= 10)
+        {
+            Console.Write(answer + ",");
+            answer++;
+        }
+
+        Console.WriteLine();
+        answer = 6;
+        // do ~ while
+        do
+        {
+            Console.Write(answer + ",");
+            answer++;
+        } while (answer <= 10);
+    }
+
     /// <summary>
     /// switch
     /// </summary>

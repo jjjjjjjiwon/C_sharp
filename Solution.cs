@@ -6,8 +6,31 @@ using System.Text;
 using System.Xml;
 
 class Solution
-{   
+{
+    public int SolutiSolution0724_2(string[] s1, string[] s2)
+    {
+        int answer = 0;
+        for (int i = 0; i < s1.Length; i++)
+        {
+            for (int k = 0; k < s2.Length; k++)
+            {
+                if (s1[i] == s2[k])
+                    answer++;   
+            }
+        }
+        return answer;
+    }
 
+    /// <summary>
+    /// 몇 사분면에 있는가
+    /// </summary>
+    /// <param name="dot"></param>
+    /// <returns></returns>
+    public int SolutiSolution0724(int[] dot)
+    {
+        int answer = dot[0] > 0 ? dot[1] > 0 ? 1 : 4 : dot[1] > 0 ? 2 : 3;
+        return answer;
+    }
 
     /// <summary>
     /// 사람 수와 피자 한 판당 조각 수를 받아서 필요한 피자 판 수를 계산합니다.
