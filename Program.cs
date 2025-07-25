@@ -10,12 +10,12 @@ internal class Program
     /// <param name="args"></param>
     private static void Main(string[] args)
     {
-        var intArray = new int[] { 2, 4 };
+        var intArray = new int[] { 4, 5, 6, 7, 8, 9, 10, 11, 12 };
         var strArr1 = new string[] { "a", "b", "c" };
-        var strArr2 = new string[]{"com", "b", "d", "p", "c"};
+        var strArr2 = new string[] { "com", "b", "d", "p", "c" };
         Solution sol = new Solution();
-        Console.WriteLine(sol.SolutiSolution0724_2(strArr1, strArr2));
-        //PrintIntArray(sol.SolutiSolution0723(intArray, 1, 3));
+        //Console.WriteLine(sol.SolutiSolution0725(10000));
+        PrintIntArray(sol.SolutiSolution0725_2(3, intArray));
 
         CS_study cS_Study = new CS_study();
         //cS_Study.LoopSample();
@@ -25,8 +25,19 @@ internal class Program
         int[] scores = { 80, 78, 60, 90, 100 };
         int sum = CalculateSum(scores);
         //Console.WriteLine(sum);
+        
     }
 
+    /// <summary>
+    /// yeield
+    /// </summary>
+    /// <returns></returns>
+    static IEnumerable<int> GetNumber()
+    {
+        yield return 10;
+        yield return 20;
+        yield return 30;
+    }
 
     /// <summary>
     /// 정수 배열의 값을 더하는 함수

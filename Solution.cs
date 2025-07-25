@@ -7,6 +7,58 @@ using System.Xml;
 
 class Solution
 {
+
+    /// <summary>
+    /// 배열에서의 기준값의 배수를 찾기
+    /// </summary>
+    /// <param name="num"></param>
+    /// <param name="iArry"></param>
+    /// <returns></returns>
+    public int[] SolutiSolution0725_2(int num, int[] iArry)
+    {
+        var list = new List<int>();
+
+        foreach (var item in iArry)
+        {
+            if (item % num == 0)
+            {
+                list.Add(item);
+            }
+        }
+
+        int[] answer = new int[list.Count];
+
+        for (int i = 0; i < answer.Length; i++)
+        {
+            answer[i] = list[i];
+        }
+
+        return answer;
+    }
+
+    /// <summary>
+    /// 약수
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int SolutiSolution0725(int n)
+    {
+        int answer = 0;
+        for (int i = 1; i <= n; i++)
+        {
+            if (n % i == 0)
+                answer++;
+        }
+
+        return answer;
+    }
+
+    /// <summary>
+    /// 두 문자열의 같은 계수
+    /// </summary>
+    /// <param name="s1"></param>
+    /// <param name="s2"></param>
+    /// <returns></returns>
     public int SolutiSolution0724_2(string[] s1, string[] s2)
     {
         int answer = 0;
@@ -15,7 +67,7 @@ class Solution
             for (int k = 0; k < s2.Length; k++)
             {
                 if (s1[i] == s2[k])
-                    answer++;   
+                    answer++;
             }
         }
         return answer;
