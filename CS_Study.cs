@@ -14,7 +14,33 @@ using System.Xml.Schema;
 class CS_study
 {
 
+    /// <summary>
+    /// try-catch-finally
+    /// </summary>
+    public void ExceptionSample()
+    {
+        int[] intArr = new int[3];
+        try
+        {
+            intArr[5] = 0;
+        }
+        catch (AggregateException ex)
+        {
+            Console.WriteLine("AE ...");
+        }
+        catch (IndexOutOfRangeException ex)
+        {
+            Console.WriteLine("ior 오류 발생!" + ex);
+        }
+        finally
+        {
+            Console.WriteLine("에러 없음");
+        }
+    }
 
+    /// <summary>
+    /// Loop
+    /// </summary>
     public void LoopSample()
     {
         // for

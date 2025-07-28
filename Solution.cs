@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using System.Formats.Asn1;
 using System.Globalization;
 using System.Reflection.Metadata;
@@ -7,6 +8,33 @@ using System.Xml;
 
 class Solution
 {
+
+    public int[] SolutiSolution0728_2(string[] strlist)
+    {
+        int length = strlist.Length;
+        int[] answer = new int[length];
+
+        for (int i = 0; i < length; i++)
+        {
+            answer[i] = strlist[i].Length;
+        }
+
+        return answer;
+    } 
+
+    /// <summary>
+    /// 개수와 남은 돈
+    /// </summary>
+    /// <param name="money"></param>
+    /// <returns></returns>
+    public int[] SolutiSolution0728(int money)
+    {
+        // int[] answer = new int[2];
+        // answer[0] = money / 5500;
+        // answer[1] = money % 5500;
+        //return answer;
+        return new int[] { money / 5500, money % 5500 };
+    }
 
     /// <summary>
     /// 배열에서의 기준값의 배수를 찾기
