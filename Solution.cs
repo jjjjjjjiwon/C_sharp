@@ -8,7 +8,46 @@ using System.Xml;
 
 class Solution
 {
+    /// <summary>
+    /// 문자열을 각 자리를 n번 만큼 반복하라
+    /// </summary>
+    /// <param name="my_string"></param>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public string SolutiSolution0729_2(string my_string, int n)
+    {
+        string answer = string.Empty;
 
+        foreach (var item in my_string)
+        {
+            for (int i = 0; i < n; i++)
+            {
+                answer += item;
+            }
+        }
+        return answer;
+    }
+
+    // 문자열안에 문자열이 있는가
+    public int SolutiSolution0729(string str, string str2)
+    {
+        int answer = 0;
+
+        if (str.Contains(str2)) // contain 문자열안에 비교할 것이 있는지 확인하는
+        {
+            answer = 1;
+        }
+        else
+        {
+            answer = 2;
+        }
+
+        //int answer = str.Contains(str2) ? 1 : 2; // 삼항으로도 가능
+
+        return answer;
+    }
+
+    // 문자열 배열 안에 있는 문자열의 크기
     public int[] SolutiSolution0728_2(string[] strlist)
     {
         int length = strlist.Length;
