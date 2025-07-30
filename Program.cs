@@ -13,10 +13,10 @@ internal class Program
     private static void Main(string[] args)
     {
         var intArray = new int[] { 4, 5, 6, 7, 8, 9, 10, 11, 12 };
-        var strArr1 = new string[] { "we", "are", "the", "world" };
+        var strArr1 = new string[] { "a", "b", "c"};
         var strArr2 = new string[] { "com", "b", "d", "p", "c" };
         Solution sol = new Solution();
-        Console.WriteLine(sol.SolutiSolution0729_2("hello", 3));
+        Console.WriteLine(sol.SolutiSolution0730_2(976));
         //util.PrintIntArray(sol.SolutiSolution0728_2(strArr1));
 
         CS_study cS_Study = new CS_study();

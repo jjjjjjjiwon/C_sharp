@@ -9,6 +9,60 @@ using System.Xml;
 class Solution
 {
     /// <summary>
+    /// 제곱수 판별
+    /// </summary>
+    /// <param name="num"></param>
+    /// <returns></returns>
+    public int SolutiSolution0730_2(int num)
+    {
+        int answer = 0;
+        int min = 1, max = 1000;
+
+        // for (int i = min; i <= max; i++)
+        // {
+        //     if (i * i == num)
+        //     {
+        //         answer = 1;
+        //         break;
+        //     }
+        //     answer = 2;
+        // }
+
+        // 루트
+        // if (Math.Sqrt(num) == (int)Math.Sqrt(num))
+        //     answer = 1;
+        // else answer = 2;
+        // answer = (Math.Sqrt(num) == (int)Math.Sqrt(num)) ? 1 : 2; // 삼항으로
+
+        return answer;
+    }
+
+    /// <summary>
+    /// 문자열 배열 모두 합치기
+    /// </summary>
+    /// <param name="str"></param>
+    /// <returns></returns>
+    public string SolutiSolution0730(string[] str)
+    {
+        string answer = " ";
+
+        // foreach (var item in str)
+        // {
+        //     answer += item;
+        // }
+
+        // stringbuilder
+        // var sb = new StringBuilder();
+        // foreach (var item in str)
+        // {
+        //     sb.Append(item);
+        // }
+        // answer = sb.ToString();
+
+        return answer;
+    }
+
+    /// <summary>
     /// 문자열을 각 자리를 n번 만큼 반복하라
     /// </summary>
     /// <param name="my_string"></param>
