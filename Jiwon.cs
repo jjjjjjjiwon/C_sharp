@@ -3,16 +3,24 @@ namespace jiwon
     class util
     {
 
-    /// <summary>
-    /// yeield
-    /// </summary>
-    /// <returns></returns>
-    static IEnumerable<int> GetNumber()
-    {
-        yield return 10;
-        yield return 20;
-        yield return 30;
-    }
+        public void StructTest()
+        {
+        CS_study.MyPoint pt = new CS_study.MyPoint(10, 12);
+        CS_study.MyPoint pt2 = new CS_study.MyPoint();
+        Console.WriteLine(pt.ToString());
+        Console.WriteLine(pt2.ToString());
+        }
+
+        /// <summary>
+        /// yeield
+        /// </summary>
+        /// <returns></returns>
+        static IEnumerable<int> GetNumber()
+        {
+            yield return 10;
+            yield return 20;
+            yield return 30;
+        }
 
     /// <summary>
     /// 정수 배열의 값을 더하는 함수

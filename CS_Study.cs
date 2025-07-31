@@ -11,8 +11,32 @@ using System.Xml.Schema;
 // var = 뒤의 것으로 변시, 숫자가 있으면 int, 문자열이 있으면 string
 // var i = 1; - int형으로, var i = "ad"; - string으로
 
+
+
 class CS_study
 {
+
+    // 구조체 정의
+    public struct MyPoint
+    {
+        public int X;
+        public int Y;
+
+        public MyPoint(int x, int y)
+        {
+            this.X = x;
+            this.Y = y;
+        }
+
+
+        public override string ToString()
+        {
+            return string.Format($"{X}, {Y}");
+        }
+    }
+
+
+
 
     /// <summary>
     /// try-catch-finally
@@ -185,14 +209,14 @@ class CS_study
         //var res = s1 + "+" + s2 + "=" + s3;
         var res = string.Format("{0} + {1} = {2}", s1, s2, s3);
 
-        
+
     }
 
     public enum GameState { Ready, Run }
     public enum Category    // enum - 상수다,  클래스, namespace에서만 사용 가능하다, 메서드안에서는 못 쓴다, 형변환 가능
     {
         cake = 10,       // 아무것도 지정하지 않으면 초기값 0, 1, ,2로 증가
-        IceCream ,      // 윗 값에 +1 을 한다 5, 6, 7등으로
+        IceCream,      // 윗 값에 +1 을 한다 5, 6, 7등으로
         Bread,          // 2, 1, ? 이런식으로 값을 지정하면 ?는 2번을 가리킨다
     }
 
@@ -205,7 +229,7 @@ class CS_study
     }
 
 
-     [Flags] // 비트연사을 하는
+    [Flags] // 비트연사을 하는
     enum Border
     {
         None = 0,
@@ -417,7 +441,7 @@ class CS_study
         String name = emp[1002];
         Console.WriteLine(name);
     }
-    
+
     // <summary>
     /// 스택, Queue에 대한 것
     /// </summary>

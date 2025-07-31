@@ -8,6 +8,39 @@ using System.Xml;
 
 class Solution
 {
+
+    public int SolutiSolution0731_2(int[] iArry, int num)
+    {
+        int answer = 0;
+
+         foreach (var item in iArry)
+    {
+        if (item == num)
+            answer++;
+    }
+
+        return answer;
+    }
+
+
+    /// <summary>
+    /// 문자열 붙여서 출력하기
+    /// </summary>
+    public void SolutiSolution0731()
+    {
+        String[] input;
+
+        Console.Clear();
+        input = Console.ReadLine().Split(' ');
+
+        string s1 = input[0];
+        string s2 = input[1];
+
+
+        Console.Write(s1 + s2);
+
+    }
+
     /// <summary>
     /// 제곱수 판별
     /// </summary>
