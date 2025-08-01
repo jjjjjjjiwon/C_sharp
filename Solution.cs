@@ -8,16 +8,42 @@ using System.Xml;
 
 class Solution
 {
+    public int SolutiSolution0801_2(int[] num)
+    {
+        
+         List<int> LIst = new List<int>(num);
+        LIst.Sort();
+
+        int answer = LIst.Count / 2;
+
+        return LIst[answer];
+    }
+
+    /// <summary>
+    /// 배열 2배 만들기
+    /// </summary>
+    /// <param name="iArry"></param>
+    /// <returns></returns>
+    public int[] SolutiSolution0801(int[] iArry)
+    {
+
+        for (int i = 0; i < iArry.Length; i++)
+        {
+            iArry[i] *= 2;
+        }
+
+        return iArry;
+    }
 
     public int SolutiSolution0731_2(int[] iArry, int num)
     {
         int answer = 0;
 
-         foreach (var item in iArry)
-    {
-        if (item == num)
-            answer++;
-    }
+        foreach (var item in iArry)
+        {
+            if (item == num)
+                answer++;
+        }
 
         return answer;
     }
