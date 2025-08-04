@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 using System.Formats.Asn1;
 using System.Globalization;
@@ -8,10 +9,61 @@ using System.Xml;
 
 class Solution
 {
+    /// <summary>
+    /// 할인율
+    /// </summary>
+    /// <param name="price"></param>
+    /// <returns></returns>
+    public int SolutiSolution0804_2(int price)
+    {
+        double answer = price;
+
+        if (price >= 500000)
+        {
+            answer = price * 0.80;
+        }
+        else if (price >= 300000)
+        {
+            answer = price * 0.90;
+        }
+        else if (price >= 100000)
+        {
+            answer = price * 0.95;
+        }
+
+        return (int)answer;
+    }
+
+
+    /// <summary>
+    /// 숫자를 포함한 아래 수의 홀수 찾기
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int[] SolutiSolution0804(int n)
+    {
+        var list = new List<int>();
+
+        for (int i = 1; i <= n; i++)
+        {
+            if (i % 2 != 0)
+            {
+                list.Add(i);
+            }
+        }
+
+        return list.ToArray();
+    }
+
+    /// <summary>
+    /// 베열의 중간은?
+    /// </summary>
+    /// <param name="num"></param>
+    /// <returns></returns>
     public int SolutiSolution0801_2(int[] num)
     {
-        
-         List<int> LIst = new List<int>(num);
+
+        List<int> LIst = new List<int>(num);
         LIst.Sort();
 
         int answer = LIst.Count / 2;

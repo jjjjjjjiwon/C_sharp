@@ -6,15 +6,58 @@ using System.Reflection.PortableExecutable;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Xml;
 using System.Xml.Schema;
 
 // var = 뒤의 것으로 변시, 숫자가 있으면 int, 문자열이 있으면 string
 // var i = 1; - int형으로, var i = "ad"; - string으로
 
 
-
 class CS_study
 {
+
+    void NullableTest()
+    {
+        int? a = null;
+        int? b = 0;
+        int result = Nullable.Compare<int>(a, b);
+        Console.WriteLine(result);
+
+        double? c = 0.01;
+        double? d = 0.0100;
+        bool result2 = Nullable.Equals<double>(c, d);
+        Console.WriteLine(result2);
+    }
+
+    double _Sum = 0;
+    DateTime _Time;
+    bool? _Selected;
+
+    public void CheckInput(int? i, double? d, DateTime? time, bool? selected)
+    {
+        if (i.HasValue && d.HasValue)
+        {
+            this._Sum = (double)i.Value + (double)d.Value;
+        }
+        if (!time.HasValue)
+        {
+            throw new ArgumentException();
+        }
+        else
+        {
+            this._Time = time.Value;
+        }
+        // 만약 selected가 null이면 false를 할당
+        // if (selected == null)
+        // {
+        //     this._Selected = false;
+        // }
+        // else
+        // {
+        //     this._Selected = selected;
+        // }
+        this._Selected = selected ?? false;
+    }
 
     // 구조체 정의
     public struct MyPoint

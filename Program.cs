@@ -16,11 +16,11 @@ internal class Program
         var strArr1 = new string[] { "a", "b", "c" };
         var strArr2 = new string[] { "com", "b", "d", "p", "c" };
         Solution sol = new Solution();
-        Console.WriteLine(sol.SolutiSolution0801_2(intArray));
-        //util.PrintIntArray(sol.SolutiSolution0801(intArray));
+        Console.WriteLine(sol.SolutiSolution0804_2(580000));
+        //util.PrintIntArray(sol.SolutiSolution0804(10));
 
         CS_study cS_Study = new CS_study();
-        //cS_Study.ExceptionSample();
+
 
     }
 
