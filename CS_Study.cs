@@ -8,13 +8,95 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Xml;
 using System.Xml.Schema;
+using jiwon;
 
 // var = 뒤의 것으로 변시, 숫자가 있으면 int, 문자열이 있으면 string
 // var i = 1; - int형으로, var i = "ad"; - string으로
 
 
-class CS_study
+class  CS_study
 {
+    public void ParamSample()
+    {
+         // ref - 초기화 필요
+        int x = 1;
+        double y = 1.0;
+        double ret = Getdata(ref x, ref y);
+        Console.WriteLine($"x : {x}, y : {y}, ret : {ret}");
+        //Console.WriteLine("x : {0}, y : {1}, ret : {2}", x,y,ret);
+
+        // out - 초기화 불필요
+        int c, d;
+        bool bret = Getdata(10, 20, out c, out d);
+        Console.WriteLine($"c : {c}, d : {d}, bret : {bret}");
+        //Console.WriteLine("c : {0}, d : {1}, bret : {2}", c,d,bret);
+
+
+        Method1(26, 100, "Park");
+        Method1(name: "John", age: 10, score: 90);
+        Method1(score: -20, name: "Lee", age: 30);
+        Method1(2, 40); // 값을 넣어 두면 안줘도 됨
+        Method1(score: 7, age: 10);
+
+        Method2(100, 0, 44);
+        Method2(99);
+
+        Method3(44, 80, true);
+        Method3();
+        Method3(live: false);
+        Method3(score: 100, age: 10);
+
+
+        int ret2 = util.Calc(130, 7); // 기본으로 string에 "+"가 있어 생략하면 +연산
+        ret2 = util.Calc(130, 7, "*");
+        ret2 = util.Calc(b: 7, a: 130, calcType: "/"); // 알아서 적어도 됨
+        Console.WriteLine(ret2);
+
+        int s = Calc2(1, 2, 3, 4);
+        //int s2 = Calc3(1, 2, 3, 4);
+        int s2 = Calc2(6, 7, 8, 9, 0, 1); 
+    
+    }
+    public int Calc3(int[] value)
+    {
+        return 0;
+    }
+    public int Calc2(params int[] value)
+    {
+        return 0;
+    }
+    public void Method3(int age = 10, int score = 0, bool live = true)
+    {
+
+    }
+    public void Method2(int age, int score = 100, int city = 11)
+    {
+
+    }
+    public void Method1(int age, int score, string name = "NoName")
+    {
+
+    }
+
+    public double Getdata(ref int a, ref double b)
+    {
+        return ++a * ++b;
+    }
+
+    public bool Getdata(int a, int b, out int c, out int d)
+    {
+        c = a + b;
+        d = a - b;
+        return true;
+    }
+
+    public int Calulate(int a)
+    {
+        Console.WriteLine("a=" + a);
+        a *= 2;
+        Console.WriteLine("a=" + a);
+        return a;
+    }
 
     void NullableTest()
     {
@@ -639,7 +721,7 @@ class CS_study
     /// <summary>
     /// int, float, string은 기억하자
     /// </summary>
-    public void DataType()
+     public void DataType()
     {
         // bool 타입
         bool b = true;

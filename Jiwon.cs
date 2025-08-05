@@ -2,13 +2,33 @@ namespace jiwon
 {
     class util
     {
+        /// <summary>
+        /// 사칙연산 계산기
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <param name="calcType"></param>
+        /// <returns></returns>
+        /// <exception cref="ArithmeticException"></exception>
+        public static int Calc(int a, int b, string calcType = "+")
+        {
+            switch (calcType)
+            {
+                case "+": return a + b;
+                case "-": return a - b;
+                case "*": return a * b;
+                case "/": return a / b;
+                default:
+                    throw new ArithmeticException();
+            }
+        }
 
         public void StructTest()
         {
-        CS_study.MyPoint pt = new CS_study.MyPoint(10, 12);
-        CS_study.MyPoint pt2 = new CS_study.MyPoint();
-        Console.WriteLine(pt.ToString());
-        Console.WriteLine(pt2.ToString());
+            CS_study.MyPoint pt = new CS_study.MyPoint(10, 12);
+            CS_study.MyPoint pt2 = new CS_study.MyPoint();
+            Console.WriteLine(pt.ToString());
+            Console.WriteLine(pt2.ToString());
         }
 
         /// <summary>
