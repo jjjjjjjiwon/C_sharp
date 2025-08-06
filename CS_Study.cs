@@ -16,9 +16,48 @@ using jiwon;
 
 class  CS_study
 {
+   
+    class MyLesson
+    {
+        public event EventHandler Run;
+        public void RunEvent()
+        {
+            if (Run != null)
+            {
+                Run(this, EventArgs.Empty);
+            }
+        }
+    }
+
+    public void EventTest()
+    {
+        MyLesson lesson = new MyLesson();
+        lesson.Run += new EventHandler(Lesson1);
+        lesson.Run += new EventHandler(Lesson2);
+        lesson.RunEvent();
+
+        lesson.Run -= new EventHandler(Lesson2);
+        lesson.RunEvent();
+        //lesson.Run -= new EventHandler(Lesson3);
+    }
+    public void Lesson3()
+    {
+
+    }
+    public void Lesson1(object sender, EventArgs e)
+    {
+
+    }
+
+    public void Lesson2(object sender, EventArgs e)
+    {
+
+    } 
+
+
     public void ParamSample()
     {
-         // ref - 초기화 필요
+        // ref - 초기화 필요
         int x = 1;
         double y = 1.0;
         double ret = Getdata(ref x, ref y);
@@ -54,8 +93,8 @@ class  CS_study
 
         int s = Calc2(1, 2, 3, 4);
         //int s2 = Calc3(1, 2, 3, 4);
-        int s2 = Calc2(6, 7, 8, 9, 0, 1); 
-    
+        int s2 = Calc2(6, 7, 8, 9, 0, 1);
+
     }
     public int Calc3(int[] value)
     {

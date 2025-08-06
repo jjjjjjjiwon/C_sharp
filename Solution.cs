@@ -6,9 +6,46 @@ using System.Reflection.Metadata;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Xml;
+using System.Xml.XPath;
 
 class Solution
 {
+
+    public int Solution0806_2(int hp)
+    {
+        int generaLlAP = 5;
+        int soldierAP = 3;
+        int WorkerAP = 1;
+        int answer = 0;
+
+        int generaLlAcount = hp / generaLlAP;
+        hp = hp % generaLlAP;
+        int soldierAcount = hp / soldierAP;
+        hp = hp % soldierAP;
+        answer = generaLlAcount + soldierAcount + hp;
+        
+        return answer;
+    }
+
+
+    public void Solution0806()
+    {
+        string[] s;
+
+        Console.Clear();
+        s = Console.ReadLine().Split(' ');
+        int n = Int32.Parse(s[0]);
+
+        for (int i = 1; i <= n; i++)
+        {
+            for (int j = 0; j < i; j++)
+            {
+                Console.Write("*");
+            }
+            Console.Write("\n");
+        }
+    }
+
     /// <summary>
     /// 할인율
     /// </summary>
