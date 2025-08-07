@@ -11,6 +11,55 @@ using System.Xml.XPath;
 class Solution
 {
 
+    /// <summary>
+    /// 가위 바위 보, 무조건 이기는
+    /// </summary>
+    /// <param name="rsp"></param>
+    /// <returns></returns>
+    public string Solution0807_2(string rsp)
+    {
+        string answer = string.Empty;
+        foreach (var item in rsp)
+        {
+            if (item == '0')
+            {
+                answer += "5";
+            }
+            else if (item == '2')
+            {
+                answer += "0";
+            }
+            else if (item == '5')
+            {
+                answer += "2";
+            }
+        }
+        return answer;
+    }
+
+    /// <summary>
+    /// 공배수 인가
+    /// </summary>
+    /// <param name="number"></param>
+    /// <param name="n"></param>
+    /// <param name="m"></param>
+    /// <returns></returns>
+    public int Solution0807(int number, int n, int m)
+    {
+        int answer = 0;
+        if (number % n == 0 && number % m == 0)
+        {
+            answer = 1;
+        }
+
+        return answer;
+    }
+
+    /// <summary>
+    /// 가장적은 병사의 수
+    /// </summary>
+    /// <param name="hp"></param>
+    /// <returns></returns>
     public int Solution0806_2(int hp)
     {
         int generaLlAP = 5;
@@ -23,11 +72,14 @@ class Solution
         int soldierAcount = hp / soldierAP;
         hp = hp % soldierAP;
         answer = generaLlAcount + soldierAcount + hp;
-        
+
         return answer;
     }
 
 
+    /// <summary>
+    /// 별로 직각 삼각형 만들기
+    /// </summary>
     public void Solution0806()
     {
         string[] s;

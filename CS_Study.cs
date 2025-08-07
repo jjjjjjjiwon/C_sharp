@@ -1,3 +1,6 @@
+#define TEST_ENV
+//#define PROD_ENV
+
 using System.Collections;
 using System.ComponentModel;
 using System.Globalization;
@@ -14,9 +17,43 @@ using jiwon;
 // var i = 1; - int형으로, var i = "ad"; - string으로
 
 
-class  CS_study
+/// <summary>
+/// 전처리기
+/// </summary>
+class CS_study
 {
-   
+    class ClaaA
+    {
+        #region public method
+        public void Run() { }
+        public void Create() { }
+        #endregion
+
+        #region  Property
+        public int Id { get; set; }
+        #endregion
+
+        #region  Privates;
+        void Execute() { }
+        #endregion
+    }
+
+    public void preProTest()
+    { 
+        bool verbose = false;
+#if (TEST_ENV)
+        Console.WriteLine("Now test env.");
+        verbose = true;
+#elif (PROD_ENV)
+        Console.WriteLine("Now prod env.");
+#endif
+        if (verbose)
+        {
+            Console.WriteLine("verbose....");
+        }
+
+    }
+
     class MyLesson
     {
         public event EventHandler Run;
@@ -52,7 +89,7 @@ class  CS_study
     public void Lesson2(object sender, EventArgs e)
     {
 
-    } 
+    }
 
 
     public void ParamSample()
@@ -137,6 +174,7 @@ class  CS_study
         return a;
     }
 
+    #region Nullable
     void NullableTest()
     {
         int? a = null;
@@ -149,6 +187,8 @@ class  CS_study
         bool result2 = Nullable.Equals<double>(c, d);
         Console.WriteLine(result2);
     }
+
+    #endregion
 
     double _Sum = 0;
     DateTime _Time;
@@ -760,7 +800,7 @@ class  CS_study
     /// <summary>
     /// int, float, string은 기억하자
     /// </summary>
-     public void DataType()
+    public void DataType()
     {
         // bool 타입
         bool b = true;
