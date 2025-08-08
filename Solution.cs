@@ -3,6 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Formats.Asn1;
 using System.Globalization;
 using System.Reflection.Metadata;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Xml;
@@ -10,6 +11,43 @@ using System.Xml.XPath;
 
 class Solution
 {
+    /// <summary>
+    /// 문자열 안에 수를 찾아 오름차순 정렬
+    /// </summary>
+    /// <param name="st"></param>
+    /// <returns></returns>
+    public int[] Solution0808_2(string st)
+    {
+        var list = new List<int>();
+
+        foreach (var item in st)
+        {
+            if (item >= '0' && item <= '9')
+            {
+                list.Add(item - '0');
+            }
+        }
+        list.Sort();
+
+        return list.ToArray();
+    }
+
+    /// <summary>
+    /// 상자안에 주사위 개수
+    /// </summary>
+    /// <param name="IsBoxed"></param>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int Solution0808(int[] IsBoxed, int n)
+    {
+        int answer = 1;
+
+        answer *= IsBoxed[0] / n;
+        answer *= IsBoxed[1] / n;
+        answer *= IsBoxed[2] / n;
+
+        return answer;
+    }
 
     /// <summary>
     /// 가위 바위 보, 무조건 이기는

@@ -17,11 +17,77 @@ using jiwon;
 // var i = 1; - int형으로, var i = "ad"; - string으로
 
 
-/// <summary>
-/// 전처리기
-/// </summary>
+
+
 class CS_study
 {
+    /// <summary>
+    /// 인덱서
+    /// </summary>
+    public class Myclass
+    {
+        private const int Max = 10;
+        private string name;
+        private int[] data = new int[Max];
+
+        public int this[int index]
+        {
+            get
+            {
+                if (index < 0 || index >= Max)
+                {
+                    throw new IndexOutOfRangeException();
+                }
+                else
+                {
+                    return data[index];
+                }
+            }
+
+            set
+            {
+                //if (!(index < 0 || index >= Max)) 
+                if (index >= 0 && index < Max) // 위 도 같은 코드
+                {
+                    data[index] = value;
+                }
+            }
+
+        }
+
+        public void SetData(int index, int value)
+        {
+            if (index >= 0 && index < Max)
+            {
+                data[index] = value;
+            }
+        }
+        public int GetData(int index)
+        {
+            if (index >= 0 && index < Max)
+            {
+                return data[index];
+            }
+            else
+            {
+                throw new IndexOutOfRangeException();
+            }
+        }
+        public void IndexTest()
+        {
+             CS_study.Myclass cls = new CS_study.Myclass();
+            cls[1] = 1024;
+            int i = cls[1];
+            cls.SetData(3, 100);
+            int i2 = cls.GetData(3);
+            Console.WriteLine(i2);
+        }
+    }
+
+
+    /// <summary>
+    /// 전처리기
+    /// </summary>
     class ClaaA
     {
         #region public method
@@ -39,7 +105,7 @@ class CS_study
     }
 
     public void preProTest()
-    { 
+    {
         bool verbose = false;
 #if (TEST_ENV)
         Console.WriteLine("Now test env.");

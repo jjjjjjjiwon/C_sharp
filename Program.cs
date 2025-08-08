@@ -12,17 +12,17 @@ internal class Program
     /// <param name="args"></param>
     private static void Main(string[] args)
     {
-        var intArray = new int[] { 9, -1, 7, 5, 0 };
+        var intArray = new int[] { 10,8,6};
         var strArr1 = new string[] { "a", "b", "c" };
         var strArr2 = new string[] { "com", "b", "d", "p", "c" };
         Solution sol = new Solution();
-        Console.WriteLine(sol.Solution0807_2("555"));
-        //util.PrintIntArray(sol.SolutiSolution0804(10));
+        //Console.WriteLine(sol.Solution0808(intArray, 3));
+        util.PrintIntArray(sol.Solution0808_2("hi12392"));
         //sol.Solution0806();
 
         CS_study cS_Study = new CS_study();
         //cS_Study.preProTest();
-        
+       
     }
 
     
