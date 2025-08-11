@@ -73,14 +73,25 @@ class CS_study
                 throw new IndexOutOfRangeException();
             }
         }
+
+        // 접근 제한자 공부
+        int id = 0;
+        public string Name { set; get; }
+        public void Run(int id) {}
+        protected void Execute() {}
+
         public void IndexTest()
         {
-             CS_study.Myclass cls = new CS_study.Myclass();
+            CS_study.Myclass cls = new CS_study.Myclass();
             cls[1] = 1024;
             int i = cls[1];
             cls.SetData(3, 100);
             int i2 = cls.GetData(3);
             Console.WriteLine(i2);
+
+            cls.Name = "Lee";
+            string str = cls.Name;
+            cls.Run(13);
         }
     }
 

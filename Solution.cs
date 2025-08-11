@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 using System.Formats.Asn1;
@@ -11,6 +12,39 @@ using System.Xml.XPath;
 
 class Solution
 {
+    public int Solution0811_2(int[] numbers)
+    {
+        int answer = 0;
+
+        Array.Sort(numbers);
+        answer = numbers[numbers.Length - 1] * numbers[numbers.Length - 2];
+        if (answer < numbers[0] * numbers[1])
+        {
+            answer = numbers[0] * numbers[1];
+        }
+
+        return answer; 
+    }
+
+    /// <summary>
+    /// 문자열 자연수의 합
+    /// </summary>
+    /// <param name="my_string"></param>
+    /// <returns></returns>
+    public int Solution0811(string my_string)
+    {
+        int answer = 0;
+        foreach (var item in my_string)
+        {
+            if ((item >= '1') && (item <= '9'))
+            {
+                answer += (item - '0');
+            }
+        }
+
+        return answer;
+    }
+
     /// <summary>
     /// 문자열 안에 수를 찾아 오름차순 정렬
     /// </summary>
