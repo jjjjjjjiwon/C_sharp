@@ -21,6 +21,25 @@ using jiwon;
 
 class CS_study
 {
+    public void classSample()
+    {
+        Console.WriteLine("++++++++++++++++++++++++");
+        Animal anione = new Animal();
+        anione.Name = "cat";
+        anione.Age = 5;
+        Dog myDog = new Dog();
+        myDog.Name = "puppy";
+        myDog.Age = 8;
+        myDog.Setweight(30);
+        myDog.HowOld();
+        myDog.SetGold(2000);
+        Console.WriteLine($"Gold:{myDog.SetGold}");
+        Bird myBird = new Bird();
+        myBird.Name = "seossi";
+        myBird.FLy();
+    }
+
+
     /// <summary>
     /// 인덱서
     /// </summary>
@@ -77,8 +96,8 @@ class CS_study
         // 접근 제한자 공부
         int id = 0;
         public string Name { set; get; }
-        public void Run(int id) {}
-        protected void Execute() {}
+        public void Run(int id) { }
+        protected void Execute() { }
 
         public void IndexTest()
         {

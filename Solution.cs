@@ -12,6 +12,49 @@ using System.Xml.XPath;
 
 class Solution
 {
+    public void Solution0812_2()
+    {
+        string[] s;
+        // Console.Clear();55
+        s = Console.ReadLine().Split(' ');
+        int a = Int32.Parse(s[0]);
+        const string str = "{0} is {1}";
+        const string strEven = "even";
+        const string strOdd = "odd";
+        string strVal = (a % 2 == 0) ? strEven : strOdd;
+        Console.WriteLine(str, a, strVal);
+        // if (a % 2 == 1)
+        // {
+        //     Console.Write($"{a} is odd");
+        // }
+        // else
+        //     Console.Write($"{a} is even");
+    }
+
+    /// <summary>
+    /// 문자열문자열문자열
+    /// </summary>
+    /// <param name="my_String"></param>
+    /// <param name="k"></param>
+    /// <returns></returns>
+    public string Solution0812(string my_String, int k)
+    {
+        // string answer = "";
+        var sb = new StringBuilder();
+        for (int i = 0; i < k; i++)
+        {
+            //answer += my_String;
+            sb.Append(my_String);
+        }
+
+        return sb.ToString();
+    }
+
+    /// <summary>
+    /// 배열에 있는 가장 큰 두수의 곱
+    /// </summary>
+    /// <param name="numbers"></param>
+    /// <returns></returns>
     public int Solution0811_2(int[] numbers)
     {
         int answer = 0;
@@ -23,7 +66,7 @@ class Solution
             answer = numbers[0] * numbers[1];
         }
 
-        return answer; 
+        return answer;
     }
 
     /// <summary>
