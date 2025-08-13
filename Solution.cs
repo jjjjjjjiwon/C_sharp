@@ -12,6 +12,41 @@ using System.Xml.XPath;
 
 class Solution
 {
+    public string Solution0813_2(string str, int n)
+    {
+        string answer = " ";
+        for (int i = n - 1; i < str.Length; i += n)
+        {
+            answer += str[i];
+        }
+        return answer;
+    }
+
+    /// <summary>
+    /// n 번째 원소부터
+    /// </summary>
+    /// <param name="num_list"></param>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int[] Solution0813(int[] num_list, int n)
+    {
+        int len = num_list.Length - n + 1;
+        int[] answer = new int[len];
+        // for (int i = 0; i < len; i++)
+        // {
+        //     answer[i] = num_list[n - 1 + i];
+        // }
+        // num_list의 크기만큼 반복
+        for (int i = n - 1, j = 0; i < num_list.Length; i++, j++)
+        {
+            answer[j] = num_list[i];
+        }
+        return answer;
+    }
+
+    /// <summary>
+    /// 홀수 인지 짝수 인지
+    /// </summary>
     public void Solution0812_2()
     {
         string[] s;

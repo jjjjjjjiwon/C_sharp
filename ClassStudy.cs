@@ -1,6 +1,64 @@
 // base class
 using System.Diagnostics.Contracts;
 using System.Security.Cryptography.X509Certificates;
+public static class MyUtility
+{
+    private static int ver;
+
+    static MyUtility()
+    {
+        ver = 1;
+    }
+
+    public static string convert(int i)
+    {
+        return i.ToString();
+    }
+
+    public static int convertBack(string s)
+    {
+        return int.Parse(s);
+    }
+    
+    
+}
+
+public class MyClass
+{
+    int val = 1;
+
+    public MyClass()
+    {
+        val = 100;
+    }
+
+    public int InstRun()
+    {
+        return val;
+    }
+
+    // static 메서드
+    public static int Run()
+    {
+        return 1;
+    }
+}
+
+public class Client
+{
+    public void Test()
+    {
+        // 일반 메서드 호출
+        MyClass myClass = new MyClass();
+        int i = myClass.InstRun();
+        Console.WriteLine($"i: {i}");
+
+        // static
+        int j = MyClass.Run();
+        Console.WriteLine($"j: {j}");
+    }
+}
+
 
 public class Animal
 {
