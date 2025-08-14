@@ -76,33 +76,51 @@ namespace jiwon
         }
         Console.WriteLine("]");
     }
-    
 
     /// <summary>
-    /// 로또
+    /// 제네릭 배열
     /// </summary>
-    public static void MakeLotto()
-    {
-        int TOTAL_BALLS = 45; // 전체 공 개수
-        int PICK_BALLS = 6;   // 뽑는 공 수
-
-        var rand = new Random();
-        var ballList = new List<int>();
-
-        for (int i = 1; i <= TOTAL_BALLS; i++)
+    /// <typeparam name="T"></typeparam>
+    /// <param name="answerArray"></param>
+    public static void PrintArray<T>(T[] answerArray)
         {
-            ballList.Add(i);    // 리스트에 45까지 의 수를 1개씩 넣는다
+            Console.Write("[");
+            for (int i = 0; i < answerArray.Length; i++)
+            {
+                Console.Write(answerArray[i]);
+                if (i != answerArray.Length - 1)
+                {
+                    Console.Write(",");
+                }
+            }
+            Console.WriteLine("]");
         }
-
-        for (int i = 0; i < PICK_BALLS; i++)
+    
+    /// <summary>
+        /// 로또
+        /// </summary>
+        public static void MakeLotto()
         {
-            int index = rand.Next() % ballList.Count; // 랜덤 숫자
+            int TOTAL_BALLS = 45; // 전체 공 개수
+            int PICK_BALLS = 6;   // 뽑는 공 수
 
-            Console.Write("[" + index + "]");
-            Console.WriteLine(ballList[index]); // 랜덤한 숫자에 해당하는 리스트를 불러온다
-            ballList.RemoveAt(index); // 랜덤 숫자의 리스트를 제거한다
+            var rand = new Random();
+            var ballList = new List<int>();
+
+            for (int i = 1; i <= TOTAL_BALLS; i++)
+            {
+                ballList.Add(i);    // 리스트에 45까지 의 수를 1개씩 넣는다
+            }
+
+            for (int i = 0; i < PICK_BALLS; i++)
+            {
+                int index = rand.Next() % ballList.Count; // 랜덤 숫자
+
+                Console.Write("[" + index + "]");
+                Console.WriteLine(ballList[index]); // 랜덤한 숫자에 해당하는 리스트를 불러온다
+                ballList.RemoveAt(index); // 랜덤 숫자의 리스트를 제거한다
+            }
         }
-    }
 
     }
 }

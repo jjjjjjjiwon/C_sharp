@@ -12,6 +12,53 @@ using System.Xml.XPath;
 
 class Solution
 {
+    public string Solution0814_2(string str)
+    {
+        StringBuilder sb = new StringBuilder();
+
+    foreach (var ch in str)
+    {
+        if (ch >= 'a' && ch <= 'z')      
+            sb.Append(char.ToUpper(ch)); 
+        else if (ch >= 'A' && ch <= 'Z') 
+            sb.Append(char.ToLower(ch)); 
+        else
+            sb.Append(ch);               
+    }
+        return sb.ToString();
+    }
+
+    /// <summary>
+    /// true면 더하고, flase면 빼라
+    /// </summary>
+    /// <param name="a"></param>
+    /// <param name="b"></param>
+    /// <param name="flag"></param>
+    /// <returns></returns>
+    public int Solution0814(int a, int b, bool flag)
+    {
+        int answer = 0;
+
+        // if (flag)
+        // {
+        //     answer = a + b;
+        // }
+        // else
+        // {
+        //     answer = a - b;
+        // }
+        // return answer;
+
+        // if를 삼항으로
+        return answer = flag ? a + b : a - b;
+    }
+
+    /// <summary>
+    /// n번째 마다 띄어 읽기
+    /// </summary>
+    /// <param name="str"></param>
+    /// <param name="n"></param>
+    /// <returns></returns>
     public string Solution0813_2(string str, int n)
     {
         string answer = " ";

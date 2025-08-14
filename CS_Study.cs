@@ -21,6 +21,39 @@ using jiwon;
 
 class CS_study
 {
+    class MyStack<T>
+    {
+        T[] _elements;
+        int pos = 0;
+        public MyStack()
+        {
+            _elements = new T[100];
+        }
+
+        public void Push(T element)
+        {
+            _elements[++pos] = element;
+        }
+
+        public T pop()
+        {
+            return _elements[pos--];
+        }
+    }
+
+    public void GenericSample()
+    {
+        MyStack<int> NumberStack = new MyStack<int>();
+        //MyStack<string> NameStack = new MyStack<string>();
+        var NameStack = new MyStack<string>(); // var 가능, 뒤에 잘 정의 하자
+        NumberStack.Push(14);
+        Console.WriteLine(NumberStack.pop());
+        NameStack.Push("NAME");
+        Console.WriteLine(NameStack.pop());
+
+    }
+
+
     public void classSample()
     {
         Console.WriteLine("++++++++++++++++++++++++");
