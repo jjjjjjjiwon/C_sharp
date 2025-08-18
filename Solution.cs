@@ -12,19 +12,65 @@ using System.Xml.XPath;
 
 class Solution
 {
+    public int [] Solution0818_2(int n)
+    {
+        List<int> list = new List<int>();
+
+        for (int i = 1; i <= n; i++)
+        {
+            if (n % i == 0)
+            {
+                list.Add(i);
+            }
+        }
+        return list.ToArray();
+    }
+
+    /// <summary>
+    /// 인덱스 바꾸기
+    /// </summary>
+    /// <param name="str"></param>
+    /// <param name="num1"></param>
+    /// <param name="num2"></param>
+    /// <returns></returns>
+    public string Solution0818(string str, int num1, int num2)
+    {
+        string answer = string.Empty;
+        char chr1 = str[num1];
+        char chr2 = str[num2];
+        for (int i = 0; i < str.Length; i++)
+        {
+            if (i == num1)
+            {
+                answer += chr2;
+            }
+            else if (i == num2)
+            {
+                answer += chr1;
+            }
+            else
+            {
+                answer += str[i];
+            }
+        }
+
+        return answer;
+    }
+
+
     public string Solution0814_2(string str)
     {
         StringBuilder sb = new StringBuilder();
 
-    foreach (var ch in str)
-    {
-        if (ch >= 'a' && ch <= 'z')      
-            sb.Append(char.ToUpper(ch)); 
-        else if (ch >= 'A' && ch <= 'Z') 
-            sb.Append(char.ToLower(ch)); 
-        else
-            sb.Append(ch);               
-    }
+        foreach (var ch in str)
+        {
+            if (ch >= 'a' && ch <= 'z')
+                sb.Append(char.ToUpper(ch));
+            else if (ch >= 'A' && ch <= 'Z')
+                sb.Append(char.ToLower(ch));
+            else
+                sb.Append(ch);
+        }
         return sb.ToString();
     }
 

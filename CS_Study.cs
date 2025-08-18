@@ -21,6 +21,85 @@ using jiwon;
 
 class CS_study
 {
+    public class ClimateMonitor
+    {
+        ILogger logger;
+        public ClimateMonitor(ILogger logger)
+        {
+            this.logger = logger;
+        }
+
+        public void Start()
+        {
+            while (true)
+            {
+                Console.Write("온도를 입력하세여 : ");
+                string temp = Console.ReadLine();
+                if (temp == "") break;
+                logger.WriteLog($"현재 온도 : {temp}");
+            }
+        }
+    }
+
+    public interface ILogger
+    {
+        void WriteLog(string messge);
+    }
+
+    public class FileLogger : ILogger
+    {
+        StreamWriter writer;
+        public FileLogger(string path)
+        {
+            writer = File.CreateText(path);
+            writer.AutoFlush = true;
+        }
+        public void WriteLog(string messge)
+        {
+            writer.WriteLine($"{DateTime.Now.ToLocalTime()}, {messge}");
+        }
+    }
+
+    public class ConsoleLogger : ILogger
+    {
+        public void WriteLog(string messge)
+        {
+            Console.WriteLine($"{DateTime.Now.ToLocalTime()}, {messge}");
+        }
+    }
+
+    public interface IComparable // 인터페이스의 이름 앞에는 I를 붙혀 인터페이스인 것을 알려주자
+    {
+        int compareTo(object obj);
+        void open();
+    }
+
+    public class MyClass2 : IComparable // 상속 받았으면 반드시 정의 해야한다
+    {
+        public int compareTo(object obj)
+        {
+            return 0;
+        }
+
+        public void open() {} // 구현을 안해도 상관 없다
+    }
+
+    public class InterfaceSample
+    {
+        public void Sample()
+        {
+            // IComparable ic = new IComparable(); // 구현만 하고 정의는 안해서 안됨
+            IComparable ic = new MyClass2();
+            MyClass2 mc2 = new MyClass2();
+
+            ic.open();
+            mc2.open(); // 인터페이스를 상속받아 구현 해놔서 사용 가능
+        }
+    }
+
+
+
+
     class MyStack<T>
     {
         T[] _elements;
