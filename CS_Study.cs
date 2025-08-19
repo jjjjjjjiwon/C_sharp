@@ -21,6 +21,28 @@ using jiwon;
 
 class CS_study
 {
+    // delegate 정의
+
+    delegate int Mydelegate(string s);
+
+    public void DeleTest()
+    {
+        Mydelegate m = new Mydelegate(StringToInt);
+        DeleRun(m);
+    }
+
+    int StringToInt(string s)
+    {
+        return int.Parse(s);
+    }
+
+    void DeleRun(Mydelegate m)
+    {
+        int i = m("123");
+        Console.WriteLine(i);
+    }
+    
+
     public class ClimateMonitor
     {
         ILogger logger;

@@ -12,7 +12,52 @@ using System.Xml.XPath;
 
 class Solution
 {
-    public int [] Solution0818_2(int n)
+    /// <summary>
+    /// 문자열 소문자로 하고 오름차순
+    /// </summary>
+    /// <param name="result"></param>
+    /// <returns></returns>
+    public string Solution0819_2(string result)
+    {
+        // string answer = result.ToLower();
+        // var list = new List<char>(answer);
+        // list.Sort();
+        // answer = new string(list.ToArray());
+        // return answer;
+        
+        char[] chrarr = result.ToLower().ToCharArray();
+        Array.Sort(chrarr);
+        return new string(chrarr);
+        
+    }
+
+    /// <summary>
+    /// 배열에 큰값 , 인덱스
+    /// </summary>
+    /// <param name="arry"></param>
+    /// <returns></returns>
+    public int[] Solution0819(int[] arry)
+    {
+        int[] answer = new int[2];
+
+        var dic = new Dictionary<int, int>();
+        for (int i = 0; i < arry.Length; i++)
+        {
+            dic.Add(arry[i], i);
+        }
+        var list = new List<int>(arry);
+        list.Sort();
+        answer[0] = list[list.Count - 1];
+        answer[1] = dic[answer[0]];
+        return answer;
+    }
+    
+    /// <summary>
+    /// 약수를 찾아 오름차순으로 정렬
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int[] Solution0818_2(int n)
     {
         List<int> list = new List<int>();
 

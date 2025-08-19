@@ -13,17 +13,16 @@ internal class Program
     /// <param name="args"></param>
     private static void Main(string[] args)
     {
-        var intArray = new int[] { 5, 2, 1, 7, 5 };
-        var strArr1 = new string[] { "a", "b", "c" };
+        var intArray = new int[] { 9,10,11,8 };
+        var strArr1 = new string[] { "Bcad" };
         var strArr2 = new string[] { "com", "b", "d", "p", "c" };
         Solution sol = new Solution();
-        //Console.WriteLine(sol.Solution0814_2("cccCCC"));
-        util.PrintArray(sol.Solution0818_2(24));
+        Console.WriteLine(sol.Solution0819_2("heLLo"));
+        //util.PrintArray(sol.Solution0819_2(strArr1));
         //sol.Solution0806();
 
 
         CS_study cS_Study = new CS_study();
-        //cS_Study.classSample();
 
         //CS_study.ILogger logger = new CS_study.ConsoleLogger();
         // CS_study.ILogger logger = new CS_study.FileLogger("MyText.Text");
