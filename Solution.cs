@@ -12,6 +12,49 @@ using System.Xml.XPath;
 
 class Solution
 {
+    public int Solution0820_2(int[] number, int n)
+    {
+        int answer = 0;
+
+        foreach (var item in number)
+        {
+            answer += item;
+            if (answer > n)
+            {
+                break;
+            }
+        }
+        return answer;
+    }
+
+    /// <summary>
+    /// 문자열 뒤에서 n번째부터 읽기
+    /// </summary>
+    /// <param name="str"></param>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public string Solution0820(string str, int n)
+    {
+        //return str.Substring(str.Length - n, n);
+        //return str.Remove(0, str.Length - n);
+
+        string answer = "";
+
+        for (int i = 0; i < str.Length; i++)
+        {
+            if (i < str.Length - n)
+            {
+                continue;
+            }
+            else
+            {
+                answer += str[i];
+            }
+        }
+        return answer;
+
+    }
+
     /// <summary>
     /// 문자열 소문자로 하고 오름차순
     /// </summary>
@@ -24,11 +67,11 @@ class Solution
         // list.Sort();
         // answer = new string(list.ToArray());
         // return answer;
-        
+
         char[] chrarr = result.ToLower().ToCharArray();
         Array.Sort(chrarr);
         return new string(chrarr);
-        
+
     }
 
     /// <summary>

@@ -1,7 +1,53 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace jiwon
 {
     class util
     {
+
+        /// <summary>
+        /// 내림 차순, 오름 차순
+        /// </summary>
+        /// <param name="i1"></param>
+        /// <param name="i2"></param>
+        /// <returns></returns>
+        public delegate int ComapreDelegate(int i1, int i2);
+        public static void sort(int[] arr, ComapreDelegate comp)
+        {
+            if (arr.Length < 2) return;
+            //Console.WriteLine($"Prototype : {comp.Method}");
+
+            int ret;
+            for (int i = 0; i < arr.Length - 1; i++)
+            {
+                for (int j = i + 1; j < arr.Length; j++)
+                {
+                    ret = comp(arr[i], arr[j]);
+                    if (ret == -1)
+                    {
+                        int tmp = arr[j];
+                        arr[j] = arr[i];
+                        arr[i] = tmp;
+                    }
+                }
+            }
+            //PrintArray(arr);
+        }
+        // CompareDelegate와 동일한 prototype
+        // 오름 차순
+        public static int AscemdingCompare(int i1, int i2)
+        {
+            if (i1 == i2) return 0;
+            return (i2 - i1) > 0 ? 1 : -1;
+        }
+        // CompareDelegate와 동일한 prototype
+        // 내림 차순
+        public static int DescendingCompare(int i1, int i2)
+        {
+            if (i1 == i2) return 0;
+            return (i1 - i2) > 0 ? 1 : -1;
+        }
+
         /// <summary>
         /// 사칙연산 계산기
         /// </summary>
