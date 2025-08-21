@@ -13,17 +13,18 @@ internal class Program
     /// <param name="args"></param>
     private static void Main(string[] args)
     {
-        var intArray = new int[] { 58,44,27,10,100 };
+        var intArray = new int[] { 5,2,1,7,5 };
         var strArr1 = new string[] { "Bcad" };
         var strArr2 = new string[] { "com", "b", "d", "p", "c" };
         Solution sol = new Solution();
-        Console.WriteLine(sol.Solution0820_2(intArray, 139));
-        //util.PrintArray(sol.Solution0819_2(strArr1));
+        //Console.WriteLine(sol.Solution0821_2(intArray, 3));
+        util.PrintArray(sol.Solution0821_2(intArray, 3));
         //sol.Solution0806();
 
+//12,4,15,46,38,-2,15 
 
         CS_study cS_Study = new CS_study();
-
+        //cS_Study.TestMyArea();
 
         //util.sort(intArray, util.DescendingCompare);
         //util.PrintArray(intArray);

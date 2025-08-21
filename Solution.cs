@@ -12,6 +12,60 @@ using System.Xml.XPath;
 
 class Solution
 {
+    public int[] Solution0821_2(int[] num, int n)
+    {
+        int[] answer = new int[num.Length];
+        int idx = 0;
+        for (int i = n; i < num.Length; i++)
+        {
+            answer[idx] = num[i];
+            idx++;
+        }
+        for (int i = 0; i < n; i++)
+        {
+            answer[idx] = num[i];
+            idx++;
+        }
+        
+        return answer;
+    }
+
+    /// <summary>
+    /// 배열에 음수가 나올때의 인덱스 찾기
+    /// </summary>
+    /// <param name="num"></param>
+    /// <returns></returns>
+    public int Solution0821(int[] num)
+    {
+        int answer = 0;
+
+        foreach (var item in num)
+        {
+            if (item > 0)
+            {
+                answer++;
+                if (num.Length == answer)
+                {
+                    answer = -1;
+                }
+
+            }
+            else if (item < 0)
+            {
+                break;
+            }
+
+        }
+
+        return answer;
+    }
+
+    /// <summary>
+    /// n보다 클때까지 배열의 값을 더하라
+    /// </summary>
+    /// <param name="number"></param>
+    /// <param name="n"></param>
+    /// <returns></returns>
     public int Solution0820_2(int[] number, int n)
     {
         int answer = 0;

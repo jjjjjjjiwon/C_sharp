@@ -12,6 +12,9 @@ using System.Text;
 using System.Xml;
 using System.Xml.Schema;
 using jiwon;
+using System.Windows.Forms; // Forms를 사용하려면 csProj에 <itemgroup> 추가 필요
+using System.Security.AccessControl;
+using System.Formats.Asn1;
 
 // var = 뒤의 것으로 변시, 숫자가 있으면 int, 문자열이 있으면 string
 // var i = 1; - int형으로, var i = "ad"; - string으로
@@ -21,6 +24,44 @@ using jiwon;
 
 class CS_study
 {
+    class MyArea : Form // using System.Windows.Forms; 필요하다
+    {
+        public MyArea()
+        {
+            this.MouseClick += delegate { MyAreaClicked(); };
+        }
+
+        public delegate void ClickDelegate(object sender);
+
+        public ClickDelegate MyClick;
+
+        void MyAreaClicked()
+        {
+            if (MyClick != null)
+            {
+                MyClick(this);
+            }
+        }
+    }
+
+    MyArea area;
+    public void TestMyArea()
+    {
+        area = new MyArea();
+        area.MyClick = Area_Click;
+        area.MyClick = AfterClick;
+        area.ShowDialog();
+    }
+    void Area_Click(object sender)
+    {
+        area.Text = "MyArea 클릭";
+    }
+    void AfterClick(object sender)
+    {
+        area.Text += "AfterClick 클릭!";
+    }
+    
+
     public void CompareRun()
     {
         int[] a = { 5, 53, 3, 7, 1 };
