@@ -50,7 +50,12 @@ class CS_study
         area = new MyArea();
         area.MyClick = Area_Click;
         area.MyClick = AfterClick;
+        // event일때 상용 불가
+        // area.MyClick = Area_Click; // 다시 초기화 해서 After가 안나옴
+        // area.MyClick = null; // null이면 안되게 만듬
         area.ShowDialog();
+        
+
     }
     void Area_Click(object sender)
     {

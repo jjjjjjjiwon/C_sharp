@@ -9,9 +9,60 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Xml;
 using System.Xml.XPath;
+using System.Collections.Generic;
 
 class Solution
 {
+    /// <summary>
+    /// n보다 작은 k의 배수
+    /// </summary>
+    /// <param name="n"></param>
+    /// <param name="k"></param>
+    /// <returns></returns>
+    public int[] Solution0822_2(int n, int k)
+    {
+        var answer = new List<int>();
+        for (int i = 1; i <= n; i++)
+        {
+            if (i * k > n) break;
+            answer.Add(i * k);
+
+        }
+
+        return answer.ToArray();
+    }
+
+    /// <summary>
+    /// num에서 end 까지 1씩 감소하는
+    /// </summary>
+    /// <param name="num"></param>
+    /// <param name="end"></param>
+    /// <returns></returns>
+    public int[] Solution0822(int num, int end)
+    {
+        // int len = num - end + 1;
+        // int[] answer = new int[len];
+        // for (int i = 0; i < len; i++)
+        // {
+        //     answer[i] = num - 1;
+        // }
+        // return answer;
+
+        //List로
+        var list = new List<int>();
+        for (int i = num; i >= end; i--)
+        {
+            list.Add(i);
+        }
+        return list.ToArray();
+    }
+    
+    /// <summary>
+    /// 인덱스 n뒤의 값을 앞으로
+    /// </summary>
+    /// <param name="num"></param>
+    /// <param name="n"></param>
+    /// <returns></returns>
     public int[] Solution0821_2(int[] num, int n)
     {
         int[] answer = new int[num.Length];
@@ -26,7 +77,7 @@ class Solution
             answer[idx] = num[i];
             idx++;
         }
-        
+
         return answer;
     }
 
