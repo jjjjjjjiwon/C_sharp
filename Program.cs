@@ -17,8 +17,8 @@ internal class Program
         var strArr1 = new string[] { "Bcad" };
         var strArr2 = new string[] { "com", "b", "d", "p", "c" };
         Solution sol = new Solution();
-        //Console.WriteLine(sol.Solution0822_2(10, 3));
-        util.PrintArray(sol.Solution0822_2(10,3));
+        Console.WriteLine(sol.Solution0825(9,91));
+        //util.PrintArray(sol.Solution0822_2(10,3));
         //sol.Solution0806();
 
 //12,4,15,46,38,-2,15 

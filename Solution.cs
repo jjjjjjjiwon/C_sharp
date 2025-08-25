@@ -13,6 +13,16 @@ using System.Collections.Generic;
 
 class Solution
 {
+    public int Solution0825(int a, int b)
+    {
+        string ab = $"{a}{b}";
+        string ba = $"{b}{a}";
+        int iab = int.Parse(ab);
+        int iba = Convert.ToInt32(ba);
+        int answer = Math.Max(iab, iba);
+        return answer;
+    }
+
     /// <summary>
     /// n보다 작은 k의 배수
     /// </summary>
