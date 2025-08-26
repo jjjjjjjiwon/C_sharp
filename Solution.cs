@@ -13,6 +13,23 @@ using System.Collections.Generic;
 
 class Solution
 {
+    public string[] Solution0826(string str)
+    {
+        var list = new List<string>();
+        for (int i = 0; i < str.Length; i++)
+        {
+            list.Add(str.Substring(i));
+        }
+        list.Sort();
+        return list.ToArray();
+    }
+
+    /// <summary>
+    /// 두개의 수를 나열해 가장 큰수를
+    /// </summary>
+    /// <param name="a"></param>
+    /// <param name="b"></param>
+    /// <returns></returns>
     public int Solution0825(int a, int b)
     {
         string ab = $"{a}{b}";
