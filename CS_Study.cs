@@ -24,6 +24,26 @@ using System.Formats.Asn1;
 
 class CS_study
 {
+    // public class Form1 : Form
+    // {
+    //     delegate void MyDelegate(int a);
+
+    //     MyDelegate dd = new MyDelegate(AnoMe);
+    //     void AnoMe(int p1)
+    //     {
+    //         Console.Write(p1);
+    //     }
+
+    //     MyDelegate d = delegate (int p1)
+    //     {
+    //         Console.Write(p1);
+    //     };
+        
+    //     d(100);
+    // }
+    
+
+
     class MyArea : Form // using System.Windows.Forms; 필요하다
     {
         public MyArea()
@@ -54,9 +74,18 @@ class CS_study
         // area.MyClick = Area_Click; // 다시 초기화 해서 After가 안나옴
         // area.MyClick = null; // null이면 안되게 만듬
         area.ShowDialog();
-        
 
+        // 무명메서드
+        area.Click += new EventHandler(delegate (object s, EventArgs a)
+            { MessageBox.Show("OK"); });
+        area.Click += (EventHandler)delegate (object s, EventArgs a)
+            { MessageBox.Show("OK"); };
+        area.Click += delegate (object s, EventArgs a)
+            { MessageBox.Show("OK"); };
+        area.Click += delegate
+            { MessageBox.Show("OK"); };
     }
+
     void Area_Click(object sender)
     {
         area.Text = "MyArea 클릭";

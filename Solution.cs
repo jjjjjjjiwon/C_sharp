@@ -13,6 +13,59 @@ using System.Collections.Generic;
 
 class Solution
 {
+    /// <summary>
+    /// 콜라츠 추측
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int[] Solution0827_2(int n)
+    {
+        List<int> list = new List<int>();
+        while (true)
+        {
+            list.Add(n);
+
+            if (n == 1)
+            {
+                break;
+            }
+            else if (n % 2 != 0)
+            {
+                n = n * 3 + 1;
+            }
+
+            else if (n % 2 == 0)
+            {
+                n = n / 2;
+            }
+        }
+
+        return list.ToArray();
+    }
+
+    /// <summary>
+    /// 문자열의 인덱스를 배열의 값으로 뽑아 문자열을 만드는
+    /// </summary>
+    /// <param name="str"></param>
+    /// <param name="index_List"></param>
+    /// <returns></returns>
+    public string Solution0827(string str, int[] index_List)
+    {
+        // stringBuilder로
+        var sb = new StringBuilder();
+        foreach (var item in index_List)
+        {
+            sb.Append(str[item]);
+        }
+
+        return sb.ToString();
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="str"></param>
+    /// <returns></returns>
     public string[] Solution0826(string str)
     {
         var list = new List<string>();
