@@ -46,9 +46,11 @@ class CS_study
 
     class MyArea : Form // using System.Windows.Forms; 필요하다
     {
+        delegate void My(int a);
         public MyArea()
         {
-            this.MouseClick += delegate { MyAreaClicked(); };
+            //this.MouseClick += delegate { MyAreaClicked(); };
+            MouseClick += (s, e) => MyAreaClicked();
         }
 
         public delegate void ClickDelegate(object sender);
@@ -84,6 +86,9 @@ class CS_study
             { MessageBox.Show("OK"); };
         area.Click += delegate
             { MessageBox.Show("OK"); };
+
+        // 람다식
+        
     }
 
     void Area_Click(object sender)

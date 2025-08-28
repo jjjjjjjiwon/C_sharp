@@ -13,6 +13,41 @@ using System.Collections.Generic;
 
 class Solution
 {
+    public string Solution0828_2(int[] arry)
+    {
+        var sb = new StringBuilder();
+        for (int i = 0; i < arry.Length - 1; i++)
+        {
+            int val = arry[i + 1] - arry[i];
+            if (val == 1) sb.Append('w');
+            else if (val == -1) sb.Append('s');
+            else if (val == 10) sb.Append('d');
+            else sb.Append('a');
+
+        }
+        return sb.ToString();
+    }
+
+    /// <summary>
+    /// wasd에 맞게 동작하라
+    /// </summary>
+    /// <param name="n"></param>
+    /// <param name="control"></param>
+    /// <returns></returns>
+    public int Solution0828(int n, string control)
+    {
+        int answer = n;
+        foreach (var item in control)
+        {
+            if (item == 'w') answer += 1;
+            if (item == 'a') answer -= 10;
+            if (item == 's') answer -= 1;
+            if (item == 'd') answer += 10;
+        }
+
+        return answer;
+    }
+
     /// <summary>
     /// 콜라츠 추측
     /// </summary>
