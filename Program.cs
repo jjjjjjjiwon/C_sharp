@@ -13,15 +13,15 @@ internal class Program
     /// <param name="args"></param>
     private static void Main(string[] args)
     {
-        var intArray = new int[] { 0,1,0,10,0,1,0,10,0,-1,-2,-1 };
+        var intArray = new int[] { 2,1,6,5 };
         var strArr1 = new string[] { "Bcad" };
         var strArr2 = new string[] { "com", "b", "d", "p", "c" };
         Solution sol = new Solution();
-        Console.WriteLine(sol.Solution0828_2(intArray));
-        //util.PrintArray(sol.Solution0827_2(10));
+        Console.WriteLine(sol.Solution0829_2(4,4,4));
+        //util.PrintArray(sol.Solution0829(intArray));
         //sol.Solution0806();
 
-//12,4,15,46,38,-2,15 
+        //12,4,15,46,38,-2,15 
 
         CS_study cS_Study = new CS_study();
         //cS_Study.TestMyArea();

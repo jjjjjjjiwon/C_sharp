@@ -10,9 +10,59 @@ using System.Text;
 using System.Xml;
 using System.Xml.XPath;
 using System.Collections.Generic;
+using System.Security.AccessControl;
 
 class Solution
 {
+    public int Solution0829_2(int a, int b, int c)
+    {
+        int answer = 0;
+        if (a == b && a == c)
+        {
+            answer = (a + b + c) * (a * a + b * b + c * c) * (a * a * a + b * b * b + c * c * c);
+        }
+        else if (a != b && a != c && b != c)
+        {
+            answer = a + b + c;
+        }
+        else
+        {
+            answer = (a + b + c) * (a * a + b * b + c * c);
+        }
+
+        return answer;
+    }
+
+    /// <summary>
+    /// 마직막 인덱스를 
+    /// </summary>
+    /// <param name="num_list"></param>
+    /// <returns></returns>
+    public int[] Solution0829(int[] num_list)
+    {
+        int Len = num_list.Length;
+        List<int> answer = new List<int>();
+
+        foreach (var item in num_list)
+        {
+            answer.Add(item);
+        }
+
+        int lastIndex = Len - 1;
+        int result = num_list[lastIndex] > num_list[lastIndex - 1]
+            ? num_list[lastIndex] - num_list[lastIndex - 1]
+            : num_list[lastIndex] * 2;
+
+        answer.Add(result);
+
+        return answer.ToArray();
+    }
+
+    /// <summary>
+    /// 변하게 만든 값을 찾아라
+    /// </summary>
+    /// <param name="arry"></param>
+    /// <returns></returns>
     public string Solution0828_2(int[] arry)
     {
         var sb = new StringBuilder();

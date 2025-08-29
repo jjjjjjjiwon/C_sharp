@@ -15,6 +15,7 @@ using jiwon;
 using System.Windows.Forms; // Forms를 사용하려면 csProj에 <itemgroup> 추가 필요
 using System.Security.AccessControl;
 using System.Formats.Asn1;
+using System.Diagnostics;
 
 // var = 뒤의 것으로 변시, 숫자가 있으면 int, 문자열이 있으면 string
 // var i = 1; - int형으로, var i = "ad"; - string으로
@@ -24,6 +25,20 @@ using System.Formats.Asn1;
 
 class CS_study
 {
+    public void AnotypeTest()
+    {
+        var v = new[] {
+            new {Name = "Lee", Age = 33, phone = "02-111-1111"},
+            new {Name = "kim", Age = 25, phone = "02-222-2222"},
+            new {Name = "Park", Age = 37, phone = "03-333-3333"}
+        };
+        var list = v.Where(p => p.Age >= 30).Select(p => new { p.Name, p.Age });
+        foreach (var item in list)
+        {
+            Debug.WriteLine($"{item.Name} : {item.Age}");
+        }
+    }
+
     // public class Form1 : Form
     // {
     //     delegate void MyDelegate(int a);
@@ -38,10 +53,10 @@ class CS_study
     //     {
     //         Console.Write(p1);
     //     };
-        
+
     //     d(100);
     // }
-    
+
 
 
     class MyArea : Form // using System.Windows.Forms; 필요하다
