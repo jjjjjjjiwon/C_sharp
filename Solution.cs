@@ -14,10 +14,24 @@ using System.Security.AccessControl;
 
 class Solution
 {
+    public void Solution0901_2()
+    {
+        string[] s;
+        Console.Clear();
+        s = Console.ReadLine().Split();
+        int a = Int32.Parse(s[0]);
+        int b = Convert.ToInt32(s[1]);
+
+        Console.WriteLine("{0} + {1} + {2}", a, b, a + b);
+    }
+
+    /// <summary>
+    /// 문자열 시계방향으로 90돌리기
+    /// </summary>
     public void Solution0901()
     {
         string s;
-        //Console.Clear();
+        Console.Clear();
         s = Console.ReadLine();
         foreach (var item in s)
         {
