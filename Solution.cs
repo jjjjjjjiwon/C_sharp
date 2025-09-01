@@ -14,6 +14,18 @@ using System.Security.AccessControl;
 
 class Solution
 {
+    public void Solution0901()
+    {
+        string s;
+        //Console.Clear();
+        s = Console.ReadLine();
+        foreach (var item in s)
+        {
+            Console.WriteLine(item);
+        }
+    }
+
+
     public int Solution0829_2(int a, int b, int c)
     {
         int answer = 0;

@@ -12,6 +12,7 @@ using System.Text;
 using System.Xml;
 using System.Xml.Schema;
 using jiwon;
+using MyExtension;
 using System.Windows.Forms; // Forms를 사용하려면 csProj에 <itemgroup> 추가 필요
 using System.Security.AccessControl;
 using System.Formats.Asn1;
@@ -25,6 +26,14 @@ using System.Diagnostics;
 
 class CS_study
 {
+    public void ExtensionTest()
+    {
+        string s = "This is a Test";
+        string s2 = s.ToChangeCase();
+        bool found = s.Found('z');
+        Console.WriteLine($"{s2}, found: {found}");
+    }
+
     public void AnotypeTest()
     {
         var v = new[] {
