@@ -14,6 +14,55 @@ using System.Security.AccessControl;
 
 class Solution
 {
+    /// <summary>
+    /// 이어 붙인 수
+    /// </summary>
+    /// <param name="num"></param>
+    /// <returns></returns>
+    public int Solution0902_2(int[] num)
+    {
+        int answer = 0;
+        string even = "", odd = "";
+
+        foreach (var item in num)
+        {
+            if (item % 2 == 0)
+            {
+                even += item;
+            }
+            else
+            {
+                odd += item;
+            }
+        }
+        return answer = Int32.Parse(even) + Convert.ToInt32(odd);
+    }
+
+    /// <summary>
+    /// 특정 문자를 대문자로 바꾸기
+    /// </summary>
+    /// <param name="str"></param>
+    /// <param name="str2"></param>
+    /// <returns></returns>
+    public string Solution0902(string str, string str2)
+    {
+        //return str.Replace(str2, str2.ToUpper());
+
+        string answer = string.Empty;
+        foreach (var item in str)
+        {
+            if (item.ToString().Equals(str2))
+            {
+                answer += str2.ToUpper();
+            }
+            else
+            {
+                answer += item;
+            }
+        }
+        return answer;
+    }
+
     public void Solution0901_2()
     {
         string[] s;

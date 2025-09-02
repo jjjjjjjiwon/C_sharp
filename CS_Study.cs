@@ -17,6 +17,7 @@ using System.Windows.Forms; // Forms를 사용하려면 csProj에 <itemgroup> �
 using System.Security.AccessControl;
 using System.Formats.Asn1;
 using System.Diagnostics;
+using Microsoft.VisualBasic;
 
 // var = 뒤의 것으로 변시, 숫자가 있으면 int, 문자열이 있으면 string
 // var i = 1; - int형으로, var i = "ad"; - string으로
@@ -26,6 +27,15 @@ using System.Diagnostics;
 
 class CS_study
 {
+    public void ExTest2()
+    {
+        var nums = new List<int> { 55, 44, 33, 66, 11 };
+        var v = nums.Where(p => p % 3 == 0);
+
+        List<int> arr = v.ToList<int>();
+        arr.ForEach(n => Console.WriteLine(n));
+    }
+
     public void ExtensionTest()
     {
         string s = "This is a Test";
