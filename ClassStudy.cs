@@ -1,6 +1,57 @@
 // base class
 using System.Diagnostics.Contracts;
 using System.Security.Cryptography.X509Certificates;
+
+partial class Class1
+{
+    public void Run() { }
+}
+
+partial class Class1
+{
+    public void Get() { }
+}
+
+partial class Class1
+{
+    public void Put() { }
+}
+
+partial struct struct1
+{
+    public int ID;
+}
+
+partial struct struct1
+{
+    public string Name;
+    public struct1(int id, string name)
+    {
+        this.ID = id;
+        this.Name = name;
+    }
+}
+
+partial interface IDoable
+{
+    string Name { get; set; }
+}
+
+partial interface IDoable
+{
+    void Do();
+}
+
+public class DoClass : IDoable
+{
+    public string Name { get; set; }
+
+    public void Do()
+    {
+
+    }
+}
+
 public static class MyUtility
 {
     private static int ver;
@@ -19,8 +70,8 @@ public static class MyUtility
     {
         return int.Parse(s);
     }
-    
-    
+
+
 }
 
 public class MyClass

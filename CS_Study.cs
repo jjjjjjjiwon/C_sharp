@@ -22,11 +22,73 @@ using Microsoft.VisualBasic;
 // var = 뒤의 것으로 변시, 숫자가 있으면 int, 문자열이 있으면 string
 // var i = 1; - int형으로, var i = "ad"; - string으로
 
-
+// Regular Expression을 사용하려면 선언 필요
+using System.Text.RegularExpressions;
 
 
 class CS_study
 {
+    public void RegexSample()
+    {
+        string str = "서울시 강남구 역삼동 강남아파트";
+        Regex regex = new Regex("강남");
+        //Match mc = regex.Match(str);
+        MatchCollection mc = regex.Matches(str);
+        // if (m.Success)
+        // {
+        //     Debug.WriteLine($"{m.Index}:{m.Value}");
+        // }
+        // while (m.Success)
+        // {
+        //     Debug.WriteLine($"{m.Index}:{m.Value}");
+        //     m = m.NextMatch();
+        // }
+        foreach (Match m in mc)
+        {
+            Debug.WriteLine("{0}:{1}", m.Index, m.Value);
+        }
+
+        string pn = "010-1234-5555";
+        Regex regex1 = new Regex(@"^01[01678]-[0-9]{4}-[0-9]{4}$");
+        if (regex1.IsMatch(pn))
+        {
+
+            Console.WriteLine("Match");
+        }
+        else
+        {
+
+            Console.WriteLine("Miss Match");
+        }
+
+        string name = "김공돌";
+        regex1 = new Regex(@"^[가-힣]{3}$");
+        if (regex1.IsMatch(name))
+        {
+
+            Console.WriteLine("Match");
+        }
+        else
+        {
+
+            Console.WriteLine("Miss Match");
+        }
+        //Regex.Split(1);
+
+    }
+
+    public void PartialTest()
+    {
+        Class1 c1 = new Class1();
+        c1.Get();
+        c1.Put();
+        c1.Run();
+
+        struct1 s1 = new struct1(123, "Kim");
+        Console.WriteLine($"{s1.ID}, {s1.Name}");
+    }
+
+
     public void ExTest2()
     {
         var nums = new List<int> { 55, 44, 33, 66, 11 };
@@ -122,7 +184,7 @@ class CS_study
             { MessageBox.Show("OK"); };
 
         // 람다식
-        
+
     }
 
     void Area_Click(object sender)
@@ -133,7 +195,7 @@ class CS_study
     {
         area.Text += "AfterClick 클릭!";
     }
-    
+
 
     public void CompareRun()
     {
@@ -190,7 +252,7 @@ class CS_study
         int i = m("123");
         Console.WriteLine(i);
     }
-    
+
 
     public class ClimateMonitor
     {
@@ -252,7 +314,7 @@ class CS_study
             return 0;
         }
 
-        public void open() {} // 구현을 안해도 상관 없다
+        public void open() { } // 구현을 안해도 상관 없다
     }
 
     public class InterfaceSample

@@ -11,9 +11,51 @@ using System.Xml;
 using System.Xml.XPath;
 using System.Collections.Generic;
 using System.Security.AccessControl;
+using System.Text.RegularExpressions;
 
 class Solution
 {
+    /// <summary>
+    /// 조건에 맞게 수열 변환
+    /// </summary>
+    /// <param name="arr"></param>
+    /// <param name="num"></param>
+    /// <returns></returns>
+    public int[] Solution0903_2(int[] arr, int num)
+    {
+        int[] answer = new int[arr.Length];
+        bool usEven = num % 2 == 0;
+        for (int i = 0; i < arr.Length; i++)
+        {
+            answer[i] = usEven ? arr[i] + num : arr[i] * num;
+        }
+        return answer;
+    }
+
+    /// <summary>
+    /// l앞의 영어를 l로 교체
+    /// </summary>
+    /// <param name="str"></param>
+    /// <returns></returns>
+    public string Solution0903(string str)
+    {
+        string answer = string.Empty;
+        foreach (var item in str)
+        {
+            if (item < 'l')
+            {
+                answer += 'l';
+            }
+            else
+            {
+                answer += item;
+            }
+        }
+        return answer;
+
+        //return Regex.Replace(str, "[a-k]", "l");
+    }
+
     /// <summary>
     /// 이어 붙인 수
     /// </summary>
