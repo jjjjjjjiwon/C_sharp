@@ -16,6 +16,51 @@ using System.Text.RegularExpressions;
 class Solution
 {
     /// <summary>
+    /// 정수의 위치 찾기
+    /// </summary>
+    /// <param name="num"></param>
+    /// <param name="k"></param>
+    /// <returns></returns>
+    public int Solution0904_2(int num, int k)
+    {
+        // int answer = num.ToString().IndexOf(k.ToString());
+        // return (answer == -1) ? answer : answer + 1;
+
+        // 복잡하게
+        string str = num.ToString();
+        char kchr = (char)('0' + k); // k를 char형태로 만들기 위해
+
+        for (int i = 0; i < str.Length; i++)
+        {
+            if (str[i].Equals(kchr))
+            {
+                return i + 1;
+            }
+        }
+        return -1;
+
+    }
+
+    /// <summary>
+    /// 정수 부분
+    /// </summary>
+    /// <param name="flo"></param>
+    /// <returns></returns>
+    public int Solution0904(double flo)
+    {
+        int answer = 0;
+        // answer = (int)flo;
+        // return answer;
+
+        // 복잡하게
+        string str = flo.ToString();
+        string[] strArr = str.Split(".");
+        answer = Convert.ToInt32(strArr[0]); //convert대신 parse써도 됨
+
+        return answer;
+    }
+
+    /// <summary>
     /// 조건에 맞게 수열 변환
     /// </summary>
     /// <param name="arr"></param>
