@@ -12,9 +12,55 @@ using System.Xml.XPath;
 using System.Collections.Generic;
 using System.Security.AccessControl;
 using System.Text.RegularExpressions;
+using System.Data;
 
 class Solution
 {
+    /// <summary>
+    /// 정수 찾기
+    /// </summary>
+    /// <param name="num"></param>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int Solution0905_2(int[] num, int n)
+    {
+        // int answer = 0;
+        // foreach (var item in num)
+        // {
+        //     if (item == n)
+        //     {
+        //         return answer = 1;
+        //     }
+        // }
+        // return answer;
+
+        return num.Contains(n) ? 1 : 0;
+    }
+
+
+    /// <summary>
+    /// 문자열 바꿔서 찾기
+    /// </summary>
+    /// <param name="str"></param>
+    /// <param name="pat"></param>
+    /// <returns></returns>
+    public int Solution0905(string str, string pat)
+    {
+        // string st = string.Empty;
+        // foreach (var item in st)
+        // {
+        //     st += item.Equals('A') ? "B" : "A";
+        // }
+        // return st.Contains(pat) ? 1 : 0;
+
+        string st = string.Empty;
+
+        st = str.Replace('A', 'b').Replace('B', 'a').ToUpper();
+        return st.Contains(pat) ? 1 : 0;
+
+    }
+
+
     /// <summary>
     /// 정수의 위치 찾기
     /// </summary>
