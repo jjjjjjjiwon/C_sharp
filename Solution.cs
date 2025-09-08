@@ -16,6 +16,49 @@ using System.Data;
 
 class Solution
 {
+    public string Solution0908_2(string[] str_list, string str)
+    {
+        // string answer = "";
+        // foreach (var item in str_list)
+        // {
+        //     if (!item.Contains(str))
+        //     {
+        //         answer += item;
+        //     }
+        // }
+        // return answer;
+
+        var sb = new StringBuilder();
+        foreach (var item in str_list)
+        {
+            if (!item.Contains(str))
+            {
+                sb.Append(item);
+            }
+        }
+        return sb.ToString();
+    }
+
+    /// <summary>
+    /// 배열의 원소 삭제하기
+    /// </summary>
+    /// <param name="arr"></param>
+    /// <param name="arr2"></param>
+    /// <returns></returns>
+    public int[] Solution0908(int[] arr, int[] arr2)
+    {
+        var answer = new List<int>();
+        foreach (var item in arr)
+        {
+            if (!arr2.Contains(item))
+            {
+                answer.Add(item);
+            }
+        }
+
+        return answer.ToArray();
+    }
+
     /// <summary>
     /// 정수 찾기
     /// </summary>
