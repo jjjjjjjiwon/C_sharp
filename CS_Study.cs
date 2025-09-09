@@ -28,8 +28,43 @@ using System.Text.RegularExpressions;
 
 class CS_study
 {
+    public void DicInit()
+    {
+        var score1 = new Dictionary<string, int>()
+        {
+            {"Kim", 100},
+            {"Lee",90}
+        };
+        int sc = score1["Lee"];
+
+        // new
+        var score2 = new  Dictionary<string, int>()
+        {
+            ["Kim"] = 100,
+            ["Lee"] = 90
+        };
+        int sc2 = score2["Lee"];
+
+        var A = new[] { 1,2,3};
+        var L = new List<int>(A) {[2] = 9};
+        Console.WriteLine($"{L[0]}, {L[2]}");
+
+    }
+
     public void NullSample()
     {
+        //List<int> rows = new List<int>();
+        //int? cnt  = rows?.Count;
+        
+        // int cnt2;
+        // if (rows == null)
+        // {
+        //     cnt2 = 0;
+        // }
+        // else{
+        //     cnt2 = rows.Count;
+        // }
+        //int cnt2 = rows?.Count ?? 0;
     }
         public event EventHandler Clicked;
 
@@ -47,19 +82,7 @@ class CS_study
             Clicked?.Invoke(this, null);
         }
         
-        //List<int> rows = new List<int>();
-        //int? cnt  = rows?.Count;
-        
-        // int cnt2;
-        // if (rows == null)
-        // {
-        //     cnt2 = 0;
-        // }
-        // else{
-        //     cnt2 = rows.Count;
-        // }
-        //int cnt2 = rows?.Count ?? 0;
-    //}
+
 
 
 

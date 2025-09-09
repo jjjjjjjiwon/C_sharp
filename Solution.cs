@@ -16,6 +16,42 @@ using System.Data;
 
 class Solution
 {
+    /// <summary>
+    /// 앞에0이면 없에라
+    /// </summary>
+    /// <param name="str"></param>
+    /// <returns></returns>
+    public string Solution0909_2(string str)
+    {
+        // bool isZero = true;
+        // while (isZero)
+        // {
+        //     //if (str[0].CompareTo('0') == 0)
+        //     if (str[0].Equals('0'))
+        //     {
+        //         str = str.Substring(1);
+        //     }
+        //     else
+        //     {
+        //         isZero = false;
+        //     }
+        // }
+        // return str;
+        return Convert.ToInt32(str).ToString();
+    }
+
+
+    /// <summary>
+    /// 부분 문자열
+    /// </summary>
+    /// <param name="str"></param>
+    /// <param name="str2"></param>
+    /// <returns></returns>
+    public int Solution0909(string str, string str2)
+    {
+        return str2.Contains(str) ? 1 : 0;
+    }
+
     public string Solution0908_2(string[] str_list, string str)
     {
         // string answer = "";
