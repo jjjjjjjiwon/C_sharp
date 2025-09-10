@@ -24,10 +24,51 @@ using Microsoft.VisualBasic;
 
 // Regular Expression을 사용하려면 선언 필요
 using System.Text.RegularExpressions;
+using System.Windows.Markup;
 
 
 class CS_study
 {
+    public string Name
+    {
+        get
+        {
+            return Name;
+        }
+        set
+        {
+            Name = value;
+        }
+    }
+    
+    class Person
+    {
+        public string Name2 { get; set; } = "(No name)";
+
+        public string Nickname { get; }
+
+        public int Age { get; }
+
+        public bool Enabled { get; } = true;
+
+        public int Level { get; }
+
+        public Person()
+        {
+            this.Level = 1;
+        }
+    }
+
+    public void AutoProperty()
+    {
+        Person p = new Person();
+        Console.WriteLine(p.Name2);
+        Console.WriteLine(p.Nickname);
+        Console.WriteLine(p.Age);
+    }
+
+
+
     public void DicInit()
     {
         var score1 = new Dictionary<string, int>()
@@ -38,15 +79,15 @@ class CS_study
         int sc = score1["Lee"];
 
         // new
-        var score2 = new  Dictionary<string, int>()
+        var score2 = new Dictionary<string, int>()
         {
             ["Kim"] = 100,
             ["Lee"] = 90
         };
         int sc2 = score2["Lee"];
 
-        var A = new[] { 1,2,3};
-        var L = new List<int>(A) {[2] = 9};
+        var A = new[] { 1, 2, 3 };
+        var L = new List<int>(A) { [2] = 9 };
         Console.WriteLine($"{L[0]}, {L[2]}");
 
     }

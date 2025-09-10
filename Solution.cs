@@ -16,6 +16,55 @@ using System.Data;
 
 class Solution
 {
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="arr"></param>
+    /// <returns></returns>
+    public int Solution0910_2(int[,] arr)
+    {
+        for (int i = 0; i < arr.GetLength(0); i++)
+        {
+            for (int j = 0; j < arr.GetLength(1); j++)
+            {
+                if (arr[i, j] != arr[j, i])
+                {
+                    return 0;
+                }
+            }
+        }
+        return 1;
+    }
+
+    /// <summary>
+    /// 2차원 배열, 같은 수만 1
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int[,] Solution0910(int n)
+    {
+        // int[,] answer = new int[n,n];
+        // for (int i = 0; i < n; i++)
+        // {
+        //     for (int j = 0; j < n; j++)
+        //     {
+        //         if (i == j)
+        //         {
+        //             answer[i, j] = 1;
+        //         }
+        //     }
+        // }
+        // return answer;
+
+        int[,] answer = new int[n, n];
+        for (int i = 0; i < n; i++)
+        {
+            answer[i, i] = 1;
+        }
+        return answer;
+    }
+
     /// <summary>
     /// 앞에0이면 없에라
     /// </summary>
