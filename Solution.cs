@@ -13,9 +13,38 @@ using System.Collections.Generic;
 using System.Security.AccessControl;
 using System.Text.RegularExpressions;
 using System.Data;
+using System.Windows.Markup;
 
 class Solution
 {
+    /// <summary>
+    /// 수를 문자열로
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public string Solution0911_2(int n)
+    {
+        //return n.ToString();
+        //return "" + n;
+        //return string.Format("{0}", n);
+        return new string($"{n}");        
+    }
+
+    /// <summary>
+    /// 문자열이 포함되어 있나
+    /// </summary>
+    /// <param name="str"></param>
+    /// <param name="str2"></param>
+    /// <returns></returns>
+    public int Solution0911(string str, string str2)
+    {
+        // int answer = 0;
+        // if (str.Contains(str2)) answer = 1;
+        // return answer;
+
+        //return str.Contains(str2) ? 1 : 0;
+        return str.IndexOf(str2) < 0 ? 0 : 1;
+    }
 
     /// <summary>
     /// 
