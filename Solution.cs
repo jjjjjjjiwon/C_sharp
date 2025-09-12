@@ -14,9 +14,37 @@ using System.Security.AccessControl;
 using System.Text.RegularExpressions;
 using System.Data;
 using System.Windows.Markup;
+using System.Drawing.Design;
 
 class Solution
 {
+    public int[] Solution0912_2(int[] num)
+    {
+        List<int> lis = new List<int>(num);
+
+        lis.Sort();
+
+        lis.RemoveRange(0, 5);
+        
+        
+        return lis.ToArray();
+    }
+    
+    /// <summary>
+    /// 문자열을 하나식 더하라
+    /// </summary>
+    /// <param name="str"></param>
+    /// <returns></returns>
+    public int Solution0912(string str)
+    {
+        int answer = 0;
+        foreach (var item in str)
+        {
+            answer += item - '0';
+        }
+        return answer;
+    }
+
     /// <summary>
     /// 수를 문자열로
     /// </summary>
@@ -27,7 +55,7 @@ class Solution
         //return n.ToString();
         //return "" + n;
         //return string.Format("{0}", n);
-        return new string($"{n}");        
+        return new string($"{n}");
     }
 
     /// <summary>
