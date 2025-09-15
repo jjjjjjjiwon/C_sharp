@@ -18,6 +18,34 @@ using System.Drawing.Design;
 
 class Solution
 {
+    public int[] Solution0915_2(int[] arr)
+    {
+        List<int> lis = new List<int>(arr);
+
+        lis.Sort();
+
+        lis.RemoveRange(5, lis.Count - 5);
+
+        return lis.ToArray();
+        
+    }
+
+    /// <summary>
+    /// 숫자 문자열을 정수형으로
+    /// </summary>
+    /// <param name="str"></param>
+    /// <returns></returns>
+    public int Solution0915(string str)
+    {
+        //return int.Parse(str);
+        return Convert.ToInt32(str);
+    }
+
+    /// <summary>
+    /// 정렬해서 아래 5개를 지워라
+    /// </summary>
+    /// <param name="num"></param>
+    /// <returns></returns>
     public int[] Solution0912_2(int[] num)
     {
         List<int> lis = new List<int>(num);
@@ -25,8 +53,8 @@ class Solution
         lis.Sort();
 
         lis.RemoveRange(0, 5);
-        
-        
+
+
         return lis.ToArray();
     }
     

@@ -25,10 +25,39 @@ using Microsoft.VisualBasic;
 // Regular Expression을 사용하려면 선언 필요
 using System.Text.RegularExpressions;
 using System.Windows.Markup;
+using System.Diagnostics.CodeAnalysis;
 
 
 class CS_study
 {
+    (int count, int sum, double average) Calculate(List<int> data)
+    {
+        int cnt = 0, sum = 0;
+        double avg = 0;
+        foreach (var item in data)
+        {
+            cnt++;
+            sum += item;
+        }
+        avg = sum / cnt;
+        return (cnt, sum, avg);
+    }
+
+    public void TupleTest()
+    {
+        var list = new List<int> { 1, 2, 3, 4, 5 };
+        //var r = Calculate(list);
+        // Console.WriteLine($"{r.count}, {r.sum}, {r.average}");
+        // Console.WriteLine($"{r.Item1}, {r.Item2}, {r.Item3}");
+        //(int count, int sum, double average) = Calculate(list);
+        int cnt, sum;
+        double avg;
+        (cnt, sum, avg) = Calculate(list);
+        Console.WriteLine($"cnt = {cnt}, sum = {sum}");
+        (cnt, sum) = (sum, cnt);
+        Console.WriteLine($"cnt = {cnt}, sum = {sum}");
+    }
+
     class Employe
     {
         int id;
@@ -85,7 +114,7 @@ class CS_study
             add => this.notified += value;
             remove => this.notified -= value;
         }
-        
+
     }
 
 
