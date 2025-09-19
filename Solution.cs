@@ -18,6 +18,51 @@ using System.Drawing.Design;
 
 class Solution
 {
+    /// <summary>
+    /// 홀수 짝수
+    /// </summary>
+    /// <param name="array"></param>
+    /// <returns></returns>
+    public int Solution0919_2(int[] array)
+    {
+        int answer1 = 0;
+        int answer2 = 0;
+        for (int i = 0; i < array.Length; i++)
+        {
+            if (i % 2 == 0)
+            {
+                answer1 += array[i];
+            }
+            else
+            {
+                answer2 += array[i];
+            }
+        }
+        return (answer1 < answer2) ? answer2 : answer1;
+    }
+
+    /// <summary>
+    /// X사이의 개수
+    /// </summary>
+    /// <param name="myString"></param>
+    /// <returns></returns>
+    public int[] Solution0919(string myString)
+    {
+        string[] str = myString.Split('x');
+        int[] answer = new int[str.Length];
+
+        for (int i = 0; i < str.Length; i++)
+        {
+            answer[i] = str[i].Length;
+        }
+        return answer;
+    }
+
+    /// <summary>
+    /// 정렬하고 앞 5개 제외 지우기
+    /// </summary>
+    /// <param name="arr"></param>
+    /// <returns></returns>
     public int[] Solution0915_2(int[] arr)
     {
         List<int> lis = new List<int>(arr);
@@ -27,7 +72,7 @@ class Solution
         lis.RemoveRange(5, lis.Count - 5);
 
         return lis.ToArray();
-        
+
     }
 
     /// <summary>
