@@ -15,9 +15,26 @@ using System.Text.RegularExpressions;
 using System.Data;
 using System.Windows.Markup;
 using System.Drawing.Design;
+using System.Windows.Forms;
 
 class Solution
 {
+    public string[] Solution0922(string str)
+    {
+        string[] strArr = str.Split();
+        var list = new List<string>();
+        foreach (var item in strArr)
+        {
+            //if (item != "")
+            //if (item != string.Empty)
+            if (!item.Equals(string.Empty))
+            {
+                list.Add(item);
+            }
+        }
+        return list.ToArray();
+    }
+
     /// <summary>
     /// 홀수 짝수
     /// </summary>
