@@ -19,6 +19,48 @@ using System.Windows.Forms;
 
 class Solution
 {
+    public string Solution0924_2(string str)
+    {
+        return str.ToLower();
+    }
+
+    /// <summary>
+    /// 간다한 식 계산하기
+    /// </summary>
+    /// <param name="str"></param>
+    /// <returns></returns>
+    public int Solution0924(string str)
+    {
+        int answer = 0;
+        string[] sa = str.Split();
+        int a = Convert.ToInt32(sa[0]);
+        int b = int.Parse(sa[2]);
+
+        // switch (sa[1])
+        // {
+        //     case "+":
+        //         answer = a + b;
+        //         break;
+        //     case "-":
+        //         answer = a - b;
+        //         break;
+        //     case "*":
+        //         answer = a * b;
+        //         break;
+        //     default:
+        //         break;
+        // }
+
+        answer = sa[1] switch
+        {
+            "+" => a + b,
+            "-" => a + b,
+            "*" => a + b,
+        };
+
+        return answer;
+    }
+
     public string[] Solution0922(string str)
     {
         string[] strArr = str.Split();

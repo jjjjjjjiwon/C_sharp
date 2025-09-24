@@ -30,6 +30,33 @@ using System.Diagnostics.CodeAnalysis;
 
 class CS_study
 {
+    public class Orders
+    {
+        public int Order_ID { get; set; }
+        public string Customer_Id { get; set; }
+        public string Ship_City { get; set; }
+        public DateTime Order_Date { get; set; }
+    }
+
+    public void LINQSample()
+    {
+        var db = new List<Orders>
+        {
+            new Orders {Order_ID = 3, Customer_Id = "FRANS", Ship_City = "SEOUL", Order_Date = new DateTime(2025,9,17)},
+            new Orders {Order_ID = 1, Customer_Id = "DAVID", Ship_City = "BUSAN", Order_Date = new DateTime(2025,9,20)},
+            new Orders {Order_ID = 2, Customer_Id = "FRANS", Ship_City = "BUSAN", Order_Date = new DateTime(2025,8,10)}
+        };
+
+        var fransOder = from ord in db
+                        where ord.Customer_Id == "FRANS"
+                        select ord;
+
+        foreach (var o in fransOder)
+        {
+            Console.WriteLine($"{o.Order_ID} : {o.Order_Date}");
+        }
+    }
+
     (int count, int sum, double average) Calculate(List<int> data)
     {
         int cnt = 0, sum = 0;
