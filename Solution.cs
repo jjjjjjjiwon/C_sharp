@@ -19,6 +19,40 @@ using System.Windows.Forms;
 
 class Solution
 {
+    /// <summary>
+    /// st 부터 end까지
+    /// </summary>
+    /// <param name="st"></param>
+    /// <param name="end"></param>
+    /// <returns></returns>
+    public int[] Solution0925_2(int st, int end)
+    {
+        int len = end - st + 1;
+        int[] answer = new int[len];
+
+        for (int i = 0; i < len; i++)
+        {
+            answer[i] = st + i;
+        }
+
+        return answer;
+    }
+
+    /// <summary>
+    /// 모든 문자를 대문자로
+    /// </summary>
+    /// <param name="str"></param>
+    /// <returns></returns>
+    public string Solution0925(string str)
+    {
+        return str.ToUpper();
+    }
+
+    /// <summary>
+    /// 모든 문자를 소문자로
+    /// </summary>
+    /// <param name="str"></param>
+    /// <returns></returns>
     public string Solution0924_2(string str)
     {
         return str.ToLower();
