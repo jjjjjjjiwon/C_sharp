@@ -30,6 +30,18 @@ using System.Diagnostics.CodeAnalysis;
 
 class CS_study
 {
+    public void FormatTest()
+    {
+        decimal val = 1234.5678M;
+        //string s = string.Format("{0, 10:N2}", val);
+        //string s = $"{val, 10:N2}";
+        //string s = string.Format("{0:N2}", 1234.567M);
+        //string s = string.Format("{0:D9}", 12345M);
+        string s = string.Format("{0:C}", 12345M);
+        
+        Console.WriteLine(s);
+    }
+
     public class Orders
     {
         public int Order_ID { get; set; }

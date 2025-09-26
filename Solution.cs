@@ -20,6 +20,52 @@ using System.Windows.Forms;
 class Solution
 {
     /// <summary>
+    /// 홀짝에 따라 다른 값 반환하기
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int Solution0926_2(int n)
+    {
+        int answer = 0;
+        if (n % 2 == 1)
+        {
+            for (int i = 1; i <= n; i += 2)
+            {
+                if (n % 2 == 1)
+                {
+                    answer += i;
+                }
+            }
+        }
+        else
+        {
+            for (int i = 2; i <= n; i += 2)
+            {
+                if (n % 2 == 0)
+                {
+                    answer += i * i;
+                }
+            }
+        }
+        
+        return answer;
+    }
+
+    /// <summary>
+    /// 두 수의 연산값 비교하기
+    /// </summary>
+    /// <param name="a"></param>
+    /// <param name="b"></param>
+    /// <returns></returns>
+    public int Solution0926(int a, int b)
+    {
+        int num2 = 10 * b.ToString().Length;
+        int num1 = a * num2;
+
+        return ((num1 + b) > (2 * a * b)) ? num1 + b : 2 * a * b;
+    }
+
+    /// <summary>
     /// st 부터 end까지
     /// </summary>
     /// <param name="st"></param>
@@ -195,7 +241,7 @@ class Solution
 
         return lis.ToArray();
     }
-    
+
     /// <summary>
     /// 문자열을 하나식 더하라
     /// </summary>
@@ -780,7 +826,7 @@ class Solution
         }
         return list.ToArray();
     }
-    
+
     /// <summary>
     /// 인덱스 n뒤의 값을 앞으로
     /// </summary>
@@ -923,7 +969,7 @@ class Solution
         answer[1] = dic[answer[0]];
         return answer;
     }
-    
+
     /// <summary>
     /// 약수를 찾아 오름차순으로 정렬
     /// </summary>
@@ -1473,7 +1519,7 @@ class Solution
         }
 
         return answer;
-    } 
+    }
 
     /// <summary>
     /// 개수와 남은 돈
@@ -1601,7 +1647,7 @@ class Solution
 
         return answer;
     }
-    
+
     /// <summary>
     /// 삼각형이 가능한가?
     /// </summary>

@@ -19,13 +19,13 @@ internal class Program
         var strArr1 = new string[] { "Bcad" };
         var strArr2 = new string[] { "com", "b", "d", "p", "c" };
         Solution sol = new Solution();
-        //Console.WriteLine(sol.Solution0925_2(3, 10));
-        util.PrintArray(sol.Solution0925_2(3, 10));
+        Console.WriteLine(sol.Solution0926_2(10));
+        //util.PrintArray(sol.Solution0925_2(3, 10));
         //sol.Solution0806();
 
 
         CS_study cS_Study = new CS_study();
-        //cS_Study.AutoProperty();
+        //cS_Study.FormatTest();
         
         // 내림차순 정렬을 이용할 때
         //util.sort(intArray, util.DescendingCompare);
