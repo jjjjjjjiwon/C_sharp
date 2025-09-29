@@ -19,6 +19,34 @@ using System.Windows.Forms;
 
 class Solution
 {
+
+    public int Solution0929_2(int[] iarry)
+    {
+        int gop = 1;
+        int hap = 0;
+        foreach (var item in iarry)
+        {
+            gop *= item;
+            hap += item;
+        }
+        hap = hap * hap;
+
+        return (hap > gop) ? 0 : 1;
+    }
+ 
+    /// <summary>
+    /// 접미사인지 확인
+    /// </summary>
+    /// <param name="str"></param>
+    /// <param name="istr"></param>
+    /// <returns></returns>
+    public int Solution0929(string str, string istr)
+    {
+        bool ox = str.EndsWith(istr);
+
+        return ox ? (int)1 : (int)0;
+    }
+
     /// <summary>
     /// 홀짝에 따라 다른 값 반환하기
     /// </summary>
