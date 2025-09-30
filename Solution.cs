@@ -18,8 +18,38 @@ using System.Drawing.Design;
 using System.Windows.Forms;
 
 class Solution
-{
+{ 
+    public int Solution0930_2(int[] arr, int idx)
+    {
+        int num = 0;
+        foreach (var item in arr)
+        {
+            num++;
+            if (num > idx && item == 1)
+            {
+                return num - 1;
+            }
+        }
+        return -1;
+    }
 
+    /// <summary>
+    /// 원하는 문자열 찾기
+    /// </summary>
+    /// <param name="str"></param>
+    /// <param name="pat"></param>
+    /// <returns></returns>
+    public int Solution0930(string str, string pat)
+    {
+        return str.ToLower().Contains(pat.ToLower()) ? 1 : 0;
+    }
+
+    /// <summary>
+    /// 원소들의 곱과 합
+    /// 
+    /// </summary>
+    /// <param name="iarry"></param>
+    /// <returns></returns>
     public int Solution0929_2(int[] iarry)
     {
         int gop = 1;
