@@ -14,12 +14,12 @@ internal class Program
     /// <param name="args"></param>
     private static void Main(string[] args)
     {
-        var intArray = new int[] { 1,1,1,1,0};
+        var intArray = new int[] { 2,3,4,5};
         var intArr2 = new int[] { 94, 777, 104, 1000, 1, 12 };
         var strArr1 = new string[] { "Bcad" };
         var strArr2 = new string[] { "com", "b", "d", "p", "c" };
         Solution sol = new Solution();
-        Console.WriteLine(sol.Solution0930_2(intArray, 3));
+        Console.WriteLine(sol.Solution1001(intArray));
         //util.PrintArray(sol.Solution0925_2(3, 10));
         //sol.Solution0806();
 

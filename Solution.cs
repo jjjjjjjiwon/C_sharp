@@ -18,7 +18,32 @@ using System.Drawing.Design;
 using System.Windows.Forms;
 
 class Solution
-{ 
+{
+
+    
+    /// <summary>
+    /// 길이에 따른 연산
+    /// </summary>
+    /// <param name="arr"></param>
+    /// <returns></returns>
+    public int Solution1001(int[] arr)
+    {
+        int answer = 0;
+        int answer2 = 1;
+        foreach (var item in arr)
+        {
+            answer += item;
+            answer2 *= item;
+        }
+        return arr.Length > 10 ? answer : answer2;
+    }
+
+    /// <summary>
+    /// 가까운 1찾기
+    /// </summary>
+    /// <param name="arr"></param>
+    /// <param name="idx"></param>
+    /// <returns></returns>
     public int Solution0930_2(int[] arr, int idx)
     {
         int num = 0;
