@@ -19,6 +19,39 @@ using System.Windows.Forms;
 
 class Solution
 {
+    /// <summary>
+    /// 할일 목록
+    /// </summary>
+    /// <param name="Arrstr"></param>
+    /// <param name="Arrbool"></param>
+    /// <returns></returns>
+    public string[] Solution1002_2(string[] Arrstr, bool[] Arrbool)
+    {
+        var list = new List<string>();
+        for (int i = 0; i < Arrstr.Length; i++)
+        {
+            if (Arrbool[i] == false)
+            {
+                list.Add(Arrstr[i]);
+            }
+        }
+        return list.ToArray();
+    }
+
+    /// <summary>
+    /// 조건에 맞게 수열 변환하기 1
+    /// </summary>
+    /// <param name="arr"></param>
+    /// <returns></returns>
+    public int[] Solution1002(int[] arr)
+    {
+        var list = new List<int>();
+        foreach (var item in arr)
+        {
+            list.Add(item >= 50 ? (item % 2 == 0 ? item / 2 : item) : (item % 2 == 1 ? item * 2 : item));
+        }
+        return list.ToArray();
+    }
 
     
     /// <summary>
