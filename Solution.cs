@@ -19,6 +19,33 @@ using System.Windows.Forms;
 
 class Solution
 {
+
+    public int Solution1010_2(string str)
+    {
+        int answer = 0;
+
+        foreach (var item in str)
+        {
+            answer += item - '0';
+        }
+        return answer % 9;
+    }
+    /// <summary>
+    /// n개 간격의 원소들
+    /// </summary>
+    /// <param name="array"></param>
+    /// <param name="num"></param>
+    /// <returns></returns>
+    public int[] Solution1010(int [] array, int num)
+    {
+        var list = new List<int>();
+        for (int i = 0; i < array.Length; i =+ num)
+        {
+            list.Add(array[i]);
+        }
+        return list.ToArray();
+    }
+
     /// <summary>
     /// 할일 목록
     /// </summary>
