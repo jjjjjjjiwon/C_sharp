@@ -19,7 +19,55 @@ using System.Windows.Forms;
 
 class Solution
 {
+    /// <summary>
+    /// 5명씩
+    /// </summary>
+    /// <param name="Arraystr"></param>
+    /// <returns></returns>
+    public string[] Solution1013_2(string[] Arraystr)
+    {
+        int count = 1;
+        var list = new List<string>();
 
+        foreach (var item in Arraystr)
+        {
+            if (count == 1 || count % 5 == 1)
+            {
+                list.Add(item);
+            }
+            count++;
+        }
+        return list.ToArray();
+
+    }
+    
+    /// <summary>
+    /// A 강조하기
+    /// </summary>
+    /// <param name="str"></param>
+    /// <returns></returns>
+    public string Solution1013(string str)
+    {
+        string answer = string.Empty;
+        foreach (var item in str)
+        {
+            if (item == 'a' || item == 'A')
+            {
+                answer += item.ToString().ToUpper();
+            }
+            else
+            {
+                answer += item.ToString().ToLower();
+            }
+        }
+        return answer;
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="str"></param>
+    /// <returns></returns>
     public int Solution1010_2(string str)
     {
         int answer = 0;

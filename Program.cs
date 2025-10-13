@@ -16,12 +16,12 @@ internal class Program
     {
         var intArray = new int[] { 4,2,6,1,7,6};
         var intArr2 = new int[] { 94, 777, 104, 1000, 1, 12 };
-        var strArr1 = new string[] { "1", "2","3","4" };
+        var strArr1 = new string[] { "a", "b", "c", "d", "e", "f", "g"};
         var strArr2 = new string[] { "com", "b", "d", "p", "c" };
         var Arrbool = new bool[] { true, false, true, false };
         Solution sol = new Solution();
-        //Console.WriteLine(sol.Solution1010(intArray, 2));
-        util.PrintArray(sol.Solution1010(intArray, 4));
+        //Console.WriteLine(sol.Solution1013_2(strArr1));
+        util.PrintArray(sol.Solution1013_2(strArr1));
         //sol.Solution0806();
 
 
