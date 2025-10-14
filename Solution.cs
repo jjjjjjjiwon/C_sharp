@@ -16,9 +16,55 @@ using System.Data;
 using System.Windows.Markup;
 using System.Drawing.Design;
 using System.Windows.Forms;
+using System.Drawing;
 
 class Solution
 {
+
+    /// <summary>
+    /// 피자 나눠 먹기 2
+    /// </summary>
+    /// <param name="num"></param>
+    /// <returns></returns>
+    public int Solution1014_2(int num)
+    {
+        int count = 1;
+
+         while ((6 * count) % num != 0)
+        {
+            count++;
+        }
+
+        return count;
+    }
+
+    /// <summary>
+    /// 외계행성의 나이
+    /// </summary>
+    /// <param name="age"></param>
+    /// <returns></returns>
+    public string Solution1014(int age)
+    {
+        var result = new List<char>();
+
+        if (age >= 100)
+        {
+            int a100 = age / 100;
+            result.Add((char)(a100 + 'a'));
+        }
+
+        if (age >= 10)
+        {
+            int a10 = (age / 10) % 10;
+            result.Add((char)(a10 + 'a'));
+        }
+
+        int a1 = age % 10;
+        result.Add((char)(a1 + 'a'));
+
+        return new string(result.ToArray());
+    }
+
     /// <summary>
     /// 5명씩
     /// </summary>
@@ -40,7 +86,7 @@ class Solution
         return list.ToArray();
 
     }
-    
+
     /// <summary>
     /// A 강조하기
     /// </summary>
@@ -84,10 +130,10 @@ class Solution
     /// <param name="array"></param>
     /// <param name="num"></param>
     /// <returns></returns>
-    public int[] Solution1010(int [] array, int num)
+    public int[] Solution1010(int[] array, int num)
     {
         var list = new List<int>();
-        for (int i = 0; i < array.Length; i =+ num)
+        for (int i = 0; i < array.Length; i = +num)
         {
             list.Add(array[i]);
         }
@@ -128,7 +174,7 @@ class Solution
         return list.ToArray();
     }
 
-    
+
     /// <summary>
     /// 길이에 따른 연산
     /// </summary>
@@ -196,7 +242,7 @@ class Solution
 
         return (hap > gop) ? 0 : 1;
     }
- 
+
     /// <summary>
     /// 접미사인지 확인
     /// </summary>
@@ -238,7 +284,7 @@ class Solution
                 }
             }
         }
-        
+
         return answer;
     }
 
