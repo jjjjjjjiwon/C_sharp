@@ -20,6 +20,52 @@ using System.Drawing;
 
 class Solution
 {
+    /// <summary>
+    /// 369게임
+    /// </summary>
+    /// <param name="num"></param>
+    /// <returns></returns>
+    public int Solution1015_2(int num)
+    {
+        string str = num.ToString();
+        int counter = 0;
+
+        foreach (var item in str)
+        {
+            if (item == '3' || item == '3' || item == '9')
+                counter++;
+        }
+        return counter;
+    }
+
+    /// <summary>
+    /// 배열 회전시키기
+    /// </summary>
+    /// <param name="array"></param>
+    /// <param name="str"></param>
+    /// <returns></returns>
+    public int[] Solution1015(int[] array, string str)
+    {
+        List<int> list = new List<int>(array);
+        switch (str)
+        {
+            case "right":
+                int last = list[list.Count - 1];
+                list.RemoveAt(list.Count - 1);
+                list.Insert(0, last);
+                break;
+            case "left":
+                int first = list[0];
+                list.RemoveAt(0);
+                list.Add(first);
+                break;
+
+            default:
+                break;
+        }
+
+        return list.ToArray();
+    }
 
     /// <summary>
     /// 피자 나눠 먹기 2
