@@ -21,6 +21,51 @@ using System.Drawing;
 class Solution
 {
     /// <summary>
+    /// 문자열 잘라서 정렬하기
+    /// </summary>
+    /// <param name="str"></param>
+    /// <returns></returns>
+    public string[] Solution1016_2(string str)
+    {
+        string[] parts = str.Split("x");
+        var list = new List<string>();
+        foreach (var item in parts)
+        {
+            if (item.Length > 0)
+            {
+                list.Add(item);
+            }
+        }
+        list.Sort();
+        return list.ToArray();
+    }
+
+
+    /// <summary>
+    /// 세로 읽기
+    /// </summary>
+    /// <param name="str"></param>
+    /// <param name="n"></param>
+    /// <param name="c"></param>
+    /// <returns></returns>
+    public string Solution1016(string str, int n, int c)
+    {
+        int nu2 = n;
+        var list = new List<char>();
+        for (int i = 0; i < str.Length; i += n)
+        {
+            string substring = str.Substring(i, Math.Min(n, str.Length - i));
+
+            if (substring.Length >= c)
+            {
+                list.Add(substring[c - 1]);
+            }
+        }
+
+        return new string(list.ToArray());
+    }
+
+    /// <summary>
     /// 369게임
     /// </summary>
     /// <param name="num"></param>
