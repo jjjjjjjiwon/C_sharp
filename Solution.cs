@@ -20,6 +20,41 @@ using System.Drawing;
 
 class Solution
 {
+    public string Solution1017_2(string str, string str2)
+    {
+        var sb = new StringBuilder();
+        for (int i = 0; i < str.Length; i++)
+        {
+            sb.Append(str[i]);
+            sb.Append(str2[i]);
+        }
+        return sb.ToString();
+    }
+
+    /// <summary>
+    /// 이차원 배열 대각선 순회하기
+    /// </summary>
+    /// <param name="board"></param>
+    /// <param name="k"></param>
+    /// <returns></returns>
+    public int Solution1017(int[,] board, int k)
+    {
+        int answer = 0;
+        for (int i = 0; i < board.GetLength(0); i++)
+        {
+            for (int j = 0; j < board.GetLength(1); j++)
+            {
+                if (i + j <= k)
+                {
+                    answer += board[i, j];
+                }
+            }
+        }
+        return answer;
+        
+    }
+
+
     /// <summary>
     /// 문자열 잘라서 정렬하기
     /// </summary>
