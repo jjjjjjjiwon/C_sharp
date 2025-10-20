@@ -20,6 +20,74 @@ using System.Drawing;
 
 class Solution
 {
+    /// <summary>
+    /// 날짜 비교하기
+    /// </summary>
+    /// <param name="array"></param>
+    /// <param name="array2"></param>
+    /// <returns></returns>
+    public int Solution1020_2(int[] array, int[] array2)
+    {
+        const int YEAR = 0;
+        const int MONTH = 1;
+        const int DAY = 2;
+        int answer = 0;
+
+        // 그냥 if
+        // if (array[YEAR] < array2[YEAR])
+        // {
+        //     answer = 1;
+        // }
+        // else if (array[YEAR] == array2[YEAR])
+        // {
+        //     if (array[MONTH] < array2[MONTH])
+        //     {
+        //         answer = 1;
+        //     }
+        //     else if (array[MONTH] == array2[MONTH])
+        //     {
+        //         if (array[DAY] < array2[DAY])
+        //         {
+        //             answer = 1;
+        //         }
+        //         else{}
+
+        //     }
+        // }
+
+        // 날짜로
+        // DateTime dt1 = new DateTime(array[YEAR], array[MONTH], array[DAY]);
+        // DateTime dt2 = new DateTime(array2[YEAR], array2[MONTH], array2[DAY]);
+        // answer = dt1 < dt2 ? 1 : 0;
+
+        // 문자로 변화하고 다시 숫자로
+        int dt1 = Convert.ToInt32($"{array[YEAR]}{array[MONTH]}{array[DAY]}");
+        int dt2 = Convert.ToInt32($"{array2[YEAR]}{array2[MONTH]}{array2[DAY]}");
+        answer = dt1 < dt2 ? 1 : 0;
+
+        return answer;
+    }
+
+    /// <summary>
+    /// 등차수열의 특정한 항만 더하기
+    /// </summary>
+    /// <param name="a"></param>
+    /// <param name="d"></param>
+    /// <param name="include"></param>
+    /// <returns></returns>
+    public int Solution1020(int a, int d, bool[] include)
+    {
+        int answer = 0;
+        for (int i = 0; i < include.Length; i++)
+        {
+            if (include[i])
+            {
+                answer += i * d + a;
+            }
+        }
+        return answer;
+    }
+
     public string Solution1017_2(string str, string str2)
     {
         var sb = new StringBuilder();
