@@ -21,6 +21,47 @@ using System.Drawing;
 class Solution
 {
     /// <summary>
+    /// 합성수 찾기
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int Solution1021_2(int n)
+    {
+        int answer = 0;
+        for (int i = 4; i <= n; i++)
+        {
+            for (int j = 2; j < i; j++)
+            {
+                if (i % j == 0)
+                {
+                    answer++;
+                    break;
+                }
+            }
+        }
+
+        return answer;
+    }
+    
+    /// <summary>
+    /// 중복된 문자 제거
+    /// </summary>
+    /// <param name="str"></param>
+    /// <returns></returns>
+    public string Solution1021(string str)
+    {
+        string answer = string.Empty;
+        foreach (var item in str)
+        {
+            if (!answer.Contains(item))
+            {
+                answer += item;
+            }
+        }    
+        return answer;
+    }
+
+    /// <summary>
     /// 날짜 비교하기
     /// </summary>
     /// <param name="array"></param>
