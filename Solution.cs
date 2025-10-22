@@ -17,9 +17,45 @@ using System.Windows.Markup;
 using System.Drawing.Design;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Windows.Forms.VisualStyles;
 
 class Solution
 {
+    /// <summary>
+    /// 빈 배열에 추가, 삭제함
+    /// </summary>
+    /// <param name="arr"></param>
+    /// <param name="flag"></param>
+    /// <returns></returns>
+    // public int[] Solution1022_2(int[] arr, bool[] flag)
+    // {
+    //     Stack<int> st = new Stack<int>();
+    //     st.Push(1);
+    //     st.Push(2);
+    //     st.Push(3);
+    //     int[] aaa = st.ToArray();
+    //     Array.Reverse(aaa);
+    // }
+    
+    /// <summary>
+    /// 수열과 구간 쿼리
+    /// </summary>
+    /// <param name="arr"></param>
+    /// <param name="array"></param>
+    /// <returns></returns>
+    public int[] Solution1022(int[] arr,int[,] array)
+    {
+        for (int i = 0; i < array.GetLength(0); i++)
+        {
+            for (int j = array[i,0]; i <= array[i,1]; j++)
+            {
+                arr[j]++;
+            }
+        }
+        return arr;
+    }
+
+
     /// <summary>
     /// 합성수 찾기
     /// </summary>
