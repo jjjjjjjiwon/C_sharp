@@ -22,6 +22,54 @@ using System.Windows.Forms.VisualStyles;
 class Solution
 {
     /// <summary>
+    /// 배열 만들기 5
+    /// </summary>
+    /// <param name="arrStr"></param>
+    /// <param name="k"></param>
+    /// <param name="s"></param>
+    /// <param name="l"></param>
+    /// <returns></returns>
+    public int[] Solution1023_2(string[] arrStr, int k, int s, int l)
+    {
+        var list = new List<int>();
+
+        foreach (var item in arrStr)
+        {
+            string str = item.Substring(s, l);
+            int istr = Convert.ToInt32(str);
+
+            if (istr > k)
+            {
+                list.Add(istr);
+            }
+        }
+
+        return list.ToArray();
+    }
+
+
+    /// <summary>
+    /// 글자 지우기
+    /// </summary>
+    /// <param name="str"></param>
+    /// <param name="arr"></param>
+    /// <returns></returns>
+    public string Solution1023(string str, int[] arr)
+    {
+        var sb = new StringBuilder();
+        var list = new List<int>(arr);
+        for (int i = 0; i < str.Length; i++)
+        {
+            if (!list.Contains(i))
+            {   
+                sb.Append(str[i]);
+            }
+        }
+        return sb.ToString();
+
+    }
+
+    /// <summary>
     /// 빈 배열에 추가, 삭제함
     /// </summary>
     /// <param name="arr"></param>
