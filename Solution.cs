@@ -20,7 +20,49 @@ using System.Drawing;
 using System.Windows.Forms.VisualStyles;
 
 class Solution
-{
+{   
+    /// <summary>
+    /// 문자열 뒤집기
+    /// </summary>
+    /// <param name="str"></param>
+    /// <param name="s"></param>
+    /// <param name="e"></param>
+    /// <returns></returns>
+    public string Solution1024_2(string str, int s, int e)
+    {
+        char[] chr = str.ToCharArray();
+        Array.Reverse(chr, s, e - s + 1);
+        return new string(chr);
+    }
+
+    /// <summary>
+    /// 1로 만들기
+    /// </summary>
+    /// <param name="num_list"></param>
+    /// <returns></returns>
+    public int Solution1024(int[] num_list)
+    {
+        int answer = 0;
+        foreach (var num in num_list)
+        {
+            int item = num;
+            while (item > 1)
+            {
+                if (item % 2 == 0)
+                {
+                    item /= 2;
+                }
+                else
+                {
+                    item = (item - 1) / 2;
+                }
+                answer++;
+            }
+        }
+
+        return answer;
+    }
+
     /// <summary>
     /// 배열 만들기 5
     /// </summary>
