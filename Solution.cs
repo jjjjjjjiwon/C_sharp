@@ -20,7 +20,47 @@ using System.Drawing;
 using System.Windows.Forms.VisualStyles;
 
 class Solution
-{   
+{
+    /// <summary>
+    /// 문자열이 몇 번 등장하는지 세기
+    /// </summary>
+    /// <param name="str"></param>
+    /// <param name="pat"></param>
+    /// <returns></returns>
+    public int Solution1027_2(string str, string pat)
+{
+    int count = 0;
+
+    // str 길이만큼 반복
+    for (int i = 0; i <= str.Length - pat.Length; i++)  // i가 pat의 길이만큼 길어지지 않도록
+    {
+        // str[i..i+pat.Length]가 pat과 일치하면 count 증가
+        if (str.Substring(i, pat.Length) == pat)
+        {
+            count++;
+        }
+    }
+
+    return count;
+}
+
+
+
+
+    /// <summary>
+    /// 특정 문자열로 끝나는 가장 긴 부분 문자열 찾기
+    /// </summary>
+    /// <param name="str"></param>
+    /// <param name="pat"></param>
+    /// <returns></returns>
+    public string Solution1027(string str, string pat)
+    {
+        string answer = string.Empty;
+        int idx = str.LastIndexOf(pat);
+        answer = str.Substring(0, idx + pat.Length);
+        return answer;
+    }
+
     /// <summary>
     /// 문자열 뒤집기
     /// </summary>
