@@ -21,6 +21,9 @@ using System.Windows.Forms.VisualStyles;
 
 class Solution
 {
+    
+
+
     /// <summary>
     /// 문자열이 몇 번 등장하는지 세기
     /// </summary>
