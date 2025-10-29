@@ -20,8 +20,76 @@ using System.Drawing;
 using System.Windows.Forms.VisualStyles;
 
 class Solution
-{
-    
+{    
+    /// <summary>
+    /// 모스부호
+    /// </summary>
+    /// <param name="str"></param>
+    /// <returns></returns>
+    public string Solution1029_2(string str)
+    {
+        Dictionary<string, char> morseDict = new Dictionary<string, char>()
+        {
+            [".-"] = 'A', ["-..."] = 'B', ["-.-."] = 'C', ["-.."] = 'D',
+            ["."] = 'E', ["..-."] = 'F', ["--."] = 'G', ["...."] = 'H',
+            [".."] = 'I', [".---"] = 'J', ["-.-"] = 'K', [".-.."] = 'L',
+            ["--"] = 'M', ["-."] = 'N', ["---"] = 'O', [".--."] = 'P',
+            ["--.-"] = 'Q', [".-."] = 'R', ["..."] = 'S', ["-"] = 'T',
+            ["..-"] = 'U', ["...-"] = 'V', [".--"] = 'W', ["-..-"] = 'X',
+            ["-.--"] = 'Y', ["--.."] = 'Z',
+            ["-----"] = '0', [".----"] = '1', ["..---"] = '2',
+            ["...--"] = '3', ["....-"] = '4', ["....."] = '5',
+            ["-...."] = '6', ["--..."] = '7', ["---.."] = '8', ["----."] = '9'
+        };
+
+        // 단어 구분: "/" 또는 3칸 공백
+        string[] words = str.Split(new[] { " / ", "   " }, StringSplitOptions.None);
+        List<string> decodedWords = new List<string>();
+
+        foreach (string word in words)
+        {
+            string[] letters = word.Split(' ');
+            string decodedWord = "";
+
+            foreach (string letter in letters)
+            {
+                if (morseDict.TryGetValue(letter, out char ch))
+                    decodedWord += ch;
+                else if (!string.IsNullOrWhiteSpace(letter))
+                    decodedWord += '?'; // 알 수 없는 부호
+            }
+
+            decodedWords.Add(decodedWord);
+        }
+
+        return string.Join(" ", decodedWords);
+
+    }
+
+    /// <summary>
+    /// A로 B만들기
+    /// </summary>
+    /// <param name="be"></param>
+    /// <param name="af"></param>
+    /// <returns></returns>
+    public int Solution1029(string be, string af)
+    {
+        foreach (var item in af)
+        {
+        int idx = be.IndexOf(item);
+        if (idx < 0)
+        {
+            return 0;
+        }
+        else
+        {
+            be = be.Remove(idx, 1);
+        }    
+        }
+        
+
+        return 1;
+    }
 
 
     /// <summary>
