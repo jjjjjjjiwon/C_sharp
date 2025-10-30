@@ -22,6 +22,64 @@ using System.Windows.Forms.VisualStyles;
 class Solution
 {    
     /// <summary>
+    /// k의 개수
+    /// </summary>
+    /// <param name="i"></param>
+    /// <param name="j"></param>
+    /// <param name="k"></param>
+    /// <returns></returns>
+    public int Solution1030_2(int i, int j, int k)
+    {
+        int answer = 0;
+        for (int idx = i; idx <= j; idx++)
+        {
+            string str = idx.ToString();
+            foreach (var item in str)
+            {
+                int val = item - '0';
+                if (val == k)
+                {
+                    answer++;
+                }
+            }
+        }
+        return answer;
+    }    
+
+    /// <summary>
+    /// 2차원으로 만들기
+    /// </summary>
+    /// <param name="arr"></param>
+    /// <param name="num"></param>
+    /// <returns></returns>
+    public int[,] Solution1030(int[] arr, int num)
+    {
+        int len = arr.Length / num;
+        int[,] answer = new int[len, num];
+
+        for (int i = 0; i < len; i++)
+        {
+            for (int j = 0; j < num; j++)
+            {
+                answer[i, j] = arr[i * num + j];
+            }
+        }
+        
+        for (int i = 0; i < answer.GetLength(0); i++)
+        {
+            for (int j = 0; j < answer.GetLength(1); j++)
+            {
+                Console.Write(answer[i, j]);
+            }
+            Console.Write(",");
+        }
+            Console.WriteLine();
+
+        return answer;
+    }
+
+    
+    /// <summary>
     /// 모스부호
     /// </summary>
     /// <param name="str"></param>
