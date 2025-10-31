@@ -20,7 +20,32 @@ using System.Drawing;
 using System.Windows.Forms.VisualStyles;
 
 class Solution
-{    
+{   
+    /// <summary>
+    /// 세 개의 구분자
+    /// </summary>
+    /// <param name="str"></param>
+    /// <returns></returns>
+    public string[] Solution1031(string str)
+    {
+        str = str.Replace("a", " ").Replace("b", " ").Replace("c", " ");
+        string[] arrstr = str.Split(" ");
+        var list = new List<string>();
+        foreach (var item in arrstr)
+        {
+            if (item.Length > 0)
+            {
+                list.Add(item);
+            }
+        }
+        if (list.Count == 0)
+        {
+            list.Add("EMPTY");
+        }
+
+        return list.ToArray();
+    }
+
     /// <summary>
     /// k의 개수
     /// </summary>
