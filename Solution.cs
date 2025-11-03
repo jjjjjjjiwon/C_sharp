@@ -18,9 +18,51 @@ using System.Drawing.Design;
 using System.Windows.Forms;
 using System.Drawing;
 using System.Windows.Forms.VisualStyles;
+using Microsoft.VisualBasic;
 
 class Solution
 {   
+    /// <summary>
+    /// 한번만 등장하는 문자
+    /// </summary>
+    /// <param name="str"></param>
+    /// <returns></returns>
+    public string Solution1103(string str)
+    {
+        string answer = "";
+        var dic = new Dictionary<char, int>();
+
+        foreach (var item in str)
+        {
+            if (dic.TryGetValue(item, out int val))
+            {
+                dic[item]++;
+            }
+            else
+            {
+                dic.Add(item, 1);
+            }
+        }
+        var list = new List<char>();
+
+        foreach (var item in dic)
+        {
+            if (item.Value == 1)
+            {
+                list.Add(item.Key);
+            }
+        }
+
+        list.Sort();
+
+        foreach (var item in list)
+        {
+            answer += item;
+        }
+
+        return answer;
+    }
+
     /// <summary>
     /// 세 개의 구분자
     /// </summary>
