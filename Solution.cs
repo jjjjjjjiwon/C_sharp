@@ -22,6 +22,29 @@ using Microsoft.VisualBasic;
 
 class Solution
 {   
+    public int Solution1104(int[] arr)
+    {
+        int answer = 0;
+
+        var sb = new StringBuilder();
+        foreach (var item in arr)
+        {
+            sb.Append(item);
+        }
+        string str = sb.ToString();
+
+        foreach (var item in str)
+        {
+            if (item.Equals('7'))
+            {
+                answer++;
+            }
+        }
+
+        return answer;
+    }
+
+
     /// <summary>
     /// 한번만 등장하는 문자
     /// </summary>
