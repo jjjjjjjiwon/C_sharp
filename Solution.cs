@@ -21,7 +21,41 @@ using System.Windows.Forms.VisualStyles;
 using Microsoft.VisualBasic;
 
 class Solution
-{   
+{
+    /// <summary>
+    /// 간단한 논리 연산
+    /// </summary>
+    /// <param name="x1"></param>
+    /// <param name="x2"></param>
+    /// <param name="x3"></param>
+    /// <param name="x4"></param>
+    /// <returns></returns>
+    public bool Solution1105_2(bool x1,bool x2,bool x3,bool x4)
+    {
+        bool answer = (x1 | x2) & (x3 | x4);
+        return answer;
+    }
+
+    /// <summary>
+    /// 문자열 반복해서 출력하기
+    /// </summary>
+    public void Solution1105()
+    {
+        String[] input;
+
+        Console.Clear();
+        input = Console.ReadLine().Split(' ');
+
+        string s1 = input[0];
+        int a = Int32.Parse(input[1]);
+
+        for (int i = 0; i < a; i++)
+        {
+            Console.Write(s1);
+        }
+    }
+    
+
     public int Solution1104(int[] arr)
     {
         int answer = 0;
