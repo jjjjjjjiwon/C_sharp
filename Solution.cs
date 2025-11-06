@@ -19,9 +19,59 @@ using System.Windows.Forms;
 using System.Drawing;
 using System.Windows.Forms.VisualStyles;
 using Microsoft.VisualBasic;
+using System.Windows;
+using System.Diagnostics.Eventing.Reader;
 
 class Solution
 {
+    /// <summary>
+    /// 가까운 수
+    /// </summary>
+    /// <param name="arr"></param>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int Solution1106(int[] arr, int n)
+    {
+        int answer = 0;
+        int max = int.MaxValue;
+        foreach (var item in arr)
+        {
+            int temp = (item > n) ? item - n : n - item;
+            
+            if (max > temp)
+            {
+                max = temp;
+                answer = item;
+            }
+            else if (max == item)
+            {
+                answer = item;
+            }
+        }
+        return answer;
+
+    }
+    
+    /// <summary>
+    /// 진료 순서 정하기
+    /// </summary>
+    /// <param name="arr"></param>
+    /// <returns></returns>
+    public int[] Solution1106(int[] arr)
+    {
+        var answer = new int[arr.Length];
+        var list = new List<int>(arr);
+        list.Sort();
+        list.Reverse();
+
+        for (int i = 0; i < answer.Length; i++)
+        {
+            answer[i] = list.IndexOf(arr[i]);
+        }
+        return answer;
+    }
+
+
     /// <summary>
     /// 간단한 논리 연산
     /// </summary>
