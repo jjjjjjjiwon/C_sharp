@@ -25,6 +25,26 @@ using System.Diagnostics.Eventing.Reader;
 class Solution
 {
     /// <summary>
+    /// 팩토리얼
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int Solution1107(int n)
+    {
+        int answer = 1;
+        int i = 1;
+
+        while (answer < n)
+        {
+            i++;
+            answer *= i;
+        }
+
+        return i - 1;
+    }
+
+
+    /// <summary>
     /// 가까운 수
     /// </summary>
     /// <param name="arr"></param>
