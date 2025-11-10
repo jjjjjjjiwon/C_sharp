@@ -25,6 +25,59 @@ using System.Diagnostics.Eventing.Reader;
 class Solution
 {
     /// <summary>
+    /// qr code
+    /// </summary>
+    /// <param name="q"></param>
+    /// <param name="r"></param>
+    /// <param name="str"></param>
+    /// <returns></returns>
+    public string Solution1110_2(int q, int r, string str)
+    {
+        string answer = string.Empty;
+        for (int i = 0; i < str.Length; i++)
+        {
+            if (i % q == r)
+            {
+                answer += str[i];
+            }
+        }
+        
+        // for (int i = r; i < str.Length; i += q)
+        // {
+        //     answer += str[i];
+        // }
+
+        return answer;
+    }
+
+
+    /// <summary>
+    /// 수열과 구간 쿼리
+    /// </summary>
+    /// <param name="arr"></param>
+    /// <param name="queries"></param>
+    /// <returns></returns>
+    public int[] Solution1110(int[] arr, int[,] queries)
+    {
+        for (int q = 0; q < queries.GetLength(0); q++)
+        {
+            int start = queries[q, 0];
+            int end = queries[q, 1];
+            int k = queries[q, 2];
+
+            for (int i = start; i <= end; i++)
+            {
+                if (i % k == 0)
+                {
+                    arr[i]++;
+                }
+            }
+        }
+
+        return arr;
+    }
+
+    /// <summary>
     /// 팩토리얼
     /// </summary>
     /// <param name="n"></param>
