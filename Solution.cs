@@ -21,9 +21,19 @@ using System.Windows.Forms.VisualStyles;
 using Microsoft.VisualBasic;
 using System.Windows;
 using System.Diagnostics.Eventing.Reader;
+using System.Diagnostics;
 
 class Solution
 {
+
+    /// <summary>
+    /// 특수문자 출력하기
+    /// </summary>
+    public static void Solution1111()
+    {
+        Console.Write(@"!@#$%^&*(\'<>?:;");
+    }
+
     /// <summary>
     /// qr code
     /// </summary>
