@@ -22,9 +22,60 @@ using Microsoft.VisualBasic;
 using System.Windows;
 using System.Diagnostics.Eventing.Reader;
 using System.Diagnostics;
+using System.Security.RightsManagement;
 
 class Solution
 {
+    /// <summary>
+    /// 컨트롤 Z
+    /// </summary>
+    /// <param name="str"></param>
+    /// <returns></returns>
+    public int  Solution1112_2(string str)
+    {
+        int answer = 0;
+        string[] arr = str.Split(' ');
+        int next = Convert.ToInt32(arr[0]);
+
+        answer += next;
+
+        for(int i = 1;  i< arr.Length; i++)
+        {
+            if (arr[i].Equals("Z"))
+            {
+                answer -= next;
+            }
+            else
+            {
+                next = int.Parse(arr[i]);
+                answer += next;
+            }
+        }
+
+        return answer;
+    }
+
+    /// <summary>
+    /// 커피 심부름
+    /// </summary>
+    /// <param name="str"></param>
+    /// <returns></returns>
+    public int  Solution1112(string[] str)
+    {
+        int answer = 0;
+        foreach (var item in str)
+        {
+            if (item.Contains("cafelatte"))
+            {
+                answer += 5000;
+            }
+            else
+            {
+                answer += 4500;
+            }
+        }
+        return answer;
+    }
 
     /// <summary>
     /// 특수문자 출력하기
