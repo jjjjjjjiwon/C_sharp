@@ -27,6 +27,81 @@ using System.Security.RightsManagement;
 class Solution
 {
     /// <summary>
+    /// 왼쪽 오른쪽
+    /// </summary>
+    /// <param name="str"></param>
+    /// <returns></returns>
+     public string[] Solution1114_2(string[] str)
+    {
+        string[] strEmpty = new string[]{};
+        var listLeft = new List<string>();
+        var listRight = new List<string>();
+
+        for (int i = 0; i < str.Length; i++)
+        {
+            if (str[i].Equals("l"))
+            {
+                return listLeft.ToArray();
+            }
+            else if (str[i].Equals("r"))
+            {
+                for (int j = i + 1; j < str.Length; j++)
+                {
+                    listRight.Add(str[j]);
+                }
+                return listRight.ToArray();
+            }
+            else
+            {
+                listLeft.Add(str[i]);
+            }
+        }
+        return strEmpty;
+    }
+
+    /// <summary>
+    /// 소인수분해
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+     public int[] Solution1114(int n)
+    {
+        List<int> nums = new List<int>();
+
+        while (true)
+        {
+            if (n % 2 == 0)
+            {
+                nums.Add(2);
+                n /= 2;
+                continue;
+            }
+
+            if (n % 3 == 0)
+            {
+                nums.Add(3);
+                n /= 3;
+                continue;
+            }
+
+            if (n % 5 == 0)
+            {
+                nums.Add(5);
+                n /= 5;
+                continue;
+            }
+
+            break;
+        }
+
+        if (n > 1)
+            nums.Add(n);
+
+        return nums.ToArray();
+    }
+
+
+    /// <summary>
     /// 컨트롤 Z
     /// </summary>
     /// <param name="str"></param>
