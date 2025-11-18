@@ -26,6 +26,36 @@ using System.Security.RightsManagement;
 
 class Solution
 {
+    // 이진수 더하기
+    public string Solution1118(string str, string str2)
+    {   
+        int int1 = Convert.ToInt32(str, 2);
+        int int2 = Convert.ToInt32(str2, 2);
+        int int3 = int1 + int2;
+        string answer = Convert.ToString(int3, 2);
+
+        return answer;
+    }
+
+
+    // 배열 만들기
+    public int[] Solution1118(int[] arr)
+    {
+        var list = new List<int>();
+        int o = int.MaxValue;
+        foreach (var item in arr)
+        {
+            if(o > item)
+            {
+                list.Add(item);
+            }
+            o = item;
+        }
+
+        return list.ToArray();
+    }
+
+
     /// <summary>
     /// 왼쪽 오른쪽
     /// </summary>
