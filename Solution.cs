@@ -26,6 +26,33 @@ using System.Security.RightsManagement;
 
 class Solution
 {
+    
+    public int  Solution1119(string str)
+    {
+        int answer = 0;
+        int pm = 0;
+        string[] sstr = str.Split(' ');
+        foreach (var item in str)
+        {
+        int temp = 0;
+        if(item.Equals("+"))
+        {
+            pm = 1;
+        }
+        else if(item.Equals("-"))
+        {
+            pm = -1;
+        }
+        else
+        {
+            temp = Convert.ToInt32(item);
+        }
+          answer += temp *pm;
+        }
+        
+        return answer;
+    }
+
     // 이진수 더하기
     public string Solution1118(string str, string str2)
     {   
