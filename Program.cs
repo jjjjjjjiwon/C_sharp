@@ -14,14 +14,14 @@ internal class Program
     /// <param name="args"></param>
     private static void Main(string[] args)
     {
-        var intArray = new int[] {1,4,2,5,3};
+        var intArray = new int[] {1,2,3,4,5,6};
         var intArr2 = new int[] { 94, 777, 104, 1000, 1, 12 };
         var strArr1 = new string[] { "a", "b", "c", "d", "e", "f", "g"};
         var strArr2 = new string[] { "com", "b", "d", "p", "c" };
         var Arrbool = new bool[] { true, false, true, false };
         Solution sol = new Solution();
-        //Console.WriteLine(sol.Solution1118(intArray));
-        util.PrintArray(sol.Solution1118(intArray));
+        Console.WriteLine(sol.Solution1120_2("123123213213123", "213213213210"));
+        //util.PrintArray(sol.Solution1118(intArray));
         //sol.Solution0806();
 
         CS_study cS_Study = new CS_study();

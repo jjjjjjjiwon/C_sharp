@@ -25,9 +25,54 @@ using System.Diagnostics;
 using System.Security.RightsManagement;
 
 class Solution
-{
+{   
+    // 두 수의 합
+    public string Solution1120_2(string a, string b)
+    {
+        int n = 0;
+
+        int anum = (int)Math.Pow(10, a.Length - 1);
+        int bnum = (int)Math.Pow(10, b.Length - 1);
+
+        foreach(var aitem in a)
+        {
+            n += (aitem - '0') * anum; 
+            anum /= 10;
+        }
+
+        foreach(var bitem in b)
+        {
+            n += (bitem - '0') * bnum;
+            bnum /= 10;
+        }
+        
+
+        return n.ToString();
+    }
+
     
-    public int  Solution1119(string str)
+
+
+    // 공 던지기
+    public int Solution1120(int[] num, int k)
+    {
+        //int answer = num[(k - 1) * 2 % num.Length];
+
+        int answer = 0;
+        int n = 0;
+
+        for (int i = 0; i < k -1; i++)
+        {
+            n = (n + 2) % num.Length;
+            answer = num[n];
+        }
+
+        return answer;
+    }
+
+
+    // 문자열 계산하기
+    public int Solution1119(string str)
     {
         int answer = 0;
         int pm = 0;
