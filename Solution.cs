@@ -25,7 +25,59 @@ using System.Diagnostics;
 using System.Security.RightsManagement;
 
 class Solution
-{   
+{
+
+    // 수열 구간 쿼리
+    public int[] Solution1121(int[] arr, int[,] queries)
+    {
+
+        int len = queries.GetLength(0);
+        int[] answer = new int[len];
+
+        for (int q = 0; q < len; q++)
+        {
+            int start = queries[q, 0];
+            int end = queries[q, 1];
+
+            int small = int.MaxValue;
+
+            for (int i = start; i <= end; i++)
+            {
+                if (arr[i] > queries[q, 2])
+                {
+                    if (arr[i] < small)
+                    {
+                        small = arr[i];
+                    }   
+                }
+            }
+            
+            if(small == int.MaxValue)
+            {
+                answer[q] = -1;
+            }
+            else{
+                answer[q] = small;
+            }
+        }
+
+        return answer;
+    }
+
+
+    // 영어가 싫어요
+    public long Solution1121(string num)
+    {
+        long answer = 0;
+        
+        string str = num.Replace("zero", "0").Replace("one", "1").Replace("two", "2").Replace("three", "3").Replace("four", "4")
+                        .Replace("five", "5").Replace("six", "6").Replace("seven", "7").Replace("eight", "8").Replace("nine", "9");
+        answer = Convert.ToInt64(str);
+
+        return answer;
+    }
+
+    
     // 두 수의 합
     public string Solution1120_2(string a, string b)
     {
