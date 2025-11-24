@@ -23,9 +23,18 @@ using System.Windows;
 using System.Diagnostics.Eventing.Reader;
 using System.Diagnostics;
 using System.Security.RightsManagement;
+using jiwon;
 
 class Solution
 {
+    // 구슬을 나누는 경우의 수
+    public int Solution1124(int balls, int share)
+    {
+        double temp = util.Sol(balls, share);
+        int answer = Convert.ToInt32(temp);
+        return answer;   
+    }
+
 
     // 수열 구간 쿼리
     public int[] Solution1121(int[] arr, int[,] queries)

@@ -4,7 +4,21 @@ namespace jiwon
 {
     class util
     {
-        
+        public static double Sol(int n, int m)
+        {
+            return Fact(n) / (Fact(n - m) * Fact(m));
+        }
+
+        static double Fact(int n)
+        {
+            double f = 1;
+            for (int i = 2; i <= n; i++)
+            {
+                f *= i;
+            }
+            return 0;
+        }
+
 
         /// <summary>
         /// 내림 차순, 오름 차순
