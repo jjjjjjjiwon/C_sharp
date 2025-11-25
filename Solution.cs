@@ -27,6 +27,31 @@ using jiwon;
 
 class Solution
 {
+    // 그림 확대
+    public string[] Solution1125_2(string[] strarr, int k)
+    {
+        foreach(var item in strarr)
+        {
+            Console.WriteLine(item);
+        }
+        return null;
+    }
+
+    // 삼각형의 완성조건
+    public int Solution1125(int[] arr)
+    {
+        Array.Sort(arr);
+        int small = arr[0];
+        int big = arr[1];
+
+        int x_min = big - small + 1;
+        int x_max = small + big - 1;
+
+        int answer = Math.Max(0, x_max - x_min + 1);
+
+        return answer;
+    }
+
     // 구슬을 나누는 경우의 수
     public int Solution1124(int balls, int share)
     {
