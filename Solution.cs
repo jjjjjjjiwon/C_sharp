@@ -27,6 +27,29 @@ using jiwon;
 
 class Solution
 {
+    public string Solution1126_2(string str, string str2, int s)
+    {
+        return str.Remove(s, str2.Length).Insert(s, str2);
+    }
+
+    /// <summary>
+    /// a와 b 출력하기
+    /// </summary>
+    public static void Solution1126()
+    {
+        string[] s;;
+
+        Console.Clear();
+        s = Console.ReadLine().Split(' ');
+
+        int a = Int32.Parse(s[0]);
+        int b = Int32.Parse(s[1]);
+
+        Console.WriteLine("a = {0}", a);
+        Console.WriteLine("b = {0}", b);
+    }
+
+
     // 그림 확대
     public string[] Solution1125_2(string[] strarr, int k)
     {
