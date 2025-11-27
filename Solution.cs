@@ -27,6 +27,13 @@ using jiwon;
 
 class Solution
 {
+
+    public int Solution1127(int m, int n)
+    {
+        return m * n -1;
+    }
+
+    /// 문자열 겹쳐쓰기
     public string Solution1126_2(string str, string str2, int s)
     {
         return str.Remove(s, str2.Length).Insert(s, str2);
