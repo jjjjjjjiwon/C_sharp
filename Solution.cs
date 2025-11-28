@@ -24,13 +24,47 @@ using System.Diagnostics.Eventing.Reader;
 using System.Diagnostics;
 using System.Security.RightsManagement;
 using jiwon;
+using System.Diagnostics.Contracts;
 
 class Solution
 {
 
+    public int[,] Solution1128_2(int[,] arr)
+    {
+        int max = Math.Max(arr.GetLength(0), arr.GetLength(1));
+        int[,] answer = new int[max, max];
+
+        for (int x = 0;  x < arr.GetLength(0); x++)
+        {
+            for (int y = 0;  y < arr.GetLength(1); y++)
+            {
+                answer[x, y] = arr[x,y];
+            }
+        }
+
+        return answer;
+    }
+
+    public int Solution1128(string[] strarr, string[] strarr2)
+    {
+        var list = new List<string>();
+        int answer = 2;
+
+    foreach (var item in strarr2)
+    {
+        if (list.All(x => item.Contains(x)) && list.Count == strarr2.Length)  // 핵심 부분
+        {
+            answer = 1;
+        }
+    }
+
+        return answer;
+    }
+
     public int Solution1127(int m, int n)
     {
-        return m * n -1;
+        int answer = m * n -1;
+        return answer;
     }
 
     /// 문자열 겹쳐쓰기
