@@ -28,6 +28,56 @@ using System.Diagnostics.Contracts;
 
 class Solution
 {
+    /// <summary>
+    /// 아이디, 패스워드
+    /// </summary>
+    /// <param name="idps"></param>
+    /// <param name="db"></param>
+    /// <returns></returns>
+    public string Solution1201(string[,] idps, string[,] db)
+    {
+        for (int i= 0; i < db.GetLength(0); i++)
+        {
+            if(idps[0, 0] == db[i,0])
+            {
+                if(idps[0,1] == db[i,1])
+                {
+                    return "login";
+                }
+                else
+                {
+                    return "wrong pw";
+                }
+            }
+        }
+        return "fail";
+    }
+
+
+    /// <summary>
+    /// 전국 대회 선발 고사
+    /// </summary>
+    /// <param name="arr"></param>
+    /// <param name="isbool"></param>
+    /// <returns></returns>
+    public int Solution1201(int[] arr, bool[] isbool)
+    {
+        var dic  = new Dictionary<int, int>();
+        var list = new List<int>(arr);
+
+        for(int i = 0; i < arr.Length;i++)
+        {
+            dic.Add(arr[i], i);
+            
+            if(isbool[i] == false)
+            {
+                list[i] = list.Count + 1;
+            }
+        }
+        list.Sort();
+        int answer = dic[list[0]] * 10000 + dic[list[1]] * 100 + dic[list[2]];
+        return answer;
+    }
 
     public int[,] Solution1128_2(int[,] arr)
     {
