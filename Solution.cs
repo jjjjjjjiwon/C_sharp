@@ -28,13 +28,54 @@ using System.Diagnostics.Contracts;
 
 class Solution
 {
+
+    /// <summary>
+    /// 직사각형 넓이 구하기
+    /// </summary>
+    /// <param name="dots"></param>
+    /// <returns></returns>
+    public int Solution1202_2(int[,] dots)
+    {
+        int[] xs = { dots[0, 0], dots[1, 0], dots[2, 0], dots[3, 0] };
+        int[] ys = { dots[0, 1], dots[1, 1], dots[2, 1], dots[3, 1] };
+
+        return (xs.Max() - xs.Min()) * (ys.Max() - ys.Min());
+    }
+
+
+    /// <summary>
+    /// 대소문자 바꿔 출력하기
+    /// </summary>
+    public void Solution1202()
+    {
+        string s;
+        Console.Clear();
+        s = Console.ReadLine();
+
+        var list = new List<string>();
+
+        foreach (char item in s)
+        {
+            if (char.IsLower(item))
+            {
+                list.Add(char.ToUpper(item).ToString());
+            }     
+            else
+            {
+                list.Add(char.ToLower(item).ToString());
+            }     
+        }
+        Console.Write(list);
+    }
+
+
     /// <summary>
     /// 아이디, 패스워드
     /// </summary>
     /// <param name="idps"></param>
     /// <param name="db"></param>
     /// <returns></returns>
-    public string Solution1201(string[,] idps, string[,] db)
+    public string Solution1201_2(string[,] idps, string[,] db)
     {
         for (int i= 0; i < db.GetLength(0); i++)
         {
