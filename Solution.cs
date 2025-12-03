@@ -28,6 +28,67 @@ using System.Diagnostics.Contracts;
 
 class Solution
 {
+    /// <summary>
+    /// 등수 매기기
+    /// </summary>
+    /// <param name="num"></param>
+    /// <returns></returns>
+    public int[] Solution1203_2(int[,] num)
+    {
+        List<int> list = new List<int>();
+
+        // 1) 점수 합을 list에 넣기
+        for (int i = 0; i < num.GetLength(0); i++)
+        {
+            list.Add(num[i, 0] + num[i, 1]);
+        }
+
+        // 2) 정렬
+        list.Sort();
+        list.Reverse(); // 내림차순(큰 점수가 1등)
+
+        // 3) foreach로 순위 생성
+        List<int> ranks = new List<int>();
+
+        int rank = 1;         // 현재 등수
+        int prevScore = -1;   // 이전 점수
+        int count = 0;        // 총 진행 학생 수
+
+        foreach (var score in list)
+        {
+            count++;
+
+            if (score != prevScore)
+            {
+                rank = count;   // 새 점수면 등수 갱신
+                prevScore = score;
+            }
+
+            ranks.Add(rank);
+        }
+
+        return ranks.ToArray();
+    }
+
+    /// <summary>
+    /// 치킨 쿠폰
+    /// </summary>
+    /// <param name="num"></param>
+    /// <returns></returns>
+    public int Solution1203(int num)
+    {
+        int answer = 0 ;
+        int cupon = num;
+
+        while (cupon >= 10)
+        {
+            cupon -= 10;
+            answer++;
+            cupon++;
+        }
+        return answer;
+    }
+
 
     /// <summary>
     /// 직사각형 넓이 구하기
