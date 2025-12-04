@@ -29,6 +29,36 @@ using System.Diagnostics.Contracts;
 class Solution
 {
     /// <summary>
+    /// 문자열 밀기
+    /// </summary>
+    /// <param name="str"></param>
+    /// <param name="str2"></param>
+    /// <returns></returns>
+    public int Solution1204_2(string str, string str2)
+    {  
+        if (str.Equals(str2)) return 0;    
+
+        for (int i = 1; i < str.Length; i++)
+        {
+            str = ShiftRight(str);
+            if(str.Equals(str2))
+            {
+                return 1;
+            }
+        }
+
+        return -1;
+    }
+
+    string ShiftRight(string str)
+    {
+        int len = str.Length;
+        string last = str.Substring(len - 1, 1);
+        string rest = str.Substring(0, len - 1);
+        return last + rest;
+    }
+
+    /// <summary>
     /// 등수 매기기
     /// </summary>
     /// <param name="num"></param>
