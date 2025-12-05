@@ -29,7 +29,7 @@ using System.Diagnostics.Contracts;
 class Solution
 {
     /// <summary>
-    /// 문자열 밀기
+    /// 문자열 밀기aa
     /// </summary>
     /// <param name="str"></param>
     /// <param name="str2"></param>
