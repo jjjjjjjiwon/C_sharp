@@ -29,7 +29,88 @@ using System.Diagnostics.Contracts;
 class Solution
 {
     /// <summary>
-    /// 문자열 밀기aa
+    /// 특이한 정렬
+    /// </summary>
+    /// <param name="numarr"></param>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int[] Solution12048_2(int[] numarr, int n)
+    {
+        for (int i = 1;  i < numarr.Length; i++)
+        {
+            for(int j = 0;  j < i + 1; j++)
+            {
+                int iabs = Math.Abs(numarr[i] - n);
+
+                int jabs = Math.Abs(numarr[j] - n);
+
+                if(iabs <  jabs)
+                {
+                    int temp = numarr[j];
+                    numarr[j] = numarr[i];
+                    numarr[i] = temp;
+                }
+                else if(iabs == jabs)
+                {
+                    if (numarr[i] > numarr[j])
+                    {
+                        int temp = numarr[j];
+                        numarr[j] = numarr[i];
+                        numarr[i] = temp;
+                    }
+                }
+            }
+        }
+        return numarr;
+    }
+
+    /// <summary>
+    /// 코드 처리하기
+    /// </summary>
+    /// <param name="code"></param>
+    /// <returns></returns>
+    public string Solution12048(string code)
+    {
+        string ret = string.Empty;
+        int mode = 0;
+        int idx = 0;
+        foreach(var item in code)
+        {
+            if(item.Equals('1'))
+            {
+                mode = 1 - mode; 
+                idx++;
+                continue;
+            }
+
+            if(mode == 0)
+            {
+                if(idx% 2 == 0)
+                {
+                    ret += item;
+                }
+            }
+            else
+            {
+                if(idx % 2 != 0)
+                {
+                    ret += item;
+                }
+            }
+                idx++;
+        }
+
+        if (ret.Length == 0)
+        {
+            ret = "EMPTY";
+        }
+
+        return ret;
+        }
+    
+    
+    /// <summary>
+    /// 문자열 밀기
     /// </summary>
     /// <param name="str"></param>
     /// <param name="str2"></param>
