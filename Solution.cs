@@ -28,6 +28,56 @@ using System.Diagnostics.Contracts;
 
 class Solution
 {
+
+    /// <summary>
+    /// 다항식 더하기
+    /// </summary>
+    /// <param name="str"></param>
+    /// <returns></returns>
+    public string Solution1209_2(string polynomial)
+    {
+        var sb = new StringBuilder();
+        string[] mono = polynomial.Split(" + ");
+        int valx = 0, val = 0, totalx = 0, total = 0;
+
+        foreach (var item in mono)
+        {
+            if (item.Contains('x'))
+            {
+                if (item.Length == 1)
+                {
+                    valx = 1;
+                }
+                else
+                {
+                    valx = int.Parse(item.Substring(0, item.Length - 1));
+                }
+                totalx += valx;
+            }
+            else
+            {
+                val =  int.Parse(item);
+                total = val;
+            }
+        }
+
+        if (totalx != 0)
+        {
+            sb.Append(totalx == 1 ? "x" : $"{totalx}x");
+        }
+        if (total != 0)
+        {
+            if (totalx != 0)
+            {
+                sb.Append(" + ");
+            }
+            sb.Append(total);
+        }
+
+        return sb.ToString();
+    }
+
+
     /// <summary>
     /// 특이한 정렬
     /// </summary>
