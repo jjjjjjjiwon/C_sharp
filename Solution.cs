@@ -25,9 +25,39 @@ using System.Diagnostics;
 using System.Security.RightsManagement;
 using jiwon;
 using System.Diagnostics.Contracts;
+using System.Numerics;
 
 class Solution
 {
+    /// <summary>
+    /// 하샤드 수
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public bool Solution1210_2(int n)
+    {
+        bool answer;
+        string str = n.ToString();
+        int total = 0;
+        foreach (var item in str)
+        {
+            total += item - '0';
+        }
+        answer = n % total == 0 ? true : false;
+        return answer;
+    }
+
+    /// <summary>
+    /// 문자열 출력하기
+    /// </summary>
+    public static void Solution1210()
+    {
+        string s;
+        Console.Clear();
+        s = Console.ReadLine();
+        Console.WriteLine();
+    }
+
 
     /// <summary>
     /// 다항식 더하기
