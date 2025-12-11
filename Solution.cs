@@ -30,6 +30,56 @@ using System.Numerics;
 class Solution
 {
     /// <summary>
+    /// 최빈값 구하기
+    /// </summary>
+    /// <param name="array"></param>
+    /// <returns></returns>
+    public int Solution1211_2(int[] array)
+    {
+        Dictionary<int, int> counts = new Dictionary<int, int>();
+
+        foreach (var n in array)
+        {
+            if (counts.ContainsKey(n)) counts[n]++;
+            else counts[n] = 1;
+        }
+
+        int maxCount = counts.Values.Max();
+        var modes = counts.Where(kv => kv.Value == maxCount).Select(kv => kv.Key).ToList();
+
+        int result = (modes.Count > 1) ? -1 : modes[0];
+        return result;
+    }
+
+    /// <summary>
+    /// ?? 
+    /// </summary>
+    /// <param name="quiz"></param>
+    /// <returns></returns>
+    public string[] Solution1211(string[] quiz)
+    {
+        string[] answer = new string[quiz.Length];
+
+        for (int i = 0; i < quiz.Length; i++)
+        {
+            string[] parts = quiz[i].Split(' ');
+
+            int left = int.Parse(parts[0]);      // 첫 번째 숫자
+            string op = parts[1];                // 연산자
+            int right = int.Parse(parts[2]);     // 두 번째 숫자
+            int expected = int.Parse(parts[4]);  // 결과값
+
+            // 계산
+            int actual = (op == "+") ? left + right : left - right;
+
+            // 결과 비교
+            answer[i] = (actual == expected) ? "O" : "X";
+        }
+
+        return answer;
+    }
+
+    /// <summary>
     /// 하샤드 수
     /// </summary>
     /// <param name="n"></param>

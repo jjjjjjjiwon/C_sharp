@@ -15,13 +15,13 @@ internal class Program
     private static void Main(string[] args)
     {
         var intArray = new int[] {0,1,2,3,4,5};
-        var intArr2 = new int[] { 1,2,4 };
+        var intArr2 = new int[] { 1 };
         var strArr1 = new string[] { "a", "b", "c", "d", "e", "f", "g"};
         var strArr2 = new string[] { "com", "b", "d", "p", "c" };
         var Arrbool = new bool[] { true, false, true, false };
         Solution sol = new Solution();
-        Console.WriteLine(sol.Solution1209_2("3x + 7 + x"));
-        //util.PrintArray(sol.Solution1103(intArray, intArr2));
+        Console.WriteLine(sol.Solution1211_2(intArr2));
+        //util.PrintArray(sol.Solution1211_2(intArray, intArr2));
         //sol.Solution0806();
 
         CS_study cS_Study = new CS_study();
