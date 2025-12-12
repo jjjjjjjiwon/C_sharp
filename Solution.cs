@@ -30,6 +30,50 @@ using System.Numerics;
 class Solution
 {
     /// <summary>
+    /// 연속된 수의 합
+    /// </summary>
+    /// <param name="num"></param>
+    /// <param name="total"></param>
+    /// <returns></returns>
+    public int[] Solution1212_2(int num, int total)
+    {
+        int[] answer = new int[num];
+        int idx  = total / num;
+        idx = idx - (num - 1) / 2;
+
+        for (int i = 0;  i <  num; i++)
+        {
+            answer[i] = idx + i;
+        }
+        return answer;
+    }
+
+
+    /// <summary>
+    /// 다음에 올 숫자
+    /// </summary>
+    /// <param name="array"></param>
+    /// <returns></returns>
+    public int Solution1212(int[] array)
+    {
+        int answer = 0;
+        int first = array[1] - array[0];
+        int second = array[2] - array[1];
+
+        if (first == second)
+        {
+            answer = array[array.Length - 1] +first;
+        }
+        else
+        {
+            int ratio = array[1] / array[0];
+            answer = array[array.Length - 1] * ratio;
+        }
+        return answer;
+    }
+
+
+    /// <summary>
     /// 최빈값 구하기
     /// </summary>
     /// <param name="array"></param>
