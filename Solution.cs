@@ -29,6 +29,68 @@ using System.Numerics;
 
 class Solution
 {
+
+    public int Solution1215_2(int[,] board)
+    {
+        int answer= 0;
+        int len = board.GetLength(0);
+        int[,] temp = new int[len +2, len +2];
+
+        for (int y = 1; y <= len; y++)
+        {
+            for (int x = 1; x <= len; x++)
+            {
+                if (board[x- 1, y - 1] == 1)
+                {
+                    temp[x - 1, y - 1]++;
+                    temp[x - 1, y   ]++;
+                    temp[x - 1, y + 1]++;
+                    temp[x  , y - 1]++;
+                    temp[x  , y   ]++;
+                    temp[x  , y + 1]++;
+                    temp[x + 1, y - 1]++;
+                    temp[x + 1, y   ]++;
+                    temp[x + 1, y + 1]++;
+
+                }
+            }
+        }
+
+        for (int y = 1; y <= len; y++)
+        {
+            for (int x = 1;  x <= len; x++)
+            {
+                if(temp[x,y] == 0)
+                {
+                    answer++;
+                }
+            }
+        }
+
+        return answer;
+    }
+
+
+    /// <summary>
+    /// 두 정수 사이의 합
+    /// </summary>
+    /// <param name="a"></param>
+    /// <param name="b"></param>
+    /// <returns></returns>
+    public long Solution1215(int a, int b)
+    {
+        int answer = 0;
+        int max = (a >= b) ? a : b;
+        int min = (max == a) ? b : a;
+
+        for (int i = min; i <= max; i++)
+        {
+            answer += i;
+        }
+
+        return answer;
+    }
+
     /// <summary>
     /// 연속된 수의 합
     /// </summary>
