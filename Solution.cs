@@ -29,7 +29,38 @@ using System.Numerics;
 
 class Solution
 {
+    
+    public int[] Solution1216_2(int numer1, int demon1, int numer2, int demon)
+    {
+        int[] answer = new int[2];
 
+        return answer;
+    }
+
+    /// <summary>
+    /// 서울에서 김서방 찾기
+    /// </summary>
+    /// <param name="seoul"></param>
+    /// <returns></returns>
+    public string Solution1216(string[] seoul)
+    {
+        string answer = "";
+        for (int i = 0;  i < seoul.Length; i++)
+        {
+            if(seoul[i].Equals("Kim"))
+            {
+                answer = $"김서방은 {i}에 있다";
+            }
+        }
+
+        return answer;
+    }
+
+    /// <summary>
+    /// 안전지대
+    /// </summary>
+    /// <param name="board"></param>
+    /// <returns></returns>
     public int Solution1215_2(int[,] board)
     {
         int answer= 0;
