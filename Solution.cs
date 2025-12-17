@@ -29,6 +29,105 @@ using System.Numerics;
 
 class Solution
 {
+    /// <summary>
+    /// 주사위 게임 3
+    /// </summary>
+    /// <param name="a"></param>
+    /// <param name="b"></param>
+    /// <param name="c"></param>
+    /// <param name="d"></param>
+    /// <returns></returns>
+    public int Solution1217(int a, int b, int c, int d)
+    {
+        int answer = 0;
+        int[] dice  = new int[7];
+        IntoDice(a, dice);
+        IntoDice(b, dice);
+        IntoDice(c, dice);
+        IntoDice(d, dice);
+        if(dice.Contains(4))
+        {
+            for(int p = 1; p <= 6; p++)
+            {
+                if(dice[p] == 4)
+                {
+                    answer = 1111 * p;
+                    break;
+                }
+            }
+        }
+        else if (dice.Contains(3))
+        {
+            for(int p = 1; p <= 6; p++)
+            {
+                if(dice[p] == 3)
+                {
+                    for (int q = 1; q <= 6; q++)
+                    {
+                        if(dice[q] == 1)
+                        {
+                            answer = (10 * p + q) * (10 * p * q);
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        else if (dice.Contains(2))
+        {
+            if (dice.Contains(1))
+            {
+                for (int q = 1; q <= 6; q++)
+                {
+                    if (dice[q] == 1)
+                    {
+                        for (int r = q + 1; r <= 6; r++)
+                        {
+                            answer = q * r;
+                            break;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                for(int p = 1; p <= 6; p++)
+                {
+                    if (dice[p] == 2)
+                    {
+                        for (int q = p + 1; q <= 6; q++)
+                        {
+                            if (dice[q] == 2)
+                            {
+                                answer = (p + q) * (q - p);
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        else
+        {
+            answer = 6;
+            for(int i = 1; i <= 6; i++)
+            {
+                if(dice[i]== 1 && answer > i)
+                {
+                    answer = i;
+
+                }
+            }
+        }
+        return answer;
+    }
+
+    int[] IntoDice(int value, int[] dice)
+    {
+        dice[value]++;
+        return dice;
+    }
+
     
     public int[] Solution1216_2(int numer1, int demon1, int numer2, int demon)
     {
