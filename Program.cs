@@ -20,7 +20,7 @@ internal class Program
         var strArr2 = new string[] { "com", "b", "d", "p", "c" };
         var Arrbool = new bool[] { true, false, true, false };
         Solution sol = new Solution();
-        Console.WriteLine(sol.Solution1215(5, 3));
+        Console.WriteLine(sol.Solution1218("010"));
         //util.PrintArray(sol.Solution1211_2(intArray, intArr2));
         //sol.Solution0806();
 

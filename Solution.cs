@@ -29,6 +29,64 @@ using System.Numerics;
 
 class Solution
 {
+
+    /// <summary>
+    /// 겹치는 선분의 길이
+    /// </summary>
+    /// <param name="arr"></param>
+    /// <returns></returns>
+    public int Solution1218_2(int[,] arr)
+    {
+        int answer = 0;
+        int min = -100;
+        int max = 100;
+        int len = max - min +1;
+        int[] line = new int[len];
+
+        for (int i = 0;  i< arr.GetLength(0); i++)
+        {
+            for (int j = arr[i, 0]; j < arr[i, 1]; j++)
+            {
+                line[j - min]++;
+            }    
+        }
+
+        for(int i = min; i <= line.Length; i++)
+        {
+            if(line[i] > 1)
+            {
+                answer++;
+            }
+        }   
+
+        return answer;
+    }
+
+    /// <summary>
+    /// 핸드폰 번호 가리기
+    /// </summary>
+    /// <param name="phone"></param>
+    /// <returns></returns>
+    public string Solution1218(string phone)
+    {
+        string answer = "";
+        int len = phone.Length;
+
+        for(int i = 0; i < len; i++)
+        {
+            if(len - 4 > i)
+            {
+                answer += "*";
+            }
+            else
+            {
+                answer += phone[i];
+            }
+        }
+
+        return answer;
+    }
+
     /// <summary>
     /// 주사위 게임 3
     /// </summary>
