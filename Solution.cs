@@ -27,9 +27,82 @@ using jiwon;
 using System.Diagnostics.Contracts;
 using System.Numerics;
 using System.Security.Cryptography;
+using System.Diagnostics.PerformanceData;
 
 class Solution
 {
+    public int[,] Solution1222_2(int n)
+    {
+        int[,] answer = new int[n,n];
+        int count = 1;
+        int idx = 0;
+        int idy = 0;
+
+        do
+        {
+            for (int  i = 0;  i < n; i++)
+            {
+                answer[idx, idy + i] = count + i;
+            }
+            count += (n - 1);
+            idy += (n - 1);
+
+            for (int  i = 0;  i < n; i++)
+            {
+                answer[idx + i, idy] = count + i;
+            }
+            count += (n - 1);
+            idx += (n - 1);
+
+            for (int  i = 0;  i < n; i++)
+            {
+                answer[idx, idy -i] = count + i;
+            }
+            count += (n - 1);
+            idy -= (n - 1);
+
+            for(int i = 0;  i < n; i++)
+            {
+                answer[idx - 1, idy] = count + i;
+            }
+
+            count += (n - 1);
+            n -= 2;
+            idx -= n;
+            idy++;
+        } while(n > 0);
+        return answer; 
+    }
+
+
+
+    /// <summary>
+    /// 시저 암호
+    /// </summary>
+    /// <param name="str"></param>
+    /// <param name="i"></param>
+    /// <returns></returns>
+    public string Solution1222(string str, int n)
+    {   
+        var sb = new StringBuilder();
+        foreach (var item in str)
+        {
+            char chr = ' ';
+            if (!item.Equals(chr))
+            {
+                if(char.IsUpper(item))
+                {
+                    chr = Convert.ToChar((item + n - 'A') % 26 + 'A');
+                }
+                else
+                {
+                    chr = Convert.ToChar((item + n - 'a') % 26 + 'a');
+                }
+            }
+            sb.Append(chr);
+        }
+        return sb.ToString();
+    }
 
     /// <summary>
     /// 평행
