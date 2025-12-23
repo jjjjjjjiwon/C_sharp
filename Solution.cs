@@ -30,7 +30,90 @@ using System.Security.Cryptography;
 using System.Diagnostics.PerformanceData;
 
 class Solution
-{
+{       
+
+    public int Solution1223(string[] str)
+    {
+        int answer = 0;
+
+        foreach(var item in str)
+        {
+            bool exit = true;
+            int idx = 0;
+            do
+            {
+                if(item[idx].Equals('a'))
+                {
+                    if((idx + 3 <= item.Length) && item.Substring(idx, 3).Equals("aya"))
+                    {
+                        idx +=3;
+                        exit = false;
+                    }
+                }
+                else if  (item[idx].Equals('y'))
+                {
+                    if((idx + 2 <= item.Length) && item.Substring(idx, 3).Equals("ye"))
+                    {
+                        idx +=2;
+                        exit = false;
+                    }
+                    
+                }
+                else if  (item[idx].Equals('w'))
+                {
+                    if((idx + 2 <= item.Length) && item.Substring(idx, 3).Equals("wy"))
+                    {
+                        idx +=2;
+                        exit = false;
+                    }
+                }
+                else if  (item[idx].Equals('m'))
+                {
+                    if((idx + 2 <= item.Length) && item.Substring(idx, 3).Equals("ma"))
+                    {
+                        idx +=2;
+                        exit = false;
+                    }
+                }
+                
+                if ((exit == false) && (idx == item.Length))
+                {
+                    answer++;
+                    exit = true;
+                }
+            } while (exit == false);
+        }
+
+        return answer;
+    }
+
+
+    /// <summary>
+    /// 숫자 문자열과 영단어
+    /// </summary>
+    /// <param name="str"></param>
+    /// <returns></returns>
+    public int Solution1223(string str)
+    {
+        str = 
+            str.Replace("zero", "0");
+            str.Replace("one", "1");
+            str.Replace("two", "2");
+            str.Replace("three", "3");
+            str.Replace("four", "4");
+            str.Replace("five", "5");
+            str.Replace("six", "6");
+            str.Replace("seven", "7");
+            str.Replace("eight", "8");
+            str.Replace("nine", "9");
+        return int.Parse(str);
+    }
+
+    /// <summary>
+    /// 정수를 나선형으로 배치하기
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
     public int[,] Solution1222_2(int n)
     {
         int[,] answer = new int[n,n];
